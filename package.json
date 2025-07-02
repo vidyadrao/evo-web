@@ -7,14 +7,11 @@
   "author": "",
   "main": "index.js",
   "workspaces": [
-    "packages/ebayui-core",
-    "packages/ebayui-core-react",
-    "packages/evo-marko",
-    "packages/skin"
+    "packages/*"
   ],
   "scripts": {
-    "build": "npm run build --ws",
-    "build:ci": "CI=true npm run build --ws",
+    "build": "npm run build -w packages/skin && npm run build -w packages/ebayui-core && npm run build -w packages/ebayui-core-react",
+    "build:ci": "CI=true npm run build -w packages/skin && npm run build -w packages/ebayui-core && npm run build -w packages/ebayui-core-react",
     "change": "changeset add",
     "copy:coreui-site": "npm run deploy --ws",
     "copy:skin-site": "npm run deploy --ws",
@@ -56,7 +53,6 @@
     "@ebay/browserslist-config": "^2.11.0",
     "@ebay/skin": "^19",
     "@floating-ui/dom": "^1.7.2",
-    "@marko/prettyprint": "^3.0.1",
     "@marko/run": "^0.7.6",
     "@marko/run-adapter-static": "^2.0.0",
     "@marko/testing-library": "^6",
