@@ -1,0 +1,36 @@
+@use "../mixins/private/chip-mixins";
+@use "../mixins/public/animation-mixins";
+
+@include chip-mixins.background-keyframes();
+
+.selection-chip {
+    @include chip-mixins.base();
+    @include chip-mixins.interactive();
+
+    border-radius: var(--border-radius-50);
+}
+
+.selection-chip--animated .selection-chip__trailing {
+    transition: rotate var(--motion-duration-medium-3)
+        var(--motion-easing-standard);
+}
+
+.selection-chip__trailing {
+    rotate: -225deg;
+}
+
+.selection-chip[aria-pressed="true"] {
+    @include chip-mixins.selected();
+}
+
+.selection-chip--animated[aria-pressed="true"] {
+    @include chip-mixins.selected-animation();
+}
+
+.selection-chip[aria-pressed="true"] .selection-chip__trailing {
+    rotate: 0deg;
+}
+
+.selection-chip__text {
+    @include chip-mixins.text();
+}
