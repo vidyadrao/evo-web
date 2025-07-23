@@ -1,6 +1,17 @@
-import React, { ChangeEvent, FC, FocusEvent, MouseEvent, useEffect, useRef, useState } from "react";
+import React, {
+    ChangeEvent,
+    FC,
+    FocusEvent,
+    MouseEvent,
+    useEffect,
+    useRef,
+    useState,
+    ComponentProps,
+    cloneElement,
+} from "react";
 import Expander from "makeup-expander";
 import classNames from "classnames";
+import { filterByType } from "../common/component-utils";
 import EbayCalendar, { EbayCalendarProps } from "../ebay-calendar/calendar";
 import { EbayTextbox, EbayTextboxPostfixIcon } from "../ebay-textbox";
 import { DayISO, dateArgToISO, toISO } from "../ebay-calendar/date-utils";
@@ -14,22 +25,23 @@ type EventData = {
     rangeEnd?: string;
 };
 
-export type EbayDateTextboxProps = Omit<EbayCalendarProps, "interactive" | "navigable" | "numMonths" | "selected"> & {
-    className?: string;
-    value?: string;
-    rangeEnd?: string;
-    defaultValue?: string;
-    defaultRangeEnd?: string;
-    range?: boolean;
-    collapseOnSelect?: boolean;
-    inputPlaceholderText?: string | string[];
-    a11yOpenPopoverText?: string;
-    onChange?: EbayChangeEventHandler<HTMLInputElement, EventData> &
-        EbayMouseEventHandler<HTMLInputElement, EventData> &
-        EbayFocusEventHandler<HTMLInputElement, EventData>;
-    onInputChange?: EbayChangeEventHandler<HTMLInputElement>;
-    onInputRangeEndChange?: EbayChangeEventHandler<HTMLInputElement>;
-};
+export type EbayDateTextboxProps = Omit<EbayCalendarProps, "interactive" | "navigable" | "numMonths" | "selected"> &
+    ComponentProps<"div"> & {
+        className?: string;
+        value?: string;
+        rangeEnd?: string;
+        defaultValue?: string;
+        defaultRangeEnd?: string;
+        range?: boolean;
+        collapseOnSelect?: boolean;
+        inputPlaceholderText?: string | string[];
+        a11yOpenPopoverText?: string;
+        onChange?: EbayChangeEventHandler<HTMLInputElement, EventData> &
+            EbayMouseEventHandler<HTMLInputElement, EventData> &
+            EbayFocusEventHandler<HTMLInputElement, EventData>;
+        onInputChange?: EbayChangeEventHandler<HTMLInputElement>;
+        onInputRangeEndChange?: EbayChangeEventHandler<HTMLInputElement>;
+    };
 
 const MIN_WIDTH_FOR_DOUBLE_PANE = 600;
 
@@ -43,6 +55,7 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
     defaultValue,
     defaultRangeEnd,
     collapseOnSelect,
+    children,
     onChange = () => {},
     onInputChange = () => {},
     onInputRangeEndChange = () => {},
@@ -58,6 +71,19 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
     const secondSelected = dateArgToISO(rangeEndToRender);
     const [isPopoverOpen, setIsPopoverOpen] = useState<boolean>(false);
     const [numMonths, setNumMonths] = useState(1);
+
+    const EbayTextboxComponentChildren = filterByType(children, EbayTextbox);
+
+    // In range mode: first child = end input, second child = start input
+    // In single mode: first child = main input, second child = unused
+    // The reason is that the latest element will have the postfix icon
+    const EbayTextboxComponentStart = range
+        ? EbayTextboxComponentChildren[1] || <EbayTextbox /> // Second child is start in range mode
+        : EbayTextboxComponentChildren[0] || <EbayTextbox />; // First child is main in single mode
+
+    const EbayTextboxComponentEnd = range
+        ? EbayTextboxComponentChildren[0] || <EbayTextbox /> // First child is end in range mode
+        : EbayTextboxComponentChildren[1] || <EbayTextbox />; // Second child unused in single mode
 
     const { overlayStyles, refs } = useFloatingDropdown({
         open: isPopoverOpen,
@@ -179,24 +205,26 @@ const EbayDateTextbox: FC<EbayDateTextboxProps> = ({
 
     return (
         <span className={classNames("date-textbox", className)} ref={refs.setHost}>
-            {range && (
-                <EbayTextbox
-                    value={valueToRender}
-                    placeholder={rangeStartPlaceholder}
-                    onInputChange={(event) => handleInternalChange(event, 0)}
-                    onBlur={(event) => handleInputChange(event, 0)}
-                />
-            )}
+            {range &&
+                cloneElement(EbayTextboxComponentEnd, {
+                    value: valueToRender,
+                    placeholder: rangeStartPlaceholder,
+                    onInputChange: (event) => handleInternalChange(event, 0),
+                    onBlur: (event) => handleInputChange(event, 0),
+                })}
 
-            <EbayTextbox
-                className="ebay-date-textbox--main"
-                placeholder={mainPlaceholder}
-                value={range ? rangeEndToRender : valueToRender}
-                onInputChange={(event) => handleInternalChange(event, range ? 1 : 0)}
-                onBlur={(event) => handleInputChange(event, range ? 1 : 0)}
-            >
-                <EbayTextboxPostfixIcon name="calendar24" buttonAriaLabel={a11yOpenPopoverText} />
-            </EbayTextbox>
+            {cloneElement(
+                EbayTextboxComponentStart,
+                {
+                    ...EbayTextboxComponentStart.props,
+                    className: "ebay-date-textbox--main",
+                    placeholder: mainPlaceholder,
+                    value: range ? rangeEndToRender : valueToRender,
+                    onInputChange: (event) => handleInternalChange(event, range ? 1 : 0),
+                    onBlur: (event) => handleInputChange(event, range ? 1 : 0),
+                },
+                <EbayTextboxPostfixIcon name="calendar24" buttonAriaLabel={a11yOpenPopoverText} />,
+            )}
 
             <div hidden={!isPopoverOpen} ref={refs.setOverlay} style={overlayStyles} className="date-textbox__popover">
                 <EbayCalendar

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StoryFn, Meta, StoryObj } from "@storybook/react-vite";
 import { EbayDateTextbox, EbayDateTextboxProps } from "../index";
 import { EbayButton } from "../../ebay-button";
+import { EbayTextbox } from "../../ebay-textbox";
 
 const story: Meta<typeof EbayDateTextbox> = {
     component: EbayDateTextbox,
@@ -46,6 +47,41 @@ export const ControlledValues: StoryFn<EbayDateTextboxProps> = (args) => {
                     <EbayButton onClick={() => setValue("2024-01-03")}>Set to 2024-01-03</EbayButton>
                 </div>
             </>
+        );
+    };
+
+    return <Component />;
+};
+
+export const WithFloatingLabel: StoryFn<EbayDateTextboxProps> = (args) => {
+    const Component = () => {
+        const [value, setValue] = useState("");
+
+        const handleOnChange = (event, { selected }) => {
+            setValue(selected || "");
+        };
+
+        const handleOnInputChange = (event) => {
+            setValue(event.target.value);
+        };
+
+        return (
+            <EbayDateTextbox value={value} onChange={handleOnChange} onInputChange={handleOnInputChange} {...args}>
+                <EbayTextbox floatingLabel="Purchase Price" />
+            </EbayDateTextbox>
+        );
+    };
+
+    return <Component />;
+};
+
+export const RangeWithFloatingLabel: StoryFn<EbayDateTextboxProps> = (args) => {
+    const Component = () => {
+        return (
+            <EbayDateTextbox range={true} {...args}>
+                <EbayTextbox floatingLabel="Start" />
+                <EbayTextbox floatingLabel="End" />
+            </EbayDateTextbox>
         );
     };
 
