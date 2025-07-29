@@ -23,6 +23,10 @@ const typeToDirection: Record<CarouselControlType, MovementDirection> = {
 
 const CarouselControlButton: FC<CarouselControlProps> = ({ type, label, hidden, disabled, onClick }) => {
     const handleOnClick = (event: SyntheticEvent<HTMLButtonElement>) => {
+        if (disabled) {
+            return;
+        }
+
         onClick(event, { direction: typeToDirection[type] });
     };
 
@@ -31,7 +35,6 @@ const CarouselControlButton: FC<CarouselControlProps> = ({ type, label, hidden, 
             className={classNames("carousel__control", `carousel__control--${type}`)}
             aria-label={label}
             aria-disabled={disabled}
-            disabled={disabled}
             onClick={handleOnClick}
         >
             <EbayIcon
