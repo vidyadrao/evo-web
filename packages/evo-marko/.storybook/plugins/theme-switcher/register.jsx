@@ -1,11 +1,11 @@
 import React from "react";
-import addons, { types } from "@storybook/addons";
+import addons, { types } from "storybook/addons";
 import {
     Icons,
     IconButton,
     WithTooltip,
     TooltipLinkList,
-} from "@storybook/components";
+} from "storybook/components";
 
 const ADDON_ID = "ebayui/theme-switcher";
 const START_PATH = location.host === "ebay.github.io" ? "/ebayui-core/" : "/";
