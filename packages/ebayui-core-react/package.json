@@ -73,7 +73,7 @@
         "react-dom": ">= 16.0.0"
     },
     "optionalDependencies": {
-        "shaka-player": "^4.15.5"
+        "shaka-player": "^4.15.9"
     },
     "publishConfig": {
         "directory": "dist",

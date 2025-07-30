@@ -69,7 +69,7 @@
         "makeup-roving-tabindex": "~0.7.5",
         "makeup-screenreader-trap": "~0.5.4",
         "makeup-typeahead": "^0.3.3",
-        "shaka-player": "4.15.5"
+        "shaka-player": "4.15.9"
     },
     "devDependencies": {
         "@marko/compiler": "^5.39.28",

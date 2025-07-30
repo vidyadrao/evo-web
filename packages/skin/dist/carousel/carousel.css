@@ -280,7 +280,8 @@ span.carousel__container {
     }
     .carousel__snap-point {
         scroll-snap-align: flex-start;
-        scroll-snap-coordinate: 0 0;
+        -webkit-scroll-snap-coordinate: 0 0;
+        -ms-scroll-snap-coordinate: 0 0;
     }
     @media (min-width: 512px) {
         div.carousel {

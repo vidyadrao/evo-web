@@ -80,7 +80,7 @@
 }
 
 .item-tile__title {
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: vertical; /* stylelint-disable-line property-no-deprecated */
     color: var(--color-foreground-link-primary);
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -98,7 +98,7 @@
 }
 
 .item-tile__subtitle {
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: vertical; /* stylelint-disable-line property-no-deprecated */
     color: var(--color-foreground-secondary);
     display: -webkit-box;
     -webkit-line-clamp: 1;
