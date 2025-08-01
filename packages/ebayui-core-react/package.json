@@ -54,7 +54,7 @@
         "string-width": "4.2.3"
     },
     "dependencies": {
-        "@floating-ui/react": "^0.27.13",
+        "@floating-ui/react": "^0.27.15",
         "classnames": "^2.5.1",
         "makeup-active-descendant": "^0.7.8",
         "makeup-expander": "^0.11.7",
