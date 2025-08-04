@@ -2,8 +2,7 @@ import { Story } from "@storybook/marko";
 import { tagToString } from "../../common/storybook/storybook-code-source";
 import { addContent } from "../../common/storybook/utils";
 import Readme from "./README.md";
-import Component from "./index.marko";
-import type { Input } from "./component";
+import Component, { type Input } from "./index.marko";
 
 const Template: Story<Input> = (args) => ({
   input: addContent(args),
@@ -44,7 +43,7 @@ export default {
       },
       description: "Text for start icon to load viewer",
     },
-    a11yLoadText: {
+    a11yLoadingText: {
       control: { type: "text" },
       table: {
         category: "Accessibility",
@@ -143,7 +142,7 @@ Default.args = {
   src: "https://ir.ebaystatic.com/cr/v/c1/ebayui/3d/v1/image.glb",
   alt: "View these shoes for sale.",
   errorText: "An error has occurred",
-  a11yLoadText: "Loading 3d model",
+  a11yLoadingText: "Loading 3d model",
 };
 Default.parameters = {
   docs: {

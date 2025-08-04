@@ -148,7 +148,7 @@ export default {
       },
     },
     onClick: {
-      action: "on-click",
+      action: "onClick",
       description: "Triggered on click",
       table: {
         category: "Events",
@@ -158,7 +158,7 @@ export default {
       },
     },
     onEscape: {
-      action: "on-escape",
+      action: "onEscape",
       description: "Triggered on escape key",
       table: {
         category: "Events",
@@ -168,7 +168,7 @@ export default {
       },
     },
     onFocus: {
-      action: "on-focus",
+      action: "onFocus",
       description: "Triggered on focus",
       table: {
         category: "Events",
@@ -178,7 +178,7 @@ export default {
       },
     },
     onBlur: {
-      action: "on-blur",
+      action: "onBlur",
       description: "Triggered on blur",
       table: {
         category: "Events",

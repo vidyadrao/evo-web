@@ -1,0 +1,88 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`3d-viewer > renders default 1`] = `
+<DocumentFragment>
+  <div
+    class="three-d-player"
+  >
+    <div
+      class="three-d-player__overlay"
+    >
+      <span
+        aria-label="Loading 3d model"
+        class="progress-spinner"
+        role="img"
+      >
+        <svg
+          aria-hidden="true"
+          class="icon icon--24"
+        >
+          <symbol
+            fill="none"
+            id="GENERATED-0"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M22.5 12A10.5 10.5 0 1 1 9.514 1.798"
+              stroke="var(--color-spinner-icon-background, #3665F3)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3"
+            />
+            <path
+              d="M14.606 1.829a10.5 10.5 0 0 1 4.056 2.055 10.499 10.499 0 0 1 2.806 3.577"
+              stroke="var(--color-spinner-icon-foreground, #E5E5E5)"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="3"
+            />
+          </symbol>
+          <use
+            href="#icon-spinner-24"
+          />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <script>
+    ((runtimeId) =&gt; (
+(self[runtimeId] = (
+  renderId,
+  prefix = runtimeId + renderId,
+  prefixLen = prefix.length,
+  lookup = {},
+  visits = [],
+  doc = document,
+  walker = doc.createTreeWalker(
+    doc,
+    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
+  ),
+) =&gt;
+  doc = (self[runtimeId][renderId] = {
+    i: prefix,
+    d: doc,
+    l: lookup,
+    v: visits,
+    x() {},
+    w(node, op, id) {
+      while ((node = walker.nextNode())) {
+        doc.x(
+          (op =
+            (op = node.data) &&
+            !op.indexOf(prefix) &&
+            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
+          id,
+          node,
+        );
+
+        if (op &gt; "#") {
+          visits.push(node);
+        }
+      }
+    },
+  })),
+self[runtimeId]
+))("M")("_");M._.r=[_=&gt;(_.b=[0,{"ConditionalRenderer:#div/0":2,"ConditionalScope:#div/0":_.a={},src:"https://ir.ebaystatic.com/cr/v/c1/ebayui/3d/v1/image.glb",errorText:"An error has occurred",a11yLoadingText:"Loading 3d model",htmlInput:{alt:"View these shoes for sale."}},_.a,{htmlInput:{}},2,{htmlInput:{}}]),"src/tags/evo-icon/index.marko_0_htmlInput",6,"src/tags/evo-progress-spinner/index.marko_0_htmlInput",3,"src/tags/evo-3d-viewer/index.marko_0_onLoadError",1];M._.w()
+  </script>
+</DocumentFragment>
+`;

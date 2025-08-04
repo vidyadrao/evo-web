@@ -2,14 +2,14 @@ export interface Input extends Marko.HTML.Input {
     size?: "large" | "small";
 }
 <const/{
-    class: inputClass,
+    // class: inputClass,
     size,
-    // ...htmlInput
+    ...htmlInput
 }=input/>
 
-<const/htmlInput=(({ class: inputClass, size, ...rest }) => rest)(input)/>
-
-<span class=["checkbox", inputClass]>
+<span class=["checkbox",
+    // inputClass
+    ]>
     <input ...htmlInput class="checkbox__control" type="checkbox">
     <span class="checkbox__icon" hidden>
         <if=size === "large">

@@ -25,11 +25,6 @@ export default {
   },
 
   argTypes: {
-    noSkinClasses: {
-      control: { type: "boolean" },
-      description:
-        "Used for special cases where `icon` classes from Skin should not be applied",
-    },
     a11yText: {
       control: { type: "text" },
       description:

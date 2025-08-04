@@ -19,21 +19,9 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" |`on
     type,
     size,
     transparent,
-    class: inputClass,
-    // ...htmlInput
+    // class: inputClass,
+    ...htmlInput
 } = input/>
-
-<const/htmlInput=(({
-    badge,
-    priority = "none",
-    partiallyDisabled,
-    content,
-    size,
-    type,
-    transparent,
-    class: inputClass,
-    ...rest
-}) => rest)(input)/>
 
 <const/tagType = input.href ? "a" : "button"/>
 <const/baseClassName = input.href ? "icon-link" : "icon-btn"/>
@@ -46,7 +34,7 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" |`on
         }
     }
     class=[
-        inputClass,
+        // inputClass,
         baseClassName,
         badge?.number && `${baseClassName}--badged`,
         transparent && `${baseClassName}--transparent`,

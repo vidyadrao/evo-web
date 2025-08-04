@@ -1,0 +1,385 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`evo-checkbox > renders checkbox with id 1`] = `
+<DocumentFragment>
+  <div>
+    false,false,false
+  </div>
+  <fieldset>
+    <legend>
+      Choose an Option
+    </legend>
+    <span
+      class="field"
+    >
+      <span
+        class="checkbox"
+      >
+        <input
+          class="checkbox__control"
+          id="GENERATED-0"
+          name="checkbox-group"
+          type="checkbox"
+        />
+        <span
+          class="checkbox__icon"
+          hidden=""
+        >
+          <svg
+            aria-hidden="true"
+            class="checkbox__unchecked icon icon--18"
+          >
+            <symbol
+              id="GENERATED-1"
+              viewBox="0 0 18 18"
+            >
+              <path
+                d="M6.4 17h5.2c1.137 0 1.929 0 2.546-.051.605-.05.953-.142 1.216-.276a3 3 0 0 0 1.311-1.311c.134-.263.226-.611.276-1.216.05-.617.051-1.41.051-2.546V6.4c0-1.137 0-1.929-.051-2.546-.05-.605-.142-.953-.276-1.216a3 3 0 0 0-1.311-1.311c-.263-.134-.611-.226-1.216-.276C13.529 1.001 12.736 1 11.6 1H6.4c-1.137 0-1.929 0-2.546.051-.605.05-.953.142-1.216.276a3 3 0 0 0-1.311 1.311c-.134.263-.226.611-.276 1.216C1.001 4.471 1 5.264 1 6.4v5.2c0 1.137 0 1.929.051 2.546.05.605.142.953.276 1.216a3 3 0 0 0 1.311 1.311c.263.134.611.226 1.216.276.617.05 1.41.051 2.546.051ZM.436 15.816C0 14.96 0 13.84 0 11.6V6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748Z"
+              />
+            </symbol>
+            <use
+              href="#icon-checkbox-unchecked-18"
+            />
+          </svg>
+          <svg
+            aria-hidden="true"
+            class="checkbox__checked icon icon--18"
+          >
+            <symbol
+              id="GENERATED-2"
+              viewBox="0 0 18 18"
+            >
+              <path
+                d="M0 6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748C0 14.96 0 13.84 0 11.6V6.4Zm14.71-2.11a1 1 0 0 0-1.41 0L7 10.59l-2.29-2.3a1.004 1.004 0 0 0-1.42 1.42l3 3a1 1 0 0 0 1.41 0l7-7a1 1 0 0 0 .01-1.42Z"
+              />
+            </symbol>
+            <use
+              href="#icon-checkbox-checked-18"
+            />
+          </svg>
+        </span>
+      </span>
+      <label
+        class="field__label field__label--end"
+        for="GENERATED-0"
+      >
+        Option 1
+      </label>
+    </span>
+    <span
+      class="field"
+    >
+      <span
+        class="checkbox"
+      >
+        <input
+          class="checkbox__control"
+          id="GENERATED-3"
+          name="checkbox-group"
+          type="checkbox"
+        />
+        <span
+          class="checkbox__icon"
+          hidden=""
+        >
+          <svg
+            aria-hidden="true"
+            class="checkbox__unchecked icon icon--18"
+          >
+            <use
+              href="#icon-checkbox-unchecked-18"
+            />
+          </svg>
+          <svg
+            aria-hidden="true"
+            class="checkbox__checked icon icon--18"
+          >
+            <use
+              href="#icon-checkbox-checked-18"
+            />
+          </svg>
+        </span>
+      </span>
+      <label
+        class="field__label field__label--end"
+        for="GENERATED-3"
+      >
+        Option 2
+      </label>
+    </span>
+    <span
+      class="field"
+    >
+      <span
+        class="checkbox"
+      >
+        <input
+          class="checkbox__control"
+          id="GENERATED-4"
+          name="checkbox-group"
+          type="checkbox"
+        />
+        <span
+          class="checkbox__icon"
+          hidden=""
+        >
+          <svg
+            aria-hidden="true"
+            class="checkbox__unchecked icon icon--18"
+          >
+            <use
+              href="#icon-checkbox-unchecked-18"
+            />
+          </svg>
+          <svg
+            aria-hidden="true"
+            class="checkbox__checked icon icon--18"
+          >
+            <use
+              href="#icon-checkbox-checked-18"
+            />
+          </svg>
+        </span>
+      </span>
+      <label
+        class="field__label field__label--end"
+        for="GENERATED-4"
+      >
+        Option 3
+      </label>
+    </span>
+  </fieldset>
+  <script>
+    ((runtimeId) =&gt; (
+(self[runtimeId] = (
+  renderId,
+  prefix = runtimeId + renderId,
+  prefixLen = prefix.length,
+  lookup = {},
+  visits = [],
+  doc = document,
+  walker = doc.createTreeWalker(
+    doc,
+    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
+  ),
+) =&gt;
+  doc = (self[runtimeId][renderId] = {
+    i: prefix,
+    d: doc,
+    l: lookup,
+    v: visits,
+    x() {},
+    w(node, op, id) {
+      while ((node = walker.nextNode())) {
+        doc.x(
+          (op =
+            (op = node.data) &&
+            !op.indexOf(prefix) &&
+            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
+          id,
+          node,
+        );
+
+        if (op &gt; "#") {
+          visits.push(node);
+        }
+      }
+    },
+  })),
+self[runtimeId]
+))("M")("_");M._.r=[_=&gt;(_.o=[0,_.b={"LoopScopeMap:#text/1":new Map(_.a=[[0,_.c={i:0,checked:!1,"#childScope/0":_.d={"ControlledType:#input/0":0,"ConditionalRenderer:#span/1":1,"ConditionalScope:#span/1":_.l={},htmlInput:_.e={checked:!1,class:"field__control",id:"group-checkbox-0",value:0,name:"checkbox-group"}}}],[1,_.f={i:1,checked:!1,"#childScope/0":_.g={"ControlledType:#input/0":0,"ConditionalRenderer:#span/1":1,"ConditionalScope:#span/1":_.m={},htmlInput:_.h={checked:!1,class:"field__control",id:"group-checkbox-1",value:1,name:"checkbox-group"}}}],[2,_.i={i:2,checked:!1,"#childScope/0":_.j={"ControlledType:#input/0":0,"ConditionalRenderer:#span/1":1,"ConditionalScope:#span/1":_.n={},htmlInput:_.k={checked:!1,class:"field__control",id:"group-checkbox-2",value:2,name:"checkbox-group"}}}]]),input:{},checkedItems:[!1,!1,!1]},_.c,_.d,_.l,1,{htmlInput:{}},1,{htmlInput:{}},_.f,_.g,_.m,1,{htmlInput:{}},1,{htmlInput:{}},_.i,_.j,_.n,1,{htmlInput:{}},1,{htmlInput:{}}],_.c._=_.f._=_.i._=_.b,_.c["TagVariableChange:checked"]=_._["src/tags/evo-checkbox/examples/group.marko_1/valueChange"](_.c),_.d["ControlledHandler:#input/0"]=_.e.checkedChange=_._["src/tags/evo-checkbox/examples/group.marko_1/checkedChange"](_.c),_.f["TagVariableChange:checked"]=_._["src/tags/evo-checkbox/examples/group.marko_1/valueChange"](_.f),_.g["ControlledHandler:#input/0"]=_.h.checkedChange=_._["src/tags/evo-checkbox/examples/group.marko_1/checkedChange"](_.f),_.i["TagVariableChange:checked"]=_._["src/tags/evo-checkbox/examples/group.marko_1/valueChange"](_.i),_.j["ControlledHandler:#input/0"]=_.k.checkedChange=_._["src/tags/evo-checkbox/examples/group.marko_1/checkedChange"](_.i),_.o),"src/tags/evo-icon/index.marko_0_htmlInput",6,8,"src/tags/evo-checkbox/index.marko_0_htmlInput",3,"src/tags/evo-icon/index.marko_0_htmlInput",13,15,"src/tags/evo-checkbox/index.marko_0_htmlInput",10,"src/tags/evo-icon/index.marko_0_htmlInput",20,22,"src/tags/evo-checkbox/index.marko_0_htmlInput",17];M._.w()
+  </script>
+</DocumentFragment>
+`;
+
+exports[`evo-checkbox > renders default checkbox 1`] = `
+<DocumentFragment>
+  <span
+    class="checkbox"
+  >
+    <input
+      class="checkbox__control"
+      type="checkbox"
+    />
+    <span
+      class="checkbox__icon"
+      hidden=""
+    >
+      <svg
+        aria-hidden="true"
+        class="checkbox__unchecked icon icon--18"
+      >
+        <symbol
+          id="GENERATED-0"
+          viewBox="0 0 18 18"
+        >
+          <path
+            d="M6.4 17h5.2c1.137 0 1.929 0 2.546-.051.605-.05.953-.142 1.216-.276a3 3 0 0 0 1.311-1.311c.134-.263.226-.611.276-1.216.05-.617.051-1.41.051-2.546V6.4c0-1.137 0-1.929-.051-2.546-.05-.605-.142-.953-.276-1.216a3 3 0 0 0-1.311-1.311c-.263-.134-.611-.226-1.216-.276C13.529 1.001 12.736 1 11.6 1H6.4c-1.137 0-1.929 0-2.546.051-.605.05-.953.142-1.216.276a3 3 0 0 0-1.311 1.311c-.134.263-.226.611-.276 1.216C1.001 4.471 1 5.264 1 6.4v5.2c0 1.137 0 1.929.051 2.546.05.605.142.953.276 1.216a3 3 0 0 0 1.311 1.311c.263.134.611.226 1.216.276.617.05 1.41.051 2.546.051ZM.436 15.816C0 14.96 0 13.84 0 11.6V6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748Z"
+          />
+        </symbol>
+        <use
+          href="#icon-checkbox-unchecked-18"
+        />
+      </svg>
+      <svg
+        aria-hidden="true"
+        class="checkbox__checked icon icon--18"
+      >
+        <symbol
+          id="GENERATED-1"
+          viewBox="0 0 18 18"
+        >
+          <path
+            d="M0 6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748C0 14.96 0 13.84 0 11.6V6.4Zm14.71-2.11a1 1 0 0 0-1.41 0L7 10.59l-2.29-2.3a1.004 1.004 0 0 0-1.42 1.42l3 3a1 1 0 0 0 1.41 0l7-7a1 1 0 0 0 .01-1.42Z"
+          />
+        </symbol>
+        <use
+          href="#icon-checkbox-checked-18"
+        />
+      </svg>
+    </span>
+  </span>
+  <script>
+    ((runtimeId) =&gt; (
+(self[runtimeId] = (
+  renderId,
+  prefix = runtimeId + renderId,
+  prefixLen = prefix.length,
+  lookup = {},
+  visits = [],
+  doc = document,
+  walker = doc.createTreeWalker(
+    doc,
+    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
+  ),
+) =&gt;
+  doc = (self[runtimeId][renderId] = {
+    i: prefix,
+    d: doc,
+    l: lookup,
+    v: visits,
+    x() {},
+    w(node, op, id) {
+      while ((node = walker.nextNode())) {
+        doc.x(
+          (op =
+            (op = node.data) &&
+            !op.indexOf(prefix) &&
+            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
+          id,
+          node,
+        );
+
+        if (op &gt; "#") {
+          visits.push(node);
+        }
+      }
+    },
+  })),
+self[runtimeId]
+))("M")("_");M._.r=[_=&gt;(_.a=[0,{htmlInput:{}},2,{htmlInput:{}},1,{htmlInput:{}}]),"src/tags/evo-icon/index.marko_0_htmlInput",4,6,"src/tags/evo-checkbox/index.marko_0_htmlInput",1];M._.w()
+  </script>
+</DocumentFragment>
+`;
+
+exports[`evo-checkbox > renders disabled checkbox 1`] = `
+<DocumentFragment>
+  <span
+    class="field"
+  >
+    <span
+      class="checkbox"
+    >
+      <input
+        class="checkbox__control"
+        disabled=""
+        id="checkbox"
+        type="checkbox"
+      />
+      <span
+        class="checkbox__icon"
+        hidden=""
+      >
+        <svg
+          aria-hidden="true"
+          class="checkbox__unchecked icon icon--18"
+        >
+          <symbol
+            id="GENERATED-0"
+            viewBox="0 0 18 18"
+          >
+            <path
+              d="M6.4 17h5.2c1.137 0 1.929 0 2.546-.051.605-.05.953-.142 1.216-.276a3 3 0 0 0 1.311-1.311c.134-.263.226-.611.276-1.216.05-.617.051-1.41.051-2.546V6.4c0-1.137 0-1.929-.051-2.546-.05-.605-.142-.953-.276-1.216a3 3 0 0 0-1.311-1.311c-.263-.134-.611-.226-1.216-.276C13.529 1.001 12.736 1 11.6 1H6.4c-1.137 0-1.929 0-2.546.051-.605.05-.953.142-1.216.276a3 3 0 0 0-1.311 1.311c-.134.263-.226.611-.276 1.216C1.001 4.471 1 5.264 1 6.4v5.2c0 1.137 0 1.929.051 2.546.05.605.142.953.276 1.216a3 3 0 0 0 1.311 1.311c.263.134.611.226 1.216.276.617.05 1.41.051 2.546.051ZM.436 15.816C0 14.96 0 13.84 0 11.6V6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748Z"
+            />
+          </symbol>
+          <use
+            href="#icon-checkbox-unchecked-18"
+          />
+        </svg>
+        <svg
+          aria-hidden="true"
+          class="checkbox__checked icon icon--18"
+        >
+          <symbol
+            id="GENERATED-1"
+            viewBox="0 0 18 18"
+          >
+            <path
+              d="M0 6.4c0-2.24 0-3.36.436-4.216A4 4 0 0 1 2.184.436C3.04 0 4.16 0 6.4 0h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C18 3.04 18 4.16 18 6.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C14.96 18 13.84 18 11.6 18H6.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748C0 14.96 0 13.84 0 11.6V6.4Zm14.71-2.11a1 1 0 0 0-1.41 0L7 10.59l-2.29-2.3a1.004 1.004 0 0 0-1.42 1.42l3 3a1 1 0 0 0 1.41 0l7-7a1 1 0 0 0 .01-1.42Z"
+            />
+          </symbol>
+          <use
+            href="#icon-checkbox-checked-18"
+          />
+        </svg>
+      </span>
+    </span>
+    <label
+      class="field__label field__label--end field__label--disabled"
+      for="checkbox"
+    >
+      Option
+    </label>
+  </span>
+  <script>
+    ((runtimeId) =&gt; (
+(self[runtimeId] = (
+  renderId,
+  prefix = runtimeId + renderId,
+  prefixLen = prefix.length,
+  lookup = {},
+  visits = [],
+  doc = document,
+  walker = doc.createTreeWalker(
+    doc,
+    129 /* NodeFilter.SHOW_COMMENT | NodeFilter.SHOW_ELEMENT */,
+  ),
+) =&gt;
+  doc = (self[runtimeId][renderId] = {
+    i: prefix,
+    d: doc,
+    l: lookup,
+    v: visits,
+    x() {},
+    w(node, op, id) {
+      while ((node = walker.nextNode())) {
+        doc.x(
+          (op =
+            (op = node.data) &&
+            !op.indexOf(prefix) &&
+            ((lookup[(id = op.slice(prefixLen + 1))] = node), op[prefixLen])),
+          id,
+          node,
+        );
+
+        if (op &gt; "#") {
+          visits.push(node);
+        }
+      }
+    },
+  })),
+self[runtimeId]
+))("M")("_");M._.r=[_=&gt;(_.a=[0,1,{htmlInput:{checked:!1,disabled:!0,class:"field__control",id:"checkbox"}},2,{htmlInput:{}},1,{htmlInput:{}}]),"src/tags/evo-icon/index.marko_0_htmlInput",5,7,"src/tags/evo-checkbox/index.marko_0_htmlInput",2];M._.w()
+  </script>
+</DocumentFragment>
+`;

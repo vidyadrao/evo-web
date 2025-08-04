@@ -1,8 +1,10 @@
 export interface Input extends Marko.Input<"details"> {
-  summary?: Marko.AttrTag<Marko.Input<"span">>;
-  size?: "regular" | "small";
-  alignment?: "regular" | "center";
-  as?: keyof Marko.NativeTags;
+    summary?: Marko.AttrTag<Marko.Input<"span">>;
+    size?: "regular" | "small";
+    alignment?: "regular" | "center";
+    as?: keyof Marko.NativeTags;
+    open?: boolean;
+    openChange?: (open?: boolean) => void;
 }
 
 <const/{
@@ -13,7 +15,7 @@ export interface Input extends Marko.Input<"details"> {
     content,
     as: inputAs,
     // ...htmlInput
-} = input/>
+}=input>
 
 <const/htmlInput=(({
     class: inputClass,
@@ -23,12 +25,9 @@ export interface Input extends Marko.Input<"details"> {
     content,
     as: inputAs,
     ...rest
-}) => rest)(input)/>
+}) => rest)(input)>
 
-<details
-    ...htmlInput
-    class=["details", inputClass]
->
+<details ...htmlInput class=["details", inputClass]>
     <if=summary>
         <summary class=[
             "details__summary",

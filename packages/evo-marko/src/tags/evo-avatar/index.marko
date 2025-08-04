@@ -11,26 +11,15 @@ export interface Input extends Marko.HTML.Div {
 }
 
 <const/{
-    class: inputClass,
+    // class: inputClass,
     size,
     color,
     img,
     username,
     content,
     knownAspectRatio,
-    // ...htmlInput
+    ...htmlInput
 }=input/>
-
-<const/htmlInput=(({
-    class: inputClass,
-    size,
-    color,
-    img,
-    username,
-    content,
-    knownAspectRatio,
-    ...rest
-}) => rest)(input)/>
 
 <let/imagePlacement=(
     knownAspectRatio && (knownAspectRatio < 3 / 4 || knownAspectRatio > 4 / 3)
@@ -43,7 +32,7 @@ export interface Input extends Marko.HTML.Div {
     class=[
         "avatar",
         imagePlacement === "fit" && "avatar--fit",
-        inputClass,
+        // inputClass,
         size && `avatar--${size}`,
         username && !img && `avatar--${getColorForText(username, color)}`,
     ]
@@ -51,7 +40,7 @@ export interface Input extends Marko.HTML.Div {
 >
     <if=img>
         <img
-            onLoad(e, el) {
+            onLoad(e:Event, el:HTMLImageElement) {
                 const aspectRatio = el.naturalWidth / el.naturalHeight;
                 if (aspectRatio < 3 / 4 || aspectRatio > 4 / 3) {
                     imagePlacement = "fit";

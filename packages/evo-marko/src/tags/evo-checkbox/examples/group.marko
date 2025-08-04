@@ -7,7 +7,7 @@
 <fieldset>
     <legend>Choose an Option</legend>
     <for|_checked, i| of=checkedItems>
-        <let/checked=_checked valueChange(v) {
+        <let/checked=_checked valueChange(v:boolean) {
             const newItems = [...checkedItems];
             newItems[i] = v;
             checkedItems = newItems }/>

@@ -74,7 +74,7 @@ export default {
 
 export const Default = Template.bind({});
 Default.args = {
-  a11yText: "Signed in - as Elizabeth",
+  "aria-label": "Signed in - as Elizabeth",
   username: "Elizabeth",
   color: "teal",
 };
@@ -91,7 +91,7 @@ export const WithImage = buildExtensionTemplate(
   imageTemplate,
   imageTemplateCode,
   {
-    a11yText: "Signed in - as Doggy",
+    "aria-label": "Signed in - as Doggy",
     username: "Doggy",
   },
 );
@@ -100,14 +100,14 @@ export const WithAutoPlacement = buildExtensionTemplate(
   autoImageTemplate,
   autoImageTemplateCode,
   {
-    a11yText: "Signed in - as Doggy",
+    "aria-label": "Signed in - as Doggy",
     username: "Doggy",
   },
 );
 
 export const SignedOut = Template.bind({});
 SignedOut.args = {
-  a11yText: "Signed out",
+  "aria-label": "Signed out",
 };
 
 SignedOut.parameters = {

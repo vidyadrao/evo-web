@@ -10,6 +10,7 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `o
     expandedChange?: (expanded?: boolean) => void;
 }
 <const/{
+    // class: inputClass,
     content,
     disabled,
     selected: inputSelected,
@@ -32,6 +33,7 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `o
 <let/expanded:=input.expanded/>
 
 <${isAnchor ? "a" : "button"}
+    ...htmlInput
     class=[
         "filter-chip",
         mounted && "filter-chip--animated",
@@ -51,7 +53,6 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" | `o
             input.onClick && input.onClick(e, target);
         }
     }
-    ...htmlInput
 >
 
     <if=variant === "expressive">

@@ -64,7 +64,7 @@ static function renderSymbol(key: WeakKey, name: string, symbol: () => string) {
         if (isBrowser && !getRoot()) {
             document.body.insertAdjacentHTML(
                 "afterbegin",
-                "<svg id=evo-web-icons>",
+                "<svg id=evo-web-icons style=\"position:absolute;width:0;height:0;\">",
             );
             const root = getRoot()!;
             const icons =

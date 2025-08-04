@@ -25,7 +25,7 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" |`on
     a11yLoadingText,
     bodyState,
     borderless,
-    class: inputClass,
+    // class: inputClass,
     fixedHeight,
     fluid,
     href,
@@ -37,29 +37,8 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" |`on
     truncate,
     type = "button",
     variant = "standard",
-    // ...htmlInput
+    ...htmlInput
 }=input/>
-
-// TODO: When this is fixed in Marko switch from iife to const destructure spread
-<const/htmlInput=(({
-    content,
-    a11yLoadingText,
-    bodyState,
-    borderless,
-    class: inputClass,
-    fixedHeight,
-    fluid,
-    href,
-    partiallyDisabled,
-    priority: inputPriority = "secondary",
-    size: inputSize,
-    split = "none",
-    transparent,
-    truncate,
-    type = "button",
-    variant = "standard",
-    ...rest
-}) => rest)(input)/>
 
 <const/priority=(borderless || variant === "form") ? "none" : inputPriority>
 <const/size=(inputSize && validSizes.includes(inputSize) ? inputSize : null)>
@@ -86,7 +65,7 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" |`on
         }
     }
     class=[
-        inputClass,
+        // inputClass,
         baseClass,
         fluid && `${baseClass}--fluid`,
         truncateClass,
@@ -104,7 +83,7 @@ export interface Input extends Marko.HTML.Button, Omit<Marko.HTML.A, "type" |`on
 >
     <if=(bodyState === "loading")>
         <span class="btn__cell">
-            <evo-progress-spinner/>
+            <evo-progress-spinner a11yText=""/>
         </span>
     </if>
     <else if=(bodyState === "expand")>
