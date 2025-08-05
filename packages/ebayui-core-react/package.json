@@ -36,6 +36,7 @@
         "smoke-test:react-18": "cd ./smoke-tests/react-18 && npm install && npm run test",
         "smoke-test:react-19": "cd ./smoke-tests/react-19 && npm install && npm run test",
         "storybook": "NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 9001 -c .storybook --no-open",
+        "start": "NODE_OPTIONS=--openssl-legacy-provider storybook dev -p 9001 -c .storybook --no-open",
         "test": "jest",
         "type:check": "tsc --noEmit",
         "update-icons": "node ./scripts/update-icons",
