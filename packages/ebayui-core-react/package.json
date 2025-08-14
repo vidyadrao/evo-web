@@ -57,14 +57,14 @@
     "dependencies": {
         "@floating-ui/react": "^0.27.15",
         "classnames": "^2.5.1",
-        "makeup-active-descendant": "^0.7.8",
-        "makeup-expander": "^0.11.7",
+        "makeup-active-descendant": "^0.7.9",
+        "makeup-expander": "^0.11.8",
         "makeup-floating-label": "^0.4.7",
         "makeup-focusables": "^0.4.5",
         "makeup-keyboard-trap": "^0.5.5",
         "makeup-prevent-scroll-keys": "^0.3.4",
-        "makeup-roving-tabindex": "^0.7.5",
-        "makeup-screenreader-trap": "^0.5.4",
+        "makeup-roving-tabindex": "^0.7.6",
+        "makeup-screenreader-trap": "^0.5.5",
         "makeup-typeahead": "^0.3.3",
         "react-remove-scroll": "^2.7.1"
     },
