@@ -430,6 +430,41 @@ span.demo__inner {
     @include typography-mixins.typography-small-secondary;
 }
 
+/* large screen titles */
+.demo-title-giant-screen-large {
+    @include typography-mixins.title-giant-screen-large;
+}
+
+.demo-title-large-screen-large {
+    @include typography-mixins.title-large-screen-large;
+}
+
+.demo-title-medium-screen-large {
+    @include typography-mixins.title-medium-screen-large;
+}
+
+.demo-title-small-screen-large {
+    @include typography-mixins.title-small-screen-large;
+}
+
+/* small screen titles */
+
+.demo-title-giant-screen-small {
+    @include typography-mixins.title-giant-screen-small;
+}
+
+.demo-title-large-screen-small {
+    @include typography-mixins.title-large-screen-small;
+}
+
+.demo-title-medium-screen-small {
+    @include typography-mixins.title-medium-screen-small;
+}
+
+.demo-title-small-screen-small {
+    @include typography-mixins.title-small-screen-small;
+}
+
 /* ICON SECTION */
 
 .demo-icon-boxes li,
