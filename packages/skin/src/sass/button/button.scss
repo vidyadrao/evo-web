@@ -1,28 +1,32 @@
-@import "../variables/variables";
-@import "../mixins/private/button-mixins";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/button-mixins";
+@use "../mixins/private/token-mixins";
 
 button.btn,
 a.fake-btn {
     background-color: transparent;
-    border-radius: var(--btn-border-radius, calc($button-height-regular / 2));
+    border-radius: var(
+        --btn-border-radius,
+        calc(button-mixins.$button-height-regular / 2)
+    );
     color: inherit;
     display: inline-block;
     font-size: var(--font-size-default);
-    min-height: $button-height-regular;
+    min-height: button-mixins.$button-height-regular;
     min-width: 88px;
-    padding: $button-padding-vertical $button-padding-horizontal;
+    padding: button-mixins.$button-padding-vertical
+        button-mixins.$button-padding-horizontal;
 
-    @include btn-base();
+    @include button-mixins.base;
 }
 
 button.btn[disabled],
 button.btn[aria-disabled="true"] {
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         expand-btn-disabled-border-color,
         color-stroke-disabled
     );
-    @include color-token(
+    @include token-mixins.color-token(
         expand-btn-disabled-foreground-color,
         color-foreground-disabled
     );
@@ -30,7 +34,7 @@ button.btn[aria-disabled="true"] {
 
 a.fake-btn:not([href]),
 a.fake-btn[aria-disabled="true"] {
-    @include color-token(
+    @include token-mixins.color-token(
         link-foreground-color-disabled,
         color-foreground-disabled
     );
@@ -60,7 +64,7 @@ a.fake-btn--borderless[aria-disabled="true"] {
 
 button.btn--borderless.btn--destructive,
 a.fake-btn--borderless.btn--destructive {
-    @include color-token(
+    @include token-mixins.color-token(
         btn-secondary-destructive-foreground-color,
         color-foreground-attention
     );
@@ -68,7 +72,7 @@ a.fake-btn--borderless.btn--destructive {
 
 button.btn--slim,
 a.fake-btn--slim {
-    height: $button-height-regular;
+    height: button-mixins.$button-height-regular;
     min-width: auto;
     padding-left: var(--spacing-100);
     padding-right: var(--spacing-100);
@@ -87,9 +91,9 @@ a.fake-btn--fluid {
 .fake-btn__cell {
     justify-content: center;
 
-    @include btn-cell-base();
-    @include btn-cell-fixed-height();
-    @include btn-cell-truncated();
+    @include button-mixins.cell-base;
+    @include button-mixins.cell-fixed-height;
+    @include button-mixins.cell-truncated;
 }
 
 button.btn--form .btn__cell,
@@ -101,7 +105,7 @@ a.fake-btn--borderless .fake-btn__cell {
 
 button.btn svg.icon,
 a.fake-btn svg.icon {
-    @include btn-icon-base();
+    @include button-mixins.icon-base;
 }
 
 button.btn__cell--fixed-height svg.icon,
@@ -114,17 +118,20 @@ a.fake-btn__cell--fixed-height svg.icon {
 
 button.btn--primary,
 a.fake-btn--primary {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         btn-primary-background-color,
         color-background-accent
     );
-    @include border-color-token(btn-primary-border-color, color-stroke-accent);
-    @include color-token(
+    @include token-mixins.border-color-token(
+        btn-primary-border-color,
+        color-stroke-accent
+    );
+    @include token-mixins.color-token(
         btn-primary-foreground-color,
         color-foreground-on-accent
     );
 
-    @include btn-animations();
+    @include button-mixins.animations;
 
     font-weight: bold;
 }
@@ -136,7 +143,7 @@ a.fake-btn--primary {
 }
 
 a.fake-btn--primary:visited {
-    @include color-token(
+    @include token-mixins.color-token(
         btn-primary-foreground-color,
         color-foreground-on-accent
     );
@@ -157,15 +164,15 @@ a.fake-btn--primary[href] {
 
 button.btn--primary.btn--destructive,
 a.fake-btn--primary.fake-btn--destructive {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         btn-primary-destructive-background-color,
         color-background-attention
     );
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         btn-primary-destructive-border-color,
         color-stroke-attention
     );
-    @include color-token(
+    @include token-mixins.color-token(
         btn-primary-destructive-foreground-color,
         color-foreground-on-attention
     );
@@ -175,11 +182,11 @@ a.fake-btn--primary.fake-btn--destructive {
 
 button.btn--primary.btn--destructive[disabled],
 button.btn--primary.btn--destructive[aria-disabled="true"] {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         btn-primary-destructive-disabled-background,
         color-background-disabled
     );
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         btn-primary-destructive-disabled-border,
         color-stroke-disabled
     );
@@ -225,31 +232,33 @@ a.fake-btn[aria-expanded="true"] svg.icon--12 {
 
 button.btn--large svg.icon,
 a.fake-btn--large svg.icon {
-    max-height: $button-height-large - ($button-padding-vertical-large * 2);
+    max-height: button-mixins.$button-height-large -
+        (button-mixins.$button-padding-vertical-large * 2);
 }
 
 button.btn--small svg.icon,
 a.fake-btn--small svg.icon {
-    max-height: $button-height-small - ($button-padding-vertical-small * 2);
+    max-height: button-mixins.$button-height-small -
+        (button-mixins.$button-padding-vertical-small * 2);
 }
 
 button.btn--primary[disabled],
 button.btn--primary[aria-disabled="true"] {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         btn-primary-disabled-background-color,
         color-foreground-disabled
     );
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         btn-primary-disabled-border-color,
         color-foreground-disabled
     );
-    @include color-token(
+    @include token-mixins.color-token(
         btn-primary-foreground-color,
         color-foreground-on-accent
     );
 
     svg.icon {
-        @include fill-token(
+        @include token-mixins.fill-token(
             btn-primary-disabled-foreground-color,
             color-background-primary
         );
@@ -258,15 +267,15 @@ button.btn--primary[aria-disabled="true"] {
 
 a.fake-btn--primary:not([href]),
 a.fake-btn--primary[aria-disabled="true"] {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         btn-primary-disabled-background-color,
         color-foreground-disabled
     );
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         btn-primary-disabled-border-color,
         color-foreground-disabled
     );
-    @include color-token(
+    @include token-mixins.color-token(
         btn-primary-foreground-color,
         color-foreground-on-accent
     );
@@ -275,20 +284,20 @@ a.fake-btn--primary[aria-disabled="true"] {
 button.btn--secondary,
 a.fake-btn--secondary {
     background-color: var(--btn-secondary-background-color, transparent);
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         btn-secondary-border-color,
         color-stroke-accent
     );
-    @include color-token(
+    @include token-mixins.color-token(
         btn-secondary-foreground-color,
         color-foreground-accent
     );
 
-    @include btn-animations();
+    @include button-mixins.animations;
 }
 
 a.fake-btn--secondary:visited {
-    @include color-token(
+    @include token-mixins.color-token(
         btn-secondary-foreground-color,
         color-foreground-accent
     );
@@ -316,11 +325,11 @@ a.fake-btn--secondary.fake-btn--destructive {
         --btn-secondary-destructive-background-color,
         transparent
     );
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         btn-secondary-destructive-border-color,
         color-stroke-attention
     );
-    @include color-token(
+    @include token-mixins.color-token(
         btn-secondary-destructive-foreground-color,
         color-foreground-attention
     );
@@ -353,21 +362,21 @@ button.btn--secondary.btn--destructive .progress-spinner {
 
 button.btn--secondary[disabled],
 button.btn--secondary[aria-disabled="true"] {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         btn-secondary-disabled-background-color,
         color-background-primary
     );
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         btn-secondary-disabled-border-color,
         color-stroke-disabled
     );
-    @include color-token(
+    @include token-mixins.color-token(
         btn-secondary-disabled-foreground-color,
         color-background-disabled
     );
 
     svg.icon {
-        @include fill-token(
+        @include token-mixins.fill-token(
             btn-secondary-disabled-foreground-color,
             color-foreground-disabled
         );
@@ -376,11 +385,11 @@ button.btn--secondary[aria-disabled="true"] {
 
 a.fake-btn--secondary:not([href]),
 a.fake-btn--secondary[aria-disabled="true"] {
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         btn-secondary-disabled-border-color,
         color-background-disabled
     );
-    @include color-token(
+    @include token-mixins.color-token(
         btn-secondary-disabled-foreground-color,
         color-background-disabled
     );
@@ -388,12 +397,12 @@ a.fake-btn--secondary[aria-disabled="true"] {
 
 button.btn--tertiary,
 a.fake-btn--tertiary {
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         btn-tertiary-border-color,
         color-stroke-default
     );
 
-    @include btn-animations();
+    @include button-mixins.animations;
 }
 
 button.btn--tertiary:not([disabled], [aria-disabled="true"]),
@@ -414,11 +423,11 @@ button.btn--tertiary[aria-disabled="true"]:not(
     ),
 a.fake-btn--tertiary:not([href]),
 a.fake-btn--tertiary[aria-disabled="true"] {
-    @include color-token(
+    @include token-mixins.color-token(
         btn-tertiary-disabled-foreground-color,
         color-background-disabled
     );
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         expand-btn-disabled-border-color,
         color-stroke-disabled
     );
@@ -426,7 +435,7 @@ a.fake-btn--tertiary[aria-disabled="true"] {
 
 button.btn--tertiary.btn--destructive,
 a.fake-btn--tertiary.fake-btn--destructive {
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         btn-tertiary-destructive-foreground-color,
         color-stroke-subtle
     );
@@ -446,7 +455,7 @@ a.fake-btn--tertiary.fake-btn--destructive[href] {
 
 button.btn--tertiary.btn--destructive[disabled],
 button.btn--tertiary.btn--destructive[aria-disabled="true"] {
-    @include color-token(
+    @include token-mixins.color-token(
         btn-tertiary-destructive-disabled-foreground-color,
         color-foreground-disabled
     );
@@ -459,22 +468,29 @@ button.btn--tertiary.btn--destructive .progress-spinner {
 
 button.btn--large,
 a.fake-btn--large {
-    @include btn-large();
+    @include button-mixins.large;
 }
 
 button.btn--small,
 a.fake-btn--small {
-    border-radius: var(--btn-border-radius, calc($button-height-small / 2));
+    border-radius: var(
+        --btn-border-radius,
+        calc(button-mixins.$button-height-small / 2)
+    );
     font-size: var(--font-size-default);
-    min-height: $button-height-small;
-    padding: $button-padding-vertical-small $button-padding-horizontal-small;
+    min-height: button-mixins.$button-height-small;
+    padding: button-mixins.$button-padding-vertical-small
+        button-mixins.$button-padding-horizontal-small;
 }
 
 button.btn--form,
 a.fake-btn--form {
     border-color: inherit;
     max-width: 100%;
-    @include border-radius-token(expand-btn-border-radius, border-radius-50);
+    @include token-mixins.border-radius-token(
+        expand-btn-border-radius,
+        border-radius-50
+    );
 }
 
 button.btn--form:not([disabled], [aria-disabled="true"]),
@@ -490,11 +506,13 @@ a.fake-btn--form:not([href]) {
 }
 
 button.btn--form.btn--large {
-    padding: $button-padding-vertical-large $button-padding-horizontal-large;
+    padding: button-mixins.$button-padding-vertical-large
+        button-mixins.$button-padding-horizontal-large;
 }
 
 button.btn--form.btn--small {
-    padding: $button-padding-vertical-small $button-padding-horizontal-small;
+    padding: button-mixins.$button-padding-vertical-small
+        button-mixins.$button-padding-horizontal-small;
 }
 
 button.btn--transparent,
@@ -514,24 +532,25 @@ a.fake-btn--fixed-height {
 
 button.btn--large-fixed-height,
 a.fake-btn--large-fixed-height {
-    height: $button-height-large;
-    min-height: $button-height-large;
+    height: button-mixins.$button-height-large;
+    min-height: button-mixins.$button-height-large;
     padding-top: calc(27px - 0.75em);
 }
 
 button.btn--truncated,
 a.fake-btn--truncated {
-    @include btn-truncate();
+    @include button-mixins.truncate;
 }
 
 button.btn--large-truncated,
 a.fake-btn--large-truncated {
     font-size: var(--font-size-medium);
-    height: $button-height-large;
-    min-height: $button-height-large;
-    padding: $button-padding-vertical-large $button-padding-horizontal;
+    height: button-mixins.$button-height-large;
+    min-height: button-mixins.$button-height-large;
+    padding: button-mixins.$button-padding-vertical-large
+        button-mixins.$button-padding-horizontal;
 
-    @include btn-truncate();
+    @include button-mixins.truncate;
 }
 
 button.btn--split-start,
@@ -555,13 +574,13 @@ a.fake-btn.fake-btn--tertiary.fake-btn--split-end {
 
 button.btn.btn--primary.btn--split-end,
 a.fake-btn.fake-btn--primary.fake-btn--split-end {
-    @include border-left-color-token(
+    @include token-mixins.border-left-color-token(
         btn-primary-border-split-color,
         color-background-primary
     );
     &:hover,
     &:focus {
-        @include border-left-color-token(
+        @include token-mixins.border-left-color-token(
             btn-primary-border-split-color,
             color-background-primary
         );
@@ -628,22 +647,22 @@ button.btn--floating-label .btn__floating-label--inline {
 
     button.btn.btn--primary.btn--split-end,
     a.fake-btn.fake-btn--primary.fake-btn--split-end {
-        @include border-left-color-token(
+        @include token-mixins.border-left-color-token(
             btn-primary-border-color,
             color-stroke-accent
         );
-        @include border-right-color-token(
+        @include token-mixins.border-right-color-token(
             primary-border-split-color,
             color-stroke-subtle
         );
 
         &:hover,
         &:focus {
-            @include border-left-color-token(
+            @include token-mixins.border-left-color-token(
                 btn-primary-border-color,
                 color-stroke-accent
             );
-            @include border-right-color-token(
+            @include token-mixins.border-right-color-token(
                 primary-border-split-color,
                 color-stroke-subtle
             );

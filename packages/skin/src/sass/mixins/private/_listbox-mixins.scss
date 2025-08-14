@@ -1,12 +1,13 @@
-@import "./selection-list-mixins";
+@use "./token-mixins";
+@use "./selection-list-mixins";
 
-@mixin listbox-option-base() {
-    @include selection-list-item-base();
-    @include border-color-token(
+@mixin base() {
+    @include selection-list-mixins.base;
+    @include token-mixins.border-color-token(
         listbox-option-border-color,
         color-background-primary
     );
-    @include color-token(
+    @include token-mixins.color-token(
         listbox-option-foreground-color,
         color-foreground-primary
     );
@@ -17,7 +18,7 @@
 
     &:hover {
         background-color: var(--color-state-primary-hover);
-        @include color-token(
+        @include token-mixins.color-token(
             listbox-option-hover-foreground-color,
             color-foreground-primary
         );
@@ -29,12 +30,12 @@
 
     &:disabled,
     &[aria-disabled="true"] {
-        @include listbox-disabled();
+        @include disabled;
     }
 }
 
-@mixin listbox-disabled() {
-    @include color-token(
+@mixin disabled() {
+    @include token-mixins.color-token(
         listbox-option-disabled-foreground-color,
         color-foreground-disabled
     );
@@ -43,6 +44,6 @@
     font-weight: unset;
 }
 
-@mixin listbox-option-status() {
-    @include selection-list-item-status();
+@mixin status() {
+    @include selection-list-mixins.status;
 }

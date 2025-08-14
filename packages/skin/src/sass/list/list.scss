@@ -1,6 +1,6 @@
-@import "../variables/variables";
-@import "../mixins/private/button-mixins";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/button-mixins";
+@use "../mixins/private/token-mixins";
 
 .list {
     max-width: 480px;
@@ -19,7 +19,7 @@
 
 .list li > *,
 .list fieldset > * {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         list-background-color,
         color-background-primary
     );
@@ -68,7 +68,7 @@
 .list li > button {
     &:hover,
     &:focus {
-        @include background-color-token(
+        @include token-mixins.background-color-token(
             list-background-hover-color,
             color-state-primary-hover
         );
@@ -80,7 +80,7 @@
 .list li > button,
 .list li > a {
     &:active {
-        @include background-color-token(
+        @include token-mixins.background-color-token(
             list-background-hover-color,
             color-state-primary-hover
         );

@@ -1,8 +1,8 @@
-@import "../variables/variables";
-@import "../mixins/private/dropdown-mixins";
-@import "../mixins/private/listbox-mixins";
-@import "../mixins/private/token-mixins";
-@import "../mixins/public/utility-mixins";
+@use "../variables/variables";
+@use "../mixins/private/dropdown-mixins";
+@use "../mixins/private/listbox-mixins";
+@use "../mixins/private/token-mixins";
+@use "../mixins/public/utility-mixins";
 
 $height-textbox: 40px;
 
@@ -18,7 +18,7 @@ span.combobox {
 }
 
 .combobox__value {
-    @include truncate();
+    @include utility-mixins.truncate;
 
     flex: 1 0 auto;
 }
@@ -28,11 +28,11 @@ span.combobox {
 }
 
 .combobox__listbox {
-    @include dropdown-base(combobox-listbox);
+    @include dropdown-mixins.base(combobox-listbox);
 }
 
 .combobox__listbox--reverse {
-    @include dropdown-reverse();
+    @include dropdown-mixins.reverse;
 }
 
 .combobox__control > svg.icon,
@@ -41,8 +41,8 @@ span.combobox {
 }
 
 .combobox__option[role^="option"] {
-    @include listbox-option-base();
-    @include dropdown-item-border-radius(combobox-listbox);
+    @include listbox-mixins.base;
+    @include dropdown-mixins.item-border-radius(combobox-listbox);
 
     cursor: default; /* needed to override text cursor */
     position: relative; /* needed for icon to show properly */
@@ -56,7 +56,7 @@ span.combobox {
     }
 
     svg.icon {
-        @include listbox-option-status();
+        @include listbox-mixins.status;
     }
 }
 
@@ -92,7 +92,10 @@ span.combobox {
 }
 
 .combobox__control > svg.icon--12 {
-    @include color-token(combobox-textbox-icon-color, color-foreground-primary);
+    @include token-mixins.color-token(
+        combobox-textbox-icon-color,
+        color-foreground-primary
+    );
 
     pointer-events: none;
     position: absolute;
@@ -115,21 +118,21 @@ span.combobox {
     margin-left: 0;
     margin-right: 0;
     padding: 0 32px 0 16px;
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         combobox-textbox-background-color,
         color-background-secondary
     );
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         combobox-textbox-border-color,
         color-stroke-default
     );
-    @include color-token(
+    @include token-mixins.color-token(
         combobox-textbox-foreground-color,
         color-foreground-on-secondary
     );
 
     &[readonly] {
-        @include color-token(
+        @include token-mixins.color-token(
             combobox-textbox-foreground-color,
             color-foreground-primary
         );
@@ -142,7 +145,7 @@ span.combobox {
 
         &::-moz-selection,
         &::selection {
-            @include background-color-token(
+            @include token-mixins.background-color-token(
                 combobox-textbox-readonly-selection-background,
                 color-background-primary
             );
@@ -151,11 +154,11 @@ span.combobox {
 
     &[disabled],
     &[aria-disabled="true"] {
-        @include border-color-token(
+        @include token-mixins.border-color-token(
             combobox-textbox-disabled-border-color,
             color-background-disabled
         );
-        @include color-token(
+        @include token-mixins.color-token(
             combobox-textbox-disabled-foreground-color,
             color-foreground-disabled
         );
@@ -170,7 +173,7 @@ span.combobox {
     }
 
     &[aria-invalid="true"] {
-        @include border-color-token(
+        @include token-mixins.border-color-token(
             combobox-textbox-invalid-foreground-color,
             color-stroke-attention
         );
@@ -188,11 +191,11 @@ span.combobox {
 }
 
 .combobox__control > input:focus {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         combobox-textbox-focus-background-color,
         color-background-primary
     );
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         combobox-textbox-focus-border-color,
         color-foreground-primary
     );
@@ -217,14 +220,14 @@ span.combobox {
 }
 
 .combobox__control > input[disabled] {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         combobox-textbox-disabled-background-color,
         color-background-secondary
     );
 }
 
 .combobox__option--active[role="option"] {
-    @include color-token(
+    @include token-mixins.color-token(
         combobox-listbox-option-hover-foreground-color,
         color-foreground-primary
     );

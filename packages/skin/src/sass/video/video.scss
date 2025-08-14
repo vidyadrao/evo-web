@@ -1,5 +1,5 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/token-mixins";
 
 .video-player {
     position: relative;
@@ -101,5 +101,5 @@
 }
 
 .video-player .shaka-video-container {
-    font-family: $font-family-default;
+    font-family: variables.$font-family-default;
 }

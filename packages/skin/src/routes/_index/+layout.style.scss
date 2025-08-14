@@ -1,16 +1,16 @@
-@import "../../sass/variables/variables";
-@import "../../sass/mixins/public/typography-mixins";
-@import "../../sass/mixins/public/utility-mixins";
-@import "../static/sass/pygments";
-@import "../static/sass/demo-colors";
-@import "../static/sass/page-grid";
-@import "../static/sass/color-schemes";
-@import "../../sass/bundles/skin-full";
+@use "../../sass/variables/variables";
+@use "../../sass/mixins/public/typography-mixins";
+@use "../../sass/mixins/public/utility-mixins";
+@use "../static/sass/pygments";
+@use "../static/sass/demo-colors";
+@use "../static/sass/page-grid";
+@use "../static/sass/color-schemes";
+@use "../../sass/bundles/skin-full";
 
 :root {
     --color-menu-background: #f2f2f2;
-    --color-code-scrollbar: rgba(255, 255, 255, 0.2);
-    --color-code-scrollbar-thumb: rgba(255, 255, 255, 0.4);
+    --color-code-scrollbar: rgb(255 255 255 / 0.2);
+    --color-code-scrollbar-thumb: rgb(255 255 255 / 0.4);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,7 +21,7 @@
 
 /* stylelint-disable no-descending-specificity */
 
-/*  
+/*
 Some browsers, especially within mobile devices, include an automatic mechanism for inflating text to help readability. We're turning that off here to get to a consistent baseline.
 */
 html {
@@ -67,7 +67,7 @@ nav h2 {
     display: none;
 }
 
-@media screen and (min-width: $_screen-size-SM) {
+@media screen and (min-width: variables.$screen-size-SM) {
     .site-nav {
         height: calc(100vh - 60px);
         margin-bottom: var(--spacing-800);
@@ -112,7 +112,7 @@ nav h2 {
     }
 }
 
-@media screen and (min-width: $_screen-size-MD) {
+@media screen and (min-width: variables.$screen-size-MD) {
     .site-nav {
         display: block;
     }
@@ -126,7 +126,7 @@ nav h2 {
     }
 }
 
-@media screen and (min-width: $_screen-size-XL) {
+@media screen and (min-width: variables.$screen-size-XL) {
     .demo-color-primitive {
         column-count: 4;
     }
@@ -137,7 +137,7 @@ nav h2 {
     }
 }
 
-@media screen and (min-width: $_screen-size-XL3) {
+@media screen and (min-width: variables.$screen-size-XL3) {
     .demo-color-primitive {
         column-count: 5;
     }
@@ -160,8 +160,8 @@ span.highlight {
 
     /* fix for long attributes values that don't wrap right */
     .s {
+        overflow-wrap: break-word;
         word-break: break-all;
-        word-wrap: break-word;
     }
 }
 
@@ -354,67 +354,67 @@ span.demo__inner {
 }
 
 .demo-typography-giant-3 {
-    @include typography-giant-3();
+    @include typography-mixins.typography-giant-3;
 }
 
 .demo-typography-giant-2 {
-    @include typography-giant-2();
+    @include typography-mixins.typography-giant-2;
 }
 
 .demo-typography-giant-1 {
-    @include typography-giant-1();
+    @include typography-mixins.typography-giant-1;
 }
 
 .demo-typography-large-2 {
-    @include typography-large-2();
+    @include typography-mixins.typography-large-2;
 }
 
 .demo-typography-large-2-secondary {
-    @include typography-large-2-secondary();
+    @include typography-mixins.typography-large-2-secondary;
 }
 
 .demo-typography-large-1 {
-    @include typography-large-1();
+    @include typography-mixins.typography-large-1;
 }
 
 .demo-typography-large-1-secondary {
-    @include typography-large-1-secondary();
+    @include typography-mixins.typography-large-1-secondary;
 }
 
 .demo-typography-medium-bold {
-    @include typography-medium-bold();
+    @include typography-mixins.typography-medium-bold;
 }
 
 .demo-typography-medium {
-    @include typography-medium();
+    @include typography-mixins.typography-medium;
 }
 
 .demo-typography-medium-secondary {
-    @include typography-medium-secondary();
+    @include typography-mixins.typography-medium-secondary;
 }
 
 .demo-typography-regular-bold {
-    @include typography-regular-bold();
+    @include typography-mixins.typography-regular-bold;
 }
 
 .demo-typography-regular {
-    @include typography-regular();
+    @include typography-mixins.typography-regular;
 }
 
 .demo-typography-regular-secondary {
-    @include typography-regular-secondary();
+    @include typography-mixins.typography-regular-secondary;
 }
 
 .demo-typography-small-bold {
-    @include typography-small-bold();
+    @include typography-mixins.typography-small-bold;
 }
 
 .demo-typography-small {
-    @include typography-small();
+    @include typography-mixins.typography-small;
 }
 
 .demo-typography-small-secondary {
-    @include typography-small-secondary();
+    @include typography-mixins.typography-small-secondary;
 }
 
 /* ICON SECTION */

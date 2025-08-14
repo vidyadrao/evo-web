@@ -1,11 +1,11 @@
 /*! DEPRECATED COMPONENT. Will be removed next major version */
 
-@import "../variables/variables";
-@import "../mixins/private/dialog-mixins";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/dialog-mixins";
+@use "../mixins/private/token-mixins";
 
 .drawer-dialog[role="dialog"] {
-    @include dialog-base();
+    @include dialog-mixins.base;
 
     align-items: flex-end;
     overflow: hidden;
@@ -16,7 +16,7 @@
 }
 
 .drawer-dialog__header {
-    @include dialog-header-content(var(--spacing-250));
+    @include dialog-mixins.header-content(var(--spacing-250));
 }
 
 .drawer-dialog__header .fake-link {
@@ -38,7 +38,10 @@
 
 /* Added :after class in order to increase parent hit box */
 .drawer-dialog__handle::after {
-    @include background-color-token(dialog-handle-color, color-stroke-default);
+    @include token-mixins.background-color-token(
+        dialog-handle-color,
+        color-stroke-default
+    );
 
     border-radius: 3px;
     content: "";
@@ -48,7 +51,7 @@
 }
 
 .drawer-dialog__main {
-    @include dialog-body-content();
+    @include dialog-mixins.body-content;
 
     min-height: auto;
     overflow: auto;
@@ -82,7 +85,7 @@ button.icon-btn.drawer-dialog__close {
 }
 
 .drawer-dialog__window {
-    @include dialog-window();
+    @include dialog-mixins.window;
 
     border-radius: var(--border-radius-100) var(--border-radius-100) 0 0;
     max-height: 50%;

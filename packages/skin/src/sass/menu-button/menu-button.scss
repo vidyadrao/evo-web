@@ -11,13 +11,13 @@
 
 .menu-button__menu,
 .fake-menu-button__menu {
-    @include dropdown-mixins.dropdown-base(menu-button-menu);
-
     /* In ebayui there is a bug where if tabindex=-1 outside the menu button */
     /* Any clicks inside will trigger on the outher tabindex=-1. In order to fix it */
     /* We added a tabindex=-1 on the popup menu root (on root so you can scroll) */
     /* This forces a focus ring, so this focus ring is removed from the root. */
     outline: 0;
+
+    @include dropdown-mixins.base(menu-button-menu);
 }
 
 span.menu-button__button,
@@ -35,15 +35,15 @@ span.fake-menu-button__button {
 }
 
 div.menu-button__item[role^="menuitem"] {
-    @include menu-mixins.menu-menuitem-base(menu-button);
-    @include dropdown-mixins.dropdown-item-border-radius(menu-button-menu);
+    @include menu-mixins.base(menu-button);
+    @include dropdown-mixins.item-border-radius(menu-button-menu);
 
     cursor: default; /* needed to override text cursor */
 }
 
 .menu-button__item > svg.icon--16,
 .fake-menu-button__item > svg.icon--16 {
-    @include menu-mixins.menu-menuitem-status();
+    @include menu-mixins.status;
 }
 
 .menu-button__item > svg.icon--16:last-child,
@@ -99,12 +99,12 @@ div.menu-button__item[role^="menuitem"][aria-checked="true"] svg.icon--16 {
 }
 
 .menu-button__item {
-    @include menu-mixins.menu-filter();
+    @include menu-mixins.filter;
 }
 
 .fake-menu-button__menu a.fake-menu-button__item,
 .fake-menu-button__menu button.fake-menu-button__item {
-    @include menu-mixins.menu-menuitem-base(menu-button);
+    @include menu-mixins.base(menu-button);
 }
 
 .fake-menu-button__menu a.fake-menu-button__item:not([href]),
@@ -144,7 +144,7 @@ div.menu-button__item[role^="menuitem"][aria-checked="true"] svg.icon--16 {
     width: 100%;
 
     span {
-        @include utility-mixins.truncate();
+        @include utility-mixins.truncate;
 
         width: 100%;
     }
@@ -179,7 +179,7 @@ div.menu-button__item--badged[role^="menuitem"] .badge {
 
 .menu-button__menu--reverse,
 .fake-menu-button__menu--reverse {
-    @include dropdown-mixins.dropdown-reverse();
+    @include dropdown-mixins.reverse;
 }
 
 .menu-button__button[aria-expanded="true"] ~ .menu-button__menu,
@@ -218,7 +218,7 @@ hr.menu-button__separator {
 }
 
 .menu-button__footer {
-    @include menu-mixins.menu-footer();
+    @include menu-mixins.footer;
 }
 
 .menu-button--filter div.menu-button__item[role^="menuitem"] {

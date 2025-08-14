@@ -1,4 +1,4 @@
-@import "../variables/variables";
+@use "../variables/variables";
 
 // Recursive Mixin to build repetative class declarations for explicit dev overrides for various breakpoints
 @mixin layout-grid-templates($breakpoint, $repeatTo, $i: 1) {
@@ -48,7 +48,7 @@
 // smallest explicit dev display rule overrides
 // for when container queries are supported
 // to use the container sizes in the rules
-@container layout-grid-container (inline-size < #{$_screen-size-XS}) {
+@container layout-grid-container (inline-size < #{variables.$screen-size-XS}) {
     .layout-grid[data-columns-min="1"] > ul {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -90,7 +90,7 @@
 /* Responsive Layouts */
 // first, we define media queries as a fallback for browsers not supporting container queries
 @supports not (contain: inline-size) {
-    @media (min-width: $_screen-size-XS) {
+    @media (min-width: variables.$screen-size-XS) {
         // Responsive columns based on XS breakpoint per button type
         .layout-grid > ul {
             grid-template-columns: repeat(var(--layout-grid-columns-xs), 1fr);
@@ -100,7 +100,7 @@
         @include layout-grid-templates(xs, 16);
     }
 
-    @media (min-width: $_screen-size-SM) {
+    @media (min-width: variables.$screen-size-SM) {
         // Responsive columns based on SM breakpoint per button type
         .layout-grid > ul {
             grid-template-columns: repeat(var(--layout-grid-columns-sm), 1fr);
@@ -110,7 +110,7 @@
         @include layout-grid-templates(sm, 16);
     }
 
-    @media (min-width: $_screen-size-MD) {
+    @media (min-width: variables.$screen-size-MD) {
         // Responsive columns based on MD breakpoint per button type
         .layout-grid > ul {
             grid-template-columns: repeat(var(--layout-grid-columns-md), 1fr);
@@ -120,7 +120,7 @@
         @include layout-grid-templates(md, 16);
     }
 
-    @media (min-width: $_screen-size-LG) {
+    @media (min-width: variables.$screen-size-LG) {
         // Responsive columns based on LG breakpoint per button type
         .layout-grid > ul {
             grid-template-columns: repeat(var(--layout-grid-columns-lg), 1fr);
@@ -130,7 +130,7 @@
         @include layout-grid-templates(lg, 16);
     }
 
-    @media (min-width: $_screen-size-XL) {
+    @media (min-width: variables.$screen-size-XL) {
         // Responsive columns based on XL breakpoint per button type
         .layout-grid > ul {
             grid-template-columns: repeat(var(--layout-grid-columns-xl), 1fr);
@@ -140,7 +140,7 @@
         @include layout-grid-templates(xl, 16);
     }
 
-    @media (min-width: $_screen-size-XL2) {
+    @media (min-width: variables.$screen-size-XL2) {
         // Responsive columns based on XL2 breakpoint per button type
         .layout-grid > ul {
             grid-template-columns: repeat(var(--layout-grid-columns-xl2), 1fr);
@@ -150,7 +150,7 @@
         @include layout-grid-templates(xl2, 16);
     }
 
-    @media (min-width: $_screen-size-XL3) {
+    @media (min-width: variables.$screen-size-XL3) {
         // Responsive columns based on XL3 breakpoint per button type
         .layout-grid > ul {
             grid-template-columns: repeat(var(--layout-grid-columns-xl3), 1fr);
@@ -160,7 +160,7 @@
         @include layout-grid-templates(xl3, 16);
     }
 
-    @media (min-width: $_screen-size-XL4) {
+    @media (min-width: variables.$screen-size-XL4) {
         // Responsive columns based on XL4 breakpoint per button type
         .layout-grid > ul {
             grid-template-columns: repeat(var(--layout-grid-columns-xl4), 1fr);
@@ -172,7 +172,7 @@
 }
 
 // For browsers that DO support container queries
-@container layout-grid-container (inline-size >= #{$_screen-size-XS}) {
+@container layout-grid-container (inline-size >= #{variables.$screen-size-XS}) {
     // Responsive columns based on XS breakpoint per button type
     .layout-grid > ul {
         grid-template-columns: repeat(var(--layout-grid-columns-xs), 1fr);
@@ -182,7 +182,7 @@
     @include layout-grid-templates(xs, 16);
 }
 
-@container layout-grid-container (inline-size >= #{$_screen-size-SM}) {
+@container layout-grid-container (inline-size >= #{variables.$screen-size-SM}) {
     // Responsive columns based on SM breakpoint per button type
     .layout-grid > ul {
         grid-template-columns: repeat(var(--layout-grid-columns-sm), 1fr);
@@ -192,7 +192,7 @@
     @include layout-grid-templates(sm, 16);
 }
 
-@container layout-grid-container (inline-size >= #{$_screen-size-MD}) {
+@container layout-grid-container (inline-size >= #{variables.$screen-size-MD}) {
     // Responsive columns based on MD breakpoint per button type
     .layout-grid > ul {
         grid-template-columns: repeat(var(--layout-grid-columns-md), 1fr);
@@ -202,7 +202,7 @@
     @include layout-grid-templates(md, 16);
 }
 
-@container layout-grid-container (inline-size >= #{$_screen-size-LG}) {
+@container layout-grid-container (inline-size >= #{variables.$screen-size-LG}) {
     // Responsive columns based on LG breakpoint per button type
     .layout-grid > ul {
         grid-template-columns: repeat(var(--layout-grid-columns-lg), 1fr);
@@ -212,7 +212,7 @@
     @include layout-grid-templates(lg, 16);
 }
 
-@container layout-grid-container (inline-size >= #{$_screen-size-XL}) {
+@container layout-grid-container (inline-size >= #{variables.$screen-size-XL}) {
     // Responsive columns based on XL breakpoint per button type
     .layout-grid > ul {
         grid-template-columns: repeat(var(--layout-grid-columns-xl), 1fr);
@@ -222,7 +222,7 @@
     @include layout-grid-templates(xl, 16);
 }
 
-@container layout-grid-container (inline-size >= #{$_screen-size-XL2}) {
+@container layout-grid-container (inline-size >= #{variables.$screen-size-XL2}) {
     // Responsive columns based on XL2 breakpoint per button type
     .layout-grid > ul {
         grid-template-columns: repeat(var(--layout-grid-columns-xl), 1fr);
@@ -232,7 +232,7 @@
     @include layout-grid-templates(xl2, 16);
 }
 
-@container layout-grid-container (inline-size >= #{$_screen-size-XL3}) {
+@container layout-grid-container (inline-size >= #{variables.$screen-size-XL3}) {
     // Responsive columns based on XL3 breakpoint per button type
     .layout-grid > ul {
         grid-template-columns: repeat(var(--layout-grid-columns-xl3), 1fr);
@@ -242,7 +242,7 @@
     @include layout-grid-templates(xl3, 16);
 }
 
-@container layout-grid-container (inline-size >= #{$_screen-size-XL4}) {
+@container layout-grid-container (inline-size >= #{variables.$screen-size-XL4}) {
     // Responsive columns based on XL4 breakpoint per button type
     .layout-grid > ul {
         grid-template-columns: repeat(var(--layout-grid-columns-xl4), 1fr);

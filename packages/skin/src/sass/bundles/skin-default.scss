@@ -4,6 +4,6 @@ Copyright 2018 eBay! Inc. All rights reserved.
 Licensed under the MIT License.
 https://github.com/eBay/evo-web/blob/master/LICENSE
 "*/
-@import "../../tokens/evo-core";
-@import "../../tokens/evo-light";
-@import "skin-headless";
+@use "../../tokens/evo-core";
+@use "../../tokens/evo-light";
+@use "skin-headless";

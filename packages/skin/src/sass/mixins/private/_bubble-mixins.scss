@@ -1,3 +1,4 @@
+@use "./token-mixins";
 /* this mixin is used by infotip, tooltip, tourtip, date-textbox */
 
 :root {
@@ -8,8 +9,11 @@
     --bubble-shadow: 0 2px 7px rgb(0 0 0 / 0.15), 0 5px 17px rgb(0 0 0 / 0.2);
 }
 
-@mixin bubble($border-radius-value: border-radius-50) {
-    @include border-radius-token(bubble-border-radius, $border-radius-value);
+@mixin base($border-radius-value: border-radius-50) {
+    @include token-mixins.border-radius-token(
+        bubble-border-radius,
+        $border-radius-value
+    );
 
     box-shadow: var(--bubble-shadow);
     display: none;
@@ -24,26 +28,29 @@
     z-index: 1;
 }
 
-@mixin bubble-mask($border-radius-value: border-radius-50) {
-    @include border-radius-token(bubble-border-radius, $border-radius-value);
+@mixin mask($border-radius-value: border-radius-50) {
+    @include token-mixins.border-radius-token(
+        bubble-border-radius,
+        $border-radius-value
+    );
 
     position: relative;
     z-index: 1;
 }
 
-@mixin bubble-large-screen() {
+@mixin large-screen() {
     max-width: 400px;
 }
 
 /* creates basic layout */
-@mixin bubble-cell($tourtip-spacing: var(--spacing-100) var(--spacing-200)) {
+@mixin cell($tourtip-spacing: var(--spacing-100) var(--spacing-200)) {
     display: flex;
     overflow-wrap: anywhere;
     padding: $tourtip-spacing;
     word-break: normal;
 }
 
-@mixin bubble-content() {
+@mixin content() {
     flex-grow: 1;
 
     p {
@@ -55,7 +62,7 @@
     }
 }
 
-@mixin bubble-close() {
+@mixin close() {
     align-self: flex-start;
     background: none;
     border: 0;
@@ -95,43 +102,43 @@
 }
 
 @mixin pointer-top-center() {
-    @include pointer-top();
-    @include pointer-center();
+    @include pointer-top;
+    @include pointer-center;
 }
 
 @mixin pointer-top-left() {
-    @include pointer-top();
+    @include pointer-top;
 
     left: 12px;
 }
 
 @mixin pointer-top-right() {
-    @include pointer-top();
+    @include pointer-top;
 
     left: auto;
     right: 12px;
 }
 
 @mixin pointer-bottom-center() {
-    @include pointer-bottom();
-    @include pointer-center();
+    @include pointer-bottom;
+    @include pointer-center;
 }
 
 @mixin pointer-bottom-left() {
-    @include pointer-bottom();
+    @include pointer-bottom;
 
     left: 12px;
 }
 
 @mixin pointer-bottom-right() {
-    @include pointer-bottom();
+    @include pointer-bottom;
 
     left: auto;
     right: 12px;
 }
 
 @mixin pointer-left() {
-    @include pointer-side-middle();
+    @include pointer-side-middle;
 
     left: -4px;
 }
@@ -148,7 +155,7 @@
 }
 
 @mixin pointer-right() {
-    @include pointer-side-middle();
+    @include pointer-side-middle;
 
     left: auto;
     right: -4px;

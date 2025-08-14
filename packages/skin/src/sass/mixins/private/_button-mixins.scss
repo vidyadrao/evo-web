@@ -9,7 +9,7 @@ $button-padding-vertical-large: 13px;
 $button-padding-horizontal-large: 20px;
 $button-border-radius-large: 24px;
 
-@mixin btn-base() {
+@mixin base() {
     border: 1px solid;
     box-sizing: border-box;
     font-family: inherit;
@@ -28,7 +28,7 @@ $button-border-radius-large: 24px;
             height: 40px;
         }
 
-        @include btn-truncate();
+        @include truncate;
     }
 
     &:focus-visible {
@@ -43,14 +43,14 @@ $button-border-radius-large: 24px;
     }
 }
 
-@mixin btn-large() {
+@mixin large() {
     border-radius: var(--btn-border-radius, calc($button-height-large / 2));
     font-size: var(--font-size-medium);
     min-height: $button-height-large;
     padding: $button-padding-vertical-large $button-padding-horizontal;
 }
 
-@mixin btn-icon-base() {
+@mixin icon-base() {
     align-self: center;
 
     &:first-child {
@@ -66,7 +66,7 @@ $button-border-radius-large: 24px;
     }
 }
 
-@mixin btn-fixed-height() {
+@mixin fixed-height() {
     display: inline-flex;
 
     > svg {
@@ -75,7 +75,7 @@ $button-border-radius-large: 24px;
     }
 }
 
-@mixin btn-truncate() {
+@mixin truncate() {
     &,
     & span {
         line-height: 1.4em; /* fixes fake and cta buttons */
@@ -85,25 +85,25 @@ $button-border-radius-large: 24px;
     }
 }
 
-@mixin btn-cell-base() {
+@mixin cell-base() {
     align-items: center;
     display: flex;
     width: 100%;
 }
 
-@mixin btn-cell-fixed-height() {
+@mixin cell-fixed-height() {
     &--fixed-height {
-        @include btn-fixed-height();
+        @include fixed-height;
     }
 }
 
-@mixin btn-cell-truncated() {
+@mixin cell-truncated() {
     &--truncated {
-        @include btn-fixed-height();
+        @include fixed-height;
     }
 }
 
-@mixin btn-animations() {
+@mixin animations() {
     transition: all var(--motion-duration-short-3)
         var(--motion-easing-quick-enter);
 

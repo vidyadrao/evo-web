@@ -1,5 +1,5 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/token-mixins";
 
 div.file-input {
     display: grid;
@@ -9,20 +9,29 @@ div.file-input {
 }
 
 input.file-input__input[type="file"] {
-    @include border-radius-token(file-input-border-radius, border-radius-100);
+    @include token-mixins.border-radius-token(
+        file-input-border-radius,
+        border-radius-100
+    );
 
     grid-area: center;
 }
 
 div.file-input__container {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         file-input-background-color,
         color-background-secondary
     );
 
-    @include border-radius-token(file-input-border-radius, border-radius-100);
+    @include token-mixins.border-radius-token(
+        file-input-border-radius,
+        border-radius-100
+    );
 
-    @include border-color-token(file-input-border-color, color-neutral-500);
+    @include token-mixins.border-color-token(
+        file-input-border-color,
+        color-neutral-500
+    );
 
     border: 1px dashed;
     display: flex;
@@ -36,14 +45,14 @@ div.file-input__container {
 }
 
 div.file-input___container--dragged-over {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         file-input-dragged-over-background-color,
         color-background-tertiary
     );
 }
 
 div.file-input__upload-icon {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         file-input-upload-icon-background-color,
         color-background-primary
     );
@@ -54,7 +63,10 @@ div.file-input__upload-icon {
 }
 
 div.file-input__upload-icon svg {
-    @include fill-token(file-input-upload-icon-fill, color-foreground-primary);
+    @include token-mixins.fill-token(
+        file-input-upload-icon-fill,
+        color-foreground-primary
+    );
 
     height: var(--spacing-300);
     width: var(--spacing-300);
@@ -69,7 +81,7 @@ div.file-input__content {
 }
 
 .file-input__content-header {
-    @include color-token(
+    @include token-mixins.color-token(
         file-input-content-header-color,
         color-foreground-primary
     );
@@ -81,7 +93,7 @@ div.file-input__content {
 }
 
 span.file-input__content-subheader {
-    @include color-token(
+    @include token-mixins.color-token(
         file-input-content-subheader-color,
         color-foreground-secondary
     );
@@ -96,7 +108,7 @@ span.file-input__content-cta {
     text-decoration-line: underline;
 }
 
-@media screen and (min-width: $_screen-size-MD) {
+@media screen and (min-width: variables.$screen-size-MD) {
     div.file-input__container {
         gap: var(--spacing-300);
         padding: var(--spacing-300);

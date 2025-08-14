@@ -1,4 +1,4 @@
-@import "../variables/variables";
+@use "../variables/variables";
 
 :root {
     --donut-chart-max-width: 600px;
@@ -72,7 +72,7 @@
 }
 
 @supports not (container-type: inline-size) {
-    @media (min-width: $_screen-size-LG) {
+    @media (min-width: variables.$screen-size-LG) {
         .donut-chart__grid {
             column-gap: var(--spacing-800);
             grid-template-columns: 1fr minmax(

@@ -1,6 +1,6 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
-@import "../mixins/public/utility-mixins";
+@use "../variables/variables";
+@use "../mixins/private/token-mixins";
+@use "../mixins/public/utility-mixins";
 
 $ebay-carousel-transition-time: 0.45s;
 $ebay-carousel-transition-function: ease-in-out;
@@ -14,7 +14,7 @@ $ebay-carousel-transition-function: ease-in-out;
 }
 
 @mixin carousel-paddle-mixin-base() {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         carousel-paddle-background-color,
         color-background-primary
     );
@@ -38,7 +38,7 @@ $ebay-carousel-transition-function: ease-in-out;
         $ebay-carousel-transition-function;
     width: 32px;
     z-index: 1;
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         carousel-paddle-border-color,
         color-stroke-subtle
     );
@@ -54,7 +54,7 @@ $ebay-carousel-transition-function: ease-in-out;
     }
 
     svg {
-        @include color-token(
+        @include token-mixins.color-token(
             carousel-paddle-foreground-color,
             color-foreground-primary
         );
@@ -68,9 +68,9 @@ $ebay-carousel-transition-function: ease-in-out;
     /* progressive enhancement for browsers with support */
     /* :focus-within and :hover cannot be combined as */
     /* IE/Edge will discard the entire rule */
-    @media (min-width: $_screen-size-SM) {
+    @media (min-width: variables.$screen-size-SM) {
         .carousel:focus-within & {
-            @include show-control();
+            @include show-control;
         }
 
         /* This is needed for some touch devices like Ipad */
@@ -78,14 +78,14 @@ $ebay-carousel-transition-function: ease-in-out;
         /* This removes hover elements on Ipad */
         @media (hover: hover) {
             .carousel:hover & {
-                @include show-control();
+                @include show-control;
             }
         }
     }
 
     &--show,
     &:focus {
-        @include show-control();
+        @include show-control;
     }
 
     &:hover {
@@ -93,7 +93,7 @@ $ebay-carousel-transition-function: ease-in-out;
         border-color: var(--color-state-primary-hover);
 
         svg {
-            @include color-token(
+            @include token-mixins.color-token(
                 carousel-paddle-hover-foreground-color,
                 color-foreground-primary
             );
@@ -152,7 +152,7 @@ $ebay-carousel-transition-function: ease-in-out;
         text-align: center;
         width: 40px;
         z-index: 2;
-        @include color-token(
+        @include token-mixins.color-token(
             carousel-playback-foreground-color,
             color-foreground-on-inverse
         );
@@ -169,11 +169,11 @@ $ebay-carousel-transition-function: ease-in-out;
 }
 
 .carousel__list--image-treatment > li {
-    @include image-treatment();
+    @include utility-mixins.image-treatment;
 }
 
 .carousel__list--image-treatment-large > li {
-    @include image-treatment(16px);
+    @include utility-mixins.image-treatment(16px);
 }
 
 div.carousel {
@@ -181,7 +181,7 @@ div.carousel {
 }
 
 .carousel__control {
-    @include carousel-paddle-mixin-base();
+    @include carousel-paddle-mixin-base;
 }
 
 .carousel__playback:focus:not(:focus-visible) {
@@ -227,7 +227,7 @@ span.carousel__container {
     /* always show paddles when scroll snapping and hover is not supported. */
     /* todo: rename to .carousel--autoplay */
     .carousel:not(.carousel__autoplay) .carousel__control {
-        @include show-control();
+        @include show-control;
     }
 }
 
@@ -304,7 +304,7 @@ span.carousel__container {
         -ms-scroll-snap-coordinate: 0 0;
     }
     /* autoprefixer: on */
-    @media (min-width: $_screen-size-SM) {
+    @media (min-width: variables.$screen-size-SM) {
         div.carousel {
             margin: 16px 0;
         }

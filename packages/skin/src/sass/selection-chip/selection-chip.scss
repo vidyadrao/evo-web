@@ -1,11 +1,11 @@
 @use "../mixins/private/chip-mixins";
 @use "../mixins/public/animation-mixins";
 
-@include chip-mixins.background-keyframes();
+@include chip-mixins.background-keyframes;
 
 .selection-chip {
-    @include chip-mixins.base();
-    @include chip-mixins.interactive();
+    @include chip-mixins.base;
+    @include chip-mixins.interactive;
 
     border-radius: var(--border-radius-50);
 }
@@ -20,11 +20,11 @@
 }
 
 .selection-chip[aria-pressed="true"] {
-    @include chip-mixins.selected();
+    @include chip-mixins.selected;
 }
 
 .selection-chip--animated[aria-pressed="true"] {
-    @include chip-mixins.selected-animation();
+    @include chip-mixins.selected-animation;
 }
 
 .selection-chip[aria-pressed="true"] .selection-chip__trailing {
@@ -32,5 +32,5 @@
 }
 
 .selection-chip__text {
-    @include chip-mixins.text();
+    @include chip-mixins.text;
 }

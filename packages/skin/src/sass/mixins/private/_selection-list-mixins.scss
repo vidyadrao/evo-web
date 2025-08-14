@@ -1,4 +1,4 @@
-@mixin selection-list-item-base() {
+@mixin base() {
     background-color: transparent;
     border-style: solid;
     border-width: 1px;
@@ -19,7 +19,7 @@
     }
 }
 
-@mixin selection-list-item-status() {
+@mixin status() {
     align-self: center;
     fill: currentColor;
     margin: 0 auto;

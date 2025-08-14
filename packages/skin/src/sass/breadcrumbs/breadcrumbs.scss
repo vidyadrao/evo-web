@@ -1,8 +1,8 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/token-mixins";
 
 nav.breadcrumbs {
-    @include color-token(
+    @include token-mixins.color-token(
         breadcrumbs-item-foreground-color,
         color-foreground-secondary
     );
@@ -74,7 +74,7 @@ nav.breadcrumbs > ul > li > button {
     }
 
     &[aria-current] {
-        @include color-token(
+        @include token-mixins.color-token(
             breadcrumbs-item-current-foreground-color,
             color-foreground-primary
         );
@@ -114,7 +114,7 @@ nav.breadcrumbs .menu-button__button {
 
 nav.breadcrumbs .fake-menu-button__button svg.icon,
 nav.breadcrumbs .menu-button__button svg.icon {
-    @include fill-token(
+    @include token-mixins.fill-token(
         breadcrumbs-overflow-foreground-color,
         color-foreground-secondary
     );
@@ -129,7 +129,7 @@ nav.breadcrumbs .menu-button__menu {
     transform: rotate(180deg);
 }
 
-@media (min-width: $_screen-size-SM) {
+@media (min-width: variables.$screen-size-SM) {
     nav.breadcrumbs {
         margin: 16px 0;
     }

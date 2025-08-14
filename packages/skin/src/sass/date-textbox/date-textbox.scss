@@ -1,6 +1,6 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
-@import "../mixins/private/bubble-mixins";
+@use "../variables/variables";
+@use "../mixins/private/token-mixins";
+@use "../mixins/private/bubble-mixins";
 
 .date-textbox {
     /* 343px - (2 * var(--spacing-200)) [not autmatically compiled by LESS] */
@@ -14,7 +14,7 @@
 }
 
 .date-textbox__popover {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         calendar-background-color,
         color-background-elevated
     );
@@ -31,7 +31,7 @@
     display: none;
 }
 
-@media only screen and (max-width: $_screen-size-SM) {
+@media only screen and (max-width: variables.$screen-size-SM) {
     .date-textbox__popover {
         left: 0;
         margin-left: 0;

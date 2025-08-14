@@ -1,8 +1,8 @@
-@import "../variables/variables";
-@import "../mixins/private/dropdown-mixins";
-@import "../mixins/private/listbox-mixins";
-@import "../mixins/private/token-mixins";
-@import "../mixins/public/utility-mixins";
+@use "../variables/variables";
+@use "../mixins/private/dropdown-mixins";
+@use "../mixins/private/listbox-mixins";
+@use "../mixins/private/token-mixins";
+@use "../mixins/public/utility-mixins";
 
 .listbox-button {
     line-height: normal;
@@ -31,7 +31,7 @@ span.listbox-button--fluid div.listbox-button__listbox {
 }
 
 div.listbox-button__listbox {
-    @include dropdown-base(listbox-button-listbox);
+    @include dropdown-mixins.base(listbox-button-listbox);
 }
 
 button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
@@ -40,7 +40,7 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
 }
 
 .listbox-button button[aria-invalid="true"] {
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         listbox-button-invalid-border-color,
         color-stroke-attention
     );
@@ -52,7 +52,7 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
         [aria-disabled="true"],
         [aria-invalid="true"]
     ).btn--form {
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         listbox-button-border-color,
         color-stroke-default
     );
@@ -82,15 +82,15 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
 }
 
 .listbox-button.listbox-button--form button {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         listbox-button-background-color,
         color-background-secondary
     );
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         listbox-button-border-color,
         color-stroke-default
     );
-    @include color-token(
+    @include token-mixins.color-token(
         listbox-button-foreground-color,
         color-foreground-primary
     );
@@ -98,43 +98,43 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
 
 .listbox-button.listbox-button--form button[disabled],
 .listbox-button.listbox-button--form button[aria-disabled="true"] {
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         listbox-button-disabled-border-color,
         color-background-disabled
     );
-    @include color-token(
+    @include token-mixins.color-token(
         listbox-button-disabled-foreground-color,
         color-foreground-disabled
     );
 }
 
 .listbox-button.listbox-button--form button:focus {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         combobox-textbox-focus-background-color,
         color-background-primary
     );
 }
 
 .listbox-button.listbox-button--form button[aria-invalid="true"] {
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         listbox-button-invalid-border-color,
         color-stroke-attention
     );
 }
 
 .listbox-button.listbox-button--error button:not(.btn--borderless) {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         listbox-button-background-color,
         color-background-secondary
     );
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         listbox-button-border-color,
         color-stroke-attention
     );
 }
 
 .listbox-button .btn__label {
-    @include color-token(
+    @include token-mixins.color-token(
         listbox-button-label-color,
         color-foreground-secondary
     );
@@ -143,12 +143,15 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
 }
 
 .listbox-button--expanded .btn__label {
-    @include color-token(listbox-button-label-color, color-foreground-primary);
+    @include token-mixins.color-token(
+        listbox-button-label-color,
+        color-foreground-primary
+    );
 }
 
 .listbox-button.listbox-button--error button .btn__label,
 .listbox-button.listbox-button--error button .btn__floating-label {
-    @include color-token(
+    @include token-mixins.color-token(
         listbox-button-label-color,
         color-foreground-attention
     );
@@ -160,7 +163,7 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
 }
 
 .listbox-button__options {
-    @include border-radius-token(
+    @include token-mixins.border-radius-token(
         listbox-button-border-radius,
         border-radius-50
     );
@@ -172,7 +175,7 @@ button.expand-btn[aria-expanded="true"] ~ div.listbox-button__listbox,
 }
 
 .listbox-button__option svg.icon {
-    @include listbox-option-status();
+    @include listbox-mixins.status;
 
     margin-inline-start: var(--spacing-100);
 }
@@ -182,7 +185,7 @@ div.listbox-button__option[role="option"][aria-selected="true"] svg.icon {
 }
 
 .listbox-button__description {
-    @include color-token(
+    @include token-mixins.color-token(
         listbox-button-subtitle-color,
         color-foreground-secondary
     );
@@ -194,14 +197,14 @@ div.listbox-button__option[role="option"][aria-selected="true"] svg.icon {
 }
 
 div.listbox-button__option[role="option"] {
-    @include listbox-option-base();
-    @include dropdown-item-border-radius(listbox-button-listbox);
+    @include listbox-mixins.base;
+    @include dropdown-mixins.item-border-radius(listbox-button-listbox);
 
     cursor: default; /* needed to override text cursor */
 
     &:disabled .listbox-button__description,
     &[aria-disabled="true"] .listbox-button__description {
-        @include listbox-disabled();
+        @include listbox-mixins.disabled;
     }
 }
 
@@ -222,7 +225,7 @@ span.listbox-button__value {
 /* stylelint-disable no-descending-specificity */
 [dir="rtl"] {
     .listbox-button .btn__label {
-        @include color-token(
+        @include token-mixins.color-token(
             listbox-button-label-color,
             color-foreground-secondary
         );

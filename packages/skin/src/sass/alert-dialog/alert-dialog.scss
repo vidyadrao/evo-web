@@ -1,14 +1,13 @@
-@import "../variables/variables";
-@import "../mixins/private/dialog-mixins";
-@import "../mixins/private/token-mixins";
-@import "../mixins/public/typography-mixins";
+@use "../variables/variables";
+@use "../mixins/private/dialog-mixins";
+@use "../mixins/public/typography-mixins";
 
 .alert-dialog[role="alertdialog"] {
-    @include lightbox-dialog-base();
+    @include dialog-mixins.lightbox-base;
 }
 
 .alert-dialog__window {
-    @include lightbox-dialog-window-centered();
+    @include dialog-mixins.lightbox-window-centered;
 
     margin-left: var(--spacing-200);
     margin-right: var(--spacing-200);
@@ -16,7 +15,7 @@
 }
 
 .alert-dialog__title {
-    @include typography-large-1();
+    @include typography-mixins.typography-large-1;
 
     margin: 0;
 }
@@ -87,16 +86,16 @@
     }
 }
 
-@include dialog-animation(alert-dialog);
-@include dialog-animation-large(alert-dialog);
+@include dialog-mixins.animation(alert-dialog);
+@include dialog-mixins.animation-large(alert-dialog);
 
-@media (min-width: $_screen-size-MD) {
+@media (min-width: variables.$screen-size-MD) {
     .alert-dialog__window {
         max-width: calc(88% - var(--spacing-400));
     }
 }
 
-@media (min-width: $_screen-size-LG) {
+@media (min-width: variables.$screen-size-LG) {
     .alert-dialog__window {
         max-width: var(--dialog-lightbox-max-width);
     }

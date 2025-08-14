@@ -1,8 +1,8 @@
-@import "../variables/variables";
-@import "../mixins/private/dropdown-mixins";
-@import "../mixins/private/listbox-mixins";
-@import "../mixins/private/token-mixins";
-@import "../mixins/public/utility-mixins";
+@use "../variables/variables";
+@use "../mixins/private/dropdown-mixins";
+@use "../mixins/private/listbox-mixins";
+@use "../mixins/private/token-mixins";
+@use "../mixins/public/utility-mixins";
 
 div.listbox {
     margin: var(--spacing-200) 0; /* margin collapse sensible default */
@@ -14,7 +14,7 @@ span.listbox {
 }
 
 div.listbox__options[role="listbox"] {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         listbox-background-color,
         color-background-primary
     );
@@ -35,7 +35,7 @@ div.listbox__options--reverse[role="listbox"] {
 }
 
 .listbox__description {
-    @include color-token(
+    @include token-mixins.color-token(
         listbox-button-subtitle-color,
         color-foreground-secondary
     );
@@ -47,11 +47,11 @@ div.listbox__options--reverse[role="listbox"] {
 }
 
 div.listbox__option[role="option"] {
-    @include listbox-option-base();
+    @include listbox-mixins.base;
 
     &:disabled .listbox__description,
     &[aria-disabled="true"] .listbox__description {
-        @include listbox-disabled();
+        @include listbox-mixins.disabled;
     }
 }
 
@@ -61,7 +61,7 @@ span.listbox__value {
 }
 
 div.listbox__option svg.icon {
-    @include listbox-option-status();
+    @include listbox-mixins.status;
 
     margin-inline-start: var(--spacing-100);
 }

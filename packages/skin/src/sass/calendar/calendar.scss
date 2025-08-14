@@ -1,9 +1,12 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/token-mixins";
 
 .calendar {
     display: table;
-    @include color-token(calendar-color-token, color-foreground-primary);
+    @include token-mixins.color-token(
+        calendar-color-token,
+        color-foreground-primary
+    );
 }
 
 /************
@@ -79,7 +82,10 @@
 }
 
 .calendar__month th {
-    @include color-token(calendar-day-label-color, color-foreground-secondary);
+    @include token-mixins.color-token(
+        calendar-day-label-color,
+        color-foreground-secondary
+    );
 
     font-weight: normal;
     line-height: var(--spacing-125);
@@ -115,7 +121,7 @@
 .calendar__month
     td:not(.calendar__cell--selected)
     > .calendar__cell--current:not(.calendar__cell--disabled) {
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         calendar-day-today-border-color,
         color-foreground-primary
     );
@@ -125,7 +131,7 @@
 
 .calendar__month td > :disabled,
 .calendar__month td > .calendar__cell--disabled {
-    @include color-token(
+    @include token-mixins.color-token(
         calendar-day-disabled-color,
         color-foreground-disabled
     );
@@ -134,7 +140,7 @@
 .calendar__month
     td:not(.calendar__range, .calendar__cell--selected)
     > button:not(:disabled):hover {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         calendar-day-hover-background-color,
         color-state-primary-hover
     );
@@ -147,11 +153,11 @@
 }
 
 .calendar__month td.calendar__cell--selected > * {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         calendar-day-selected-background-color,
         color-background-inverse
     );
-    @include color-token(
+    @include token-mixins.color-token(
         calendar-day-selected-color,
         color-foreground-on-inverse
     );
@@ -164,7 +170,7 @@
  ************/
 
 .calendar__range {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         calendar-day-range-background-color,
         color-state-secondary-active
     );
@@ -219,7 +225,7 @@
     > :not(:disabled, [aria-disabled="true"]),
 .calendar__range--end:not(.calendar__cell--selected)
     > :not(:disabled, [aria-disabled="true"]) {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         calendar-day-range-end,
         color-state-secondary-active
     );

@@ -1,6 +1,6 @@
-@import "../variables/variables";
-@import "../mixins/private/bubble-mixins";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/bubble-mixins";
+@use "../mixins/private/token-mixins";
 
 .tooltip {
     position: relative;
@@ -11,16 +11,19 @@ span.tooltip {
 }
 
 .tooltip__overlay {
-    @include bubble();
+    @include bubble-mixins.base;
 }
 
 .tooltip__mask {
-    @include bubble-mask();
-    @include background-color-token(
+    @include bubble-mixins.mask;
+    @include token-mixins.background-color-token(
         tooltip-background-color,
         color-background-inverse
     );
-    @include color-token(tooltip-foreground-color, color-foreground-on-inverse);
+    @include token-mixins.color-token(
+        tooltip-foreground-color,
+        color-foreground-on-inverse
+    );
 }
 
 span.tooltip__mask {
@@ -28,10 +31,10 @@ span.tooltip__mask {
 }
 
 .tooltip__cell {
-    @include bubble-cell();
+    @include bubble-mixins.cell;
 
     a {
-        @include color-token(
+        @include token-mixins.color-token(
             tooltip-foreground-color,
             color-foreground-on-inverse
         );
@@ -43,67 +46,67 @@ span.tooltip__mask {
 }
 
 .tooltip__content {
-    @include bubble-content();
+    @include bubble-mixins.content;
 }
 
 button.tooltip__close {
-    @include bubble-close();
+    @include bubble-mixins.close;
 }
 
 .tooltip__pointer {
-    @include pointer-base();
-    @include background-color-token(
+    @include bubble-mixins.pointer-base;
+    @include token-mixins.background-color-token(
         tooltip-background-color,
         color-background-inverse
     );
 }
 
 .tooltip__pointer--top-left {
-    @include pointer-top-left();
+    @include bubble-mixins.pointer-top-left;
 }
 
 .tooltip__pointer--top {
-    @include pointer-top-center();
+    @include bubble-mixins.pointer-top-center;
 }
 
 .tooltip__pointer--top-right {
-    @include pointer-top-right();
+    @include bubble-mixins.pointer-top-right;
 }
 
 .tooltip__pointer--bottom-left {
-    @include pointer-bottom-left();
+    @include bubble-mixins.pointer-bottom-left;
 }
 
 .tooltip__pointer--bottom {
-    @include pointer-bottom-center();
+    @include bubble-mixins.pointer-bottom-center;
 }
 
 .tooltip__pointer--bottom-right {
-    @include pointer-bottom-right();
+    @include bubble-mixins.pointer-bottom-right;
 }
 
 .tooltip__pointer--left {
-    @include pointer-left();
+    @include bubble-mixins.pointer-left;
 }
 
 .tooltip__pointer--left-bottom {
-    @include pointer-left-bottom();
+    @include bubble-mixins.pointer-left-bottom;
 }
 
 .tooltip__pointer--left-top {
-    @include pointer-left-top();
+    @include bubble-mixins.pointer-left-top;
 }
 
 .tooltip__pointer--right {
-    @include pointer-right();
+    @include bubble-mixins.pointer-right;
 }
 
 .tooltip__pointer--right-bottom {
-    @include pointer-right-bottom();
+    @include bubble-mixins.pointer-right-bottom;
 }
 
 .tooltip__pointer--right-top {
-    @include pointer-right-top();
+    @include bubble-mixins.pointer-right-top;
 }
 
 .tooltip--expanded .tooltip__overlay,
@@ -111,8 +114,8 @@ button.tooltip__close {
     display: block;
 }
 
-@media (min-width: $_screen-size-SM) {
+@media (min-width: variables.$screen-size-SM) {
     .tooltip__overlay {
-        @include bubble-large-screen();
+        @include bubble-mixins.large-screen;
     }
 }

@@ -1,12 +1,12 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/token-mixins";
 
 .page-notice {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         page-notice-general-background-color,
         color-background-inverse
     );
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         page-notice-general-border-color,
         color-background-inverse
     );
@@ -16,7 +16,10 @@
     font-size: var(--font-size-default);
     margin: var(--spacing-100) 0;
     padding: var(--spacing-200);
-    @include color-token(page-notice-color, color-foreground-on-inverse);
+    @include token-mixins.color-token(
+        page-notice-color,
+        color-foreground-on-inverse
+    );
 }
 
 div[role="region"].page-notice,
@@ -42,7 +45,10 @@ span[role="region"].page-notice {
 }
 
 .page-notice a {
-    @include color-token(page-notice-color, color-foreground-on-inverse);
+    @include token-mixins.color-token(
+        page-notice-color,
+        color-foreground-on-inverse
+    );
 
     font-size: var(--font-size-default);
     font-weight: bold;
@@ -58,18 +64,27 @@ span[role="region"].page-notice {
 }
 
 .page-notice a:hover {
-    @include color-token(page-notice-color, color-foreground-on-inverse);
+    @include token-mixins.color-token(
+        page-notice-color,
+        color-foreground-on-inverse
+    );
 }
 
 .page-notice button.fake-link {
-    @include color-token(page-notice-color, color-foreground-on-inverse);
+    @include token-mixins.color-token(
+        page-notice-color,
+        color-foreground-on-inverse
+    );
 
     font-size: var(--font-size-default);
     font-weight: bold;
 }
 
 .page-notice button.fake-link:hover {
-    @include color-token(page-notice-color, color-foreground-on-inverse);
+    @include token-mixins.color-token(
+        page-notice-color,
+        color-foreground-on-inverse
+    );
 }
 
 /* Override default outline color to avoid contrast issues */
@@ -83,17 +98,17 @@ span[role="region"].page-notice {
 }
 
 .page-notice--attention {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         page-notice-attention-background-color,
         color-background-attention
     );
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         page-notice-attention-border-color,
         color-stroke-attention
     );
 
     .page-notice__header svg {
-        @include color-token(
+        @include token-mixins.color-token(
             page-notice-attention-icon-color,
             color-foreground-on-attention
         );
@@ -101,17 +116,17 @@ span[role="region"].page-notice {
 }
 
 .page-notice--confirmation {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         page-notice-confirmation-background-color,
         color-background-confirmation
     );
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         page-notice-confirmation-border-color,
         color-stroke-confirmation
     );
 
     .page-notice__header svg {
-        @include color-token(
+        @include token-mixins.color-token(
             page-notice-confirmation-icon-color,
             color-foreground-on-confirmation
         );
@@ -119,17 +134,17 @@ span[role="region"].page-notice {
 }
 
 .page-notice--information {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         page-notice-information-background-color,
         color-background-information
     );
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         page-notice-information-border-color,
         color-stroke-information
     );
 
     .page-notice__header svg {
-        @include color-token(
+        @include token-mixins.color-token(
             page-notice-information-icon-color,
             color-foreground-on-information
         );
@@ -137,7 +152,7 @@ span[role="region"].page-notice {
 }
 
 .page-notice--general {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         page-notice-general-background-color,
         color-background-inverse
     );
@@ -184,7 +199,7 @@ p.page-notice__cta {
     margin-top: var(--spacing-200);
 }
 
-@media (min-width: $_screen-size-SM) {
+@media (min-width: variables.$screen-size-SM) {
     section.page-notice,
     div[role="region"].page-notice {
         margin: var(--spacing-200) 0;

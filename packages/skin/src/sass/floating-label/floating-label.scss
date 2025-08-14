@@ -1,5 +1,5 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/token-mixins";
 
 .floating-label {
     position: relative;
@@ -14,7 +14,10 @@ div.floating-label {
 }
 
 label.floating-label__label {
-    @include color-token(floating-label-color, color-foreground-secondary);
+    @include token-mixins.color-token(
+        floating-label-color,
+        color-foreground-secondary
+    );
 
     background-color: transparent;
     display: inline-block;
@@ -32,7 +35,7 @@ label.floating-label__label {
 }
 
 .floating-label--opaque label.floating-label__label {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         floating-label-background-color,
         color-background-secondary
     );
@@ -43,11 +46,14 @@ label.floating-label__label {
 }
 
 label.floating-label__label--focus {
-    @include color-token(floating-label-focus-color, color-foreground-primary);
+    @include token-mixins.color-token(
+        floating-label-focus-color,
+        color-foreground-primary
+    );
 }
 
 .floating-label--opaque label.floating-label__label--focus {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         floating-label-focus-background-color,
         color-background-primary
     );
@@ -73,21 +79,21 @@ label.floating-label__label--animate {
 }
 
 label.floating-label__label--disabled {
-    @include color-token(
+    @include token-mixins.color-token(
         floating-label-disabled-color,
         color-foreground-disabled
     );
 }
 
 .floating-label--opaque label.floating-label__label--disabled {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         floating-label-disabled-background-color,
         color-background-secondary
     );
 }
 
 label.floating-label__label--invalid {
-    @include color-token(
+    @include token-mixins.color-token(
         floating-label-invalid-color,
         color-foreground-attention
     );

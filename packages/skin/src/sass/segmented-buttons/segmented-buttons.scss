@@ -1,11 +1,11 @@
-@import "../variables/variables";
-@import "../mixins/private/button-mixins";
+@use "../variables/variables";
+@use "../mixins/private/button-mixins";
 
 .segmented-buttons {
     border: 1px solid var(--color-stroke-default);
     border-radius: var(
         --segmented-button-border-radius,
-        calc($button-height-large / 2)
+        calc(button-mixins.$button-height-large / 2)
     );
     max-width: 720px;
     min-width: 215px;
@@ -31,27 +31,34 @@
 .segmented-buttons__button {
     background-color: transparent;
     border: none;
-    border-radius: var(--btn-border-radius, calc($button-height-regular / 2));
+    border-radius: var(
+        --btn-border-radius,
+        calc(button-mixins.$button-height-regular / 2)
+    );
     color: var(--color-foreground-on-primary);
     font-family: inherit;
     font-size: var(--font-size-default);
-    min-height: calc($button-height-regular - (var(--spacing-50) * 2));
+    min-height: calc(
+        button-mixins.$button-height-regular - (var(--spacing-50) * 2)
+    );
     padding: var(--spacing-100) var(--spacing-200);
     width: 100%;
 }
 
 .segmented-buttons--large .segmented-buttons__button {
-    min-height: calc($button-height-large - (var(--spacing-50) * 2));
+    min-height: calc(
+        button-mixins.$button-height-large - (var(--spacing-50) * 2)
+    );
 }
 
 .segmented-buttons__button-cell {
-    @include btn-cell-base();
+    @include button-mixins.cell-base;
 
     justify-content: center;
 }
 
 .segmented-buttons__button svg.icon {
-    @include btn-icon-base();
+    @include button-mixins.icon-base;
 }
 
 .segmented-buttons__button[aria-current] {

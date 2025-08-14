@@ -1,13 +1,13 @@
-@import "../variables/variables";
-@import "../mixins/private/dialog-mixins";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/token-mixins";
+@use "../mixins/private/dialog-mixins";
 
 .snackbar-dialog {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         snackbar-dialog-background-color,
         color-background-inverse
     );
-    @include border-radius-token(
+    @include token-mixins.border-radius-token(
         snackbar-dialog-border-radius,
         border-radius-100
     );
@@ -24,7 +24,7 @@
     transform: translateY(0);
     will-change: opacity, transform;
     z-index: 2;
-    @include color-token(
+    @include token-mixins.color-token(
         snackbar-dialog-foreground-color,
         color-foreground-on-inverse
     );
@@ -76,7 +76,7 @@
 }
 
 .snackbar-dialog__actions .fake-link {
-    @include color-token(
+    @include token-mixins.color-token(
         snackbar-dialog-foreground-color,
         color-foreground-on-inverse
     );
@@ -90,7 +90,7 @@
 
 /* this needs to be super specific to override base fake-link */
 .snackbar-dialog__actions button.fake-link:hover:not(:disabled) {
-    @include color-token(
+    @include token-mixins.color-token(
         snackbar-dialog-foreground-color,
         color-foreground-on-inverse
     );
@@ -98,7 +98,7 @@
     text-decoration: underline;
 }
 
-@media (min-width: $_screen-size-SM) {
+@media (min-width: variables.$screen-size-SM) {
     .snackbar-dialog {
         bottom: 20px;
     }

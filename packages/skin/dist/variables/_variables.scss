@@ -3,7 +3,26 @@
 /* Mobile-first means the default layout applies to mobile and there should be no mimimums even though */
 /* most mobile devices would be higher in screen width than the smallest viewport width. */
 
-/* The variables with underscores are to be considered constants. They can be read, but should not be modified. */
+/* The variables are to be considered constants. They can be read, but should not be modified. */
+$screen-size-XS: 320px;
+$screen-size-SM: 512px;
+$screen-size-MD: 768px;
+$screen-size-LG: 1024px;
+$screen-size-XL: 1280px;
+$screen-size-XL2: 1440px;
+$screen-size-XL3: 1680px;
+$screen-size-XL4: 1920px;
+$page-grid-max-width: 1584px;
+$page-grid-number-cols-small: 8;
+$page-grid-number-cols-large: 16;
+$page-grid-outside-margins-small: 16px;
+$page-grid-outside-margins-large: 32px;
+$page-grid-outside-margins-max: 48px;
+$page-grid-column-gaps-small: var(--spacing-100);
+$page-grid-column-gaps-large: var(--spacing-200);
+$page-grid-row-gaps-small: var(--spacing-100);
+$page-grid-row-gaps-large: var(--spacing-200);
+/* Deprecated when using variables with _ or - with @use, they are not accessable */
 $_screen-size-XS: 320px;
 $_screen-size-SM: 512px;
 $_screen-size-MD: 768px;

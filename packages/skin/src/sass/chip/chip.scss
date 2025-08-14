@@ -1,8 +1,8 @@
 @use "../mixins/private/chip-mixins";
-@import "../variables/variables";
+@use "../variables/variables";
 
 .chip {
-    @include chip-mixins.base();
+    @include chip-mixins.base;
 
     background-color: var(--color-background-strong);
     border-radius: var(--border-radius-50);
@@ -10,7 +10,7 @@
 }
 
 .chip__text {
-    @include chip-mixins.text();
+    @include chip-mixins.text;
 }
 
 .chip button.chip__button {

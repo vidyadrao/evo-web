@@ -1,5 +1,5 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/token-mixins";
 
 $progress-stepper-min-width: 80px;
 $progress-stepper-large-min-width: 120px;
@@ -28,7 +28,7 @@ $_progress-stepper-upcoming-gradient: var(
 }
 
 hr.progress-stepper__separator {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         progress-stepper-active-color,
         color-background-information
     );
@@ -56,7 +56,10 @@ hr.progress-stepper__separator {
 .progress-stepper__text h4,
 .progress-stepper__text h5,
 .progress-stepper__text h6 {
-    @include color-token(progress-stepper-text-color, color-foreground-primary);
+    @include token-mixins.color-token(
+        progress-stepper-text-color,
+        color-foreground-primary
+    );
 
     font-size: var(--font-size-default);
     font-weight: normal;
@@ -67,7 +70,7 @@ hr.progress-stepper__separator {
 .progress-stepper__items--upcoming .progress-stepper__text h4,
 .progress-stepper__items--upcoming .progress-stepper__text h5,
 .progress-stepper__items--upcoming .progress-stepper__text h6 {
-    @include color-token(
+    @include token-mixins.color-token(
         progress-stepper-text-light-color,
         color-foreground-secondary
     );
@@ -101,14 +104,14 @@ hr.progress-stepper__separator {
     ~ .progress-stepper__item
     .progress-stepper__text
     h6 {
-    @include color-token(
+    @include token-mixins.color-token(
         progress-stepper-text-light-color,
         color-foreground-secondary
     );
 }
 
 .progress-stepper__text p {
-    @include color-token(
+    @include token-mixins.color-token(
         progress-stepper-text-light-color,
         color-foreground-secondary
     );
@@ -122,7 +125,7 @@ hr.progress-stepper__separator {
 
 .progress-stepper__items--upcoming hr.progress-stepper__separator,
 .progress-stepper__item[aria-current] ~ hr.progress-stepper__separator {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         progress-stepper-upcoming-color,
         color-background-disabled
     );
@@ -140,7 +143,7 @@ hr.progress-stepper__separator {
 
 .progress-stepper__item--attention[aria-current]
     ~ hr.progress-stepper__separator {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         progress-stepper-upcoming-color,
         color-background-disabled
     );
@@ -189,7 +192,7 @@ hr.progress-stepper__separator {
 .progress-stepper--vertical
     .progress-stepper__item--attention[aria-current]
     ~ hr.progress-stepper__separator {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         progress-stepper-upcoming-color,
         color-background-disabled
     );
@@ -256,7 +259,7 @@ hr.progress-stepper__separator {
         .progress-stepper__items--current
         .progress-stepper__item[aria-current]
         ~ hr.progress-stepper__separator {
-        @include background-color-token(
+        @include token-mixins.background-color-token(
             progress-stepper-upcoming-color,
             color-background-disabled
         );
@@ -280,7 +283,7 @@ hr.progress-stepper__separator {
     }
 }
 
-@media (min-width: $_screen-size-SM) {
+@media (min-width: variables.$screen-size-SM) {
     hr.progress-stepper__separator {
         min-width: $progress-stepper-large-min-width;
     }

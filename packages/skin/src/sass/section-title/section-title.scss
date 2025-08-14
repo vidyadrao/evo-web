@@ -1,6 +1,6 @@
-@import "../variables/variables";
-@import "../mixins/public/typography-mixins";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/public/typography-mixins";
+@use "../mixins/private/token-mixins";
 
 .section-title {
     align-items: baseline;
@@ -13,21 +13,21 @@
 }
 
 .section-title__title {
-    @include typography-large-1();
+    @include typography-mixins.typography-large-1;
 
     margin: 0;
 }
 
 .section-title__subtitle {
-    @include typography-regular();
-    @include color-token(
+    @include typography-mixins.typography-regular;
+    @include token-mixins.color-token(
         section-title-subtitle-color,
         color-foreground-secondary
     );
 }
 
 .section-title__title svg.icon {
-    @include background-color-token(color-background-secondary);
+    @include token-mixins.background-color-token(color-background-secondary);
 
     border-radius: 12px;
     margin-inline-start: var(--spacing-100);
@@ -66,7 +66,7 @@
 
 .section-title--large {
     .section-title__title {
-        @include typography-large-1();
+        @include typography-mixins.typography-large-1;
     }
 
     > .section-title__cta,
@@ -96,12 +96,12 @@
     }
 }
 
-@media (min-width: $_screen-size-SM) {
+@media (min-width: variables.$screen-size-SM) {
     .section-title__title {
-        @include typography-large-2();
+        @include typography-mixins.typography-large-2;
     }
 
     .section-title__subtitle {
-        @include typography-medium();
+        @include typography-mixins.typography-medium;
     }
 }

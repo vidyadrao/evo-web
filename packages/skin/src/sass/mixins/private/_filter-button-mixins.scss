@@ -1,4 +1,6 @@
-@mixin filter-button-base() {
+@use "./token-mixins";
+
+@mixin base() {
     align-items: center;
     border: 1px solid transparent;
     border-radius: 16px;
@@ -17,7 +19,7 @@
     text-align: center;
     text-decoration: none;
     vertical-align: bottom;
-    @include color-token(
+    @include token-mixins.color-token(
         filter-button-foreground-color,
         color-foreground-primary
     );

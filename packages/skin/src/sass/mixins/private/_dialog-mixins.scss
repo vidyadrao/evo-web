@@ -1,4 +1,6 @@
-@use "../public/utility-mixins" as *;
+@use "../public/utility-mixins";
+@use "./token-mixins";
+@use "../../variables/variables";
 
 :root {
     --dialog-scrim-color-hide: rgb(17 24 32 / 0);
@@ -6,7 +8,7 @@
     --dialog-lightbox-max-width: 616px;
 }
 
-@mixin dialog-base() {
+@mixin base() {
     background-color: var(--dialog-scrim-color-show);
     bottom: 0;
     left: 0;
@@ -23,15 +25,15 @@
     }
 }
 
-@mixin lightbox-dialog-base() {
-    @include dialog-base();
+@mixin lightbox-base() {
+    @include base;
 
     align-items: flex-start;
     justify-content: center;
 }
 
-@mixin dialog-window() {
-    @include background-color-token(
+@mixin window() {
+    @include token-mixins.background-color-token(
         dialog-window-background-color,
         color-background-primary
     );
@@ -44,9 +46,12 @@
 }
 
 // TODO deprecated, remove when we merge small and large
-@mixin lightbox-dialog-window() {
-    @include dialog-window();
-    @include border-radius-token(lightbox-border-radius, border-radius-150);
+@mixin lightbox-window() {
+    @include window;
+    @include token-mixins.border-radius-token(
+        lightbox-border-radius,
+        border-radius-150
+    );
 
     margin: auto auto 16px;
     max-height: 90%;
@@ -56,9 +61,12 @@
 
 // This should become the new ligtbox-dialog-window mixin
 // TODO refactor code to not to use calc and use spacing tokens instead
-@mixin lightbox-dialog-window-centered() {
-    @include dialog-window();
-    @include border-radius-token(lightbox-border-radius, border-radius-100);
+@mixin lightbox-window-centered() {
+    @include window;
+    @include token-mixins.border-radius-token(
+        lightbox-border-radius,
+        border-radius-100
+    );
 
     margin: auto;
     max-height: 90%;
@@ -67,12 +75,15 @@
 }
 
 // TODO deprecated, remove when we merge small and large
-@mixin lightbox-dialog-window-large() {
+@mixin lightbox-window-large() {
     margin: auto;
-    @include border-radius-token(lightbox-border-radius, border-radius-100);
+    @include token-mixins.border-radius-token(
+        lightbox-border-radius,
+        border-radius-100
+    );
 }
 
-@mixin dialog-header-content($top-margin: var(--spacing-200)) {
+@mixin header-content($top-margin: var(--spacing-200)) {
     display: flex;
     /* Fix for Safari not honoring min-height */
     flex-shrink: 0;
@@ -96,7 +107,7 @@
     }
 }
 
-@mixin dialog-body-content() {
+@mixin body-content() {
     box-sizing: border-box;
     flex: 1 1 auto;
     padding: var(--spacing-200);
@@ -111,7 +122,7 @@
     }
 }
 
-@mixin dialog-footer-content() {
+@mixin footer-content() {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -124,16 +135,16 @@
 }
 
 /* Unused, small and large are the same now */
-@mixin dialog-header-content-large() {
+@mixin header-content-large() {
     margin: var(--spacing-200) var(--spacing-200) 0;
 }
 
 /* Unused, small and large are the same now */
-@mixin dialog-body-content-large() {
+@mixin body-content-large() {
     margin: var(--spacing-200);
 }
 
-@mixin dialog-footer-content-large() {
+@mixin footer-content-large() {
     flex-direction: row;
     justify-content: flex-end;
 
@@ -143,7 +154,7 @@
     }
 }
 
-@mixin dialog-animation($name) {
+@mixin animation($name) {
     .#{$name}--hide {
         &.#{$name}--mask-fade {
             transition: background-color var(--motion-duration-short-3)
@@ -329,7 +340,7 @@
 }
 
 // When we merge large and small to always show centered, we can remove this mixin
-@mixin dialog-animation-large($name) {
+@mixin animation-large($name) {
     .#{$name}--show .#{$name}__window--animate,
     .#{$name}--hide-init .#{$name}__window--animate {
         transform: scale(1);

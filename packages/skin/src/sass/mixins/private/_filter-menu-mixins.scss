@@ -1,5 +1,7 @@
-@mixin filter-menu-item-base() {
-    @include background-color-token(
+@use "./token-mixins";
+
+@mixin base() {
+    @include token-mixins.background-color-token(
         filter-menu-item-background-color,
         color-background-elevated
     );
@@ -11,7 +13,7 @@
     line-height: 1.4em;
     margin: 0;
     width: 100%;
-    @include color-token(
+    @include token-mixins.color-token(
         filter-menu-item-foreground-color,
         color-foreground-primary
     );
@@ -25,13 +27,13 @@
 
     &:disabled,
     &[aria-disabled="true"] {
-        @include color-token(
+        @include token-mixins.color-token(
             filter-menu-item-foreground-color-disabled,
             color-foreground-disabled
         );
 
         span > svg {
-            @include color-token(
+            @include token-mixins.color-token(
                 filter-menu-item-icon-color-disabled,
                 color-foreground-disabled
             );

@@ -1,6 +1,6 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
-@import "../mixins/public/utility-mixins";
+@use "../variables/variables";
+@use "../mixins/private/token-mixins";
+@use "../mixins/public/utility-mixins";
 
 /* clear floated elements */
 .clearfix {
@@ -63,12 +63,12 @@
 
 /* greys out space in the li not taken by the img, in order to match height to other img */
 .image-treatment {
-    @include image-treatment();
+    @include utility-mixins.image-treatment;
 }
 
 /* Image will have border-radius of 16px; this should be applied to images larger than 40px */
 .image-treatment-large {
-    @include image-treatment(16px);
+    @include utility-mixins.image-treatment(16px);
 }
 
 .image-disabled {
@@ -81,4 +81,4 @@
     white-space: nowrap;
 }
 
-@include scrollbars-permanent(".scrollbars-permanent");
+@include utility-mixins.scrollbars-permanent(".scrollbars-permanent");

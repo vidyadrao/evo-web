@@ -1,5 +1,4 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
+@use "../mixins/private/token-mixins";
 
 .badge {
     align-items: center;
@@ -12,9 +11,12 @@
     min-width: 8px;
     padding: 2px 6px;
     white-space: nowrap;
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         badge-background-color,
         color-background-attention
     );
-    @include color-token(badge-foreground-color, color-foreground-on-attention);
+    @include token-mixins.color-token(
+        badge-foreground-color,
+        color-foreground-on-attention
+    );
 }

@@ -1,10 +1,10 @@
-@import "../../../src/sass/variables/variables";
-@import "../../../src/sass/mixins/public/typography-mixins";
-@import "../../../src/sass/mixins/public/utility-mixins";
-@import "pygments";
-@import "demo-colors";
-@import "page-grid";
-@import "color-schemes";
+@use "../../../src/sass/variables/variables";
+@use "../../../src/sass/mixins/public/typography-mixins";
+@use "../../../src/sass/mixins/public/utility-mixins";
+@use "pygments";
+@use "demo-colors";
+@use "page-grid";
+@use "color-schemes";
 
 :root {
     --color-menu-background: #f2f2f2;
@@ -58,8 +58,8 @@ span.highlight {
 
     /* fix for long attributes values that don't wrap right */
     .s {
+        overflow-wrap: break-word;
         word-break: break-all;
-        word-wrap: break-word;
     }
 }
 
@@ -146,7 +146,7 @@ figure.highlight {
     width: 100%;
 }
 
-@media screen and (min-width: $_screen-size-MD) {
+@media screen and (min-width: variables.$screen-size-MD) {
     .app-bar {
         grid-area: 1 / 1 / span 1 / span 16;
     }
@@ -367,67 +367,67 @@ span.demo__inner {
 }
 
 .demo-typography-giant-3 {
-    @include typography-giant-3();
+    @include typography-mixins.typography-giant-3;
 }
 
 .demo-typography-giant-2 {
-    @include typography-giant-2();
+    @include typography-mixins.typography-giant-2;
 }
 
 .demo-typography-giant-1 {
-    @include typography-giant-1();
+    @include typography-mixins.typography-giant-1;
 }
 
 .demo-typography-large-2 {
-    @include typography-large-2();
+    @include typography-mixins.typography-large-2;
 }
 
 .demo-typography-large-2-secondary {
-    @include typography-large-2-secondary();
+    @include typography-mixins.typography-large-2-secondary;
 }
 
 .demo-typography-large-1 {
-    @include typography-large-1();
+    @include typography-mixins.typography-large-1;
 }
 
 .demo-typography-large-1-secondary {
-    @include typography-large-1-secondary();
+    @include typography-mixins.typography-large-1-secondary;
 }
 
 .demo-typography-medium-bold {
-    @include typography-medium-bold();
+    @include typography-mixins.typography-medium-bold;
 }
 
 .demo-typography-medium {
-    @include typography-medium();
+    @include typography-mixins.typography-medium;
 }
 
 .demo-typography-medium-secondary {
-    @include typography-medium-secondary();
+    @include typography-mixins.typography-medium-secondary;
 }
 
 .demo-typography-regular-bold {
-    @include typography-regular-bold();
+    @include typography-mixins.typography-regular-bold;
 }
 
 .demo-typography-regular {
-    @include typography-regular();
+    @include typography-mixins.typography-regular;
 }
 
 .demo-typography-regular-secondary {
-    @include typography-regular-secondary();
+    @include typography-mixins.typography-regular-secondary;
 }
 
 .demo-typography-small-bold {
-    @include typography-small-bold();
+    @include typography-mixins.typography-small-bold;
 }
 
 .demo-typography-small {
-    @include typography-small();
+    @include typography-mixins.typography-small;
 }
 
 .demo-typography-small-secondary {
-    @include typography-small-secondary();
+    @include typography-mixins.typography-small-secondary;
 }
 
 /* ICON SECTION */

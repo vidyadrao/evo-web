@@ -1,6 +1,6 @@
-@import "../variables/variables";
-@import "../mixins/private/bubble-mixins";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/bubble-mixins";
+@use "../mixins/private/token-mixins";
 
 .tourtip {
     position: relative;
@@ -11,16 +11,19 @@ span.tourtip {
 }
 
 .tourtip__overlay {
-    @include bubble(border-radius-100);
+    @include bubble-mixins.base(border-radius-100);
 }
 
 .tourtip__mask {
-    @include bubble-mask(border-radius-100);
-    @include background-color-token(
+    @include bubble-mixins.mask(border-radius-100);
+    @include token-mixins.background-color-token(
         tourtip-background-color,
         color-background-inverse
     );
-    @include color-token(tourtip-foreground-color, color-foreground-on-inverse);
+    @include token-mixins.color-token(
+        tourtip-foreground-color,
+        color-foreground-on-inverse
+    );
 }
 
 span.tourtip__mask {
@@ -28,12 +31,12 @@ span.tourtip__mask {
 }
 
 .tourtip__cell {
-    @include bubble-cell(var(--spacing-200));
+    @include bubble-mixins.cell(var(--spacing-200));
 
     flex-wrap: wrap;
 
     a {
-        @include color-token(
+        @include token-mixins.color-token(
             tourtip-foreground-color,
             color-foreground-on-inverse
         );
@@ -45,18 +48,18 @@ span.tourtip__mask {
 }
 
 .tourtip__content {
-    @include bubble-content();
+    @include bubble-mixins.content;
 
     flex-basis: 0;
 }
 
 button.tourtip__close {
-    @include bubble-close();
+    @include bubble-mixins.close;
 
     outline-offset: -2px;
 
     svg.icon {
-        @include fill-token(
+        @include token-mixins.fill-token(
             tourtip-foreground-color,
             color-foreground-on-inverse
         );
@@ -64,59 +67,59 @@ button.tourtip__close {
 }
 
 .tourtip__pointer {
-    @include pointer-base();
-    @include background-color-token(
+    @include bubble-mixins.pointer-base;
+    @include token-mixins.background-color-token(
         tourtip-background-color,
         color-background-inverse
     );
 }
 
 .tourtip__pointer--top-left {
-    @include pointer-top-left();
+    @include bubble-mixins.pointer-top-left;
 }
 
 .tourtip__pointer--top {
-    @include pointer-top-center();
+    @include bubble-mixins.pointer-top-center;
 }
 
 .tourtip__pointer--top-right {
-    @include pointer-top-right();
+    @include bubble-mixins.pointer-top-right;
 }
 
 .tourtip__pointer--bottom-left {
-    @include pointer-bottom-left();
+    @include bubble-mixins.pointer-bottom-left;
 }
 
 .tourtip__pointer--bottom {
-    @include pointer-bottom-center();
+    @include bubble-mixins.pointer-bottom-center;
 }
 
 .tourtip__pointer--bottom-right {
-    @include pointer-bottom-right();
+    @include bubble-mixins.pointer-bottom-right;
 }
 
 .tourtip__pointer--left {
-    @include pointer-left();
+    @include bubble-mixins.pointer-left;
 }
 
 .tourtip__pointer--left-bottom {
-    @include pointer-left-bottom();
+    @include bubble-mixins.pointer-left-bottom;
 }
 
 .tourtip__pointer--left-top {
-    @include pointer-left-top();
+    @include bubble-mixins.pointer-left-top;
 }
 
 .tourtip__pointer--right {
-    @include pointer-right();
+    @include bubble-mixins.pointer-right;
 }
 
 .tourtip__pointer--right-bottom {
-    @include pointer-right-bottom();
+    @include bubble-mixins.pointer-right-bottom;
 }
 
 .tourtip__pointer--right-top {
-    @include pointer-right-top();
+    @include bubble-mixins.pointer-right-top;
 }
 
 .tourtip__heading {
@@ -142,11 +145,14 @@ span.tourtip__heading {
 }
 
 .tourtip__footer > button.btn--primary {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         tourtip-background-color,
         color-foreground-on-inverse
     );
-    @include color-token(tourtip-foreground-color, color-background-inverse);
+    @include token-mixins.color-token(
+        tourtip-foreground-color,
+        color-background-inverse
+    );
 }
 
 .tourtip__footer > button:not(:last-child),
@@ -171,8 +177,8 @@ span.tourtip__heading {
     flex: 1;
 }
 
-@media (min-width: $_screen-size-SM) {
+@media (min-width: variables.$screen-size-SM) {
     .tourtip__overlay {
-        @include bubble-large-screen();
+        @include bubble-mixins.large-screen;
     }
 }

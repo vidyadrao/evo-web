@@ -1,5 +1,5 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/token-mixins";
 
 /* BASE CLASS */
 
@@ -55,7 +55,10 @@ div.field--table {
 }
 
 .field__description {
-    @include color-token(field-description-color, color-foreground-secondary);
+    @include token-mixins.color-token(
+        field-description-color,
+        color-foreground-secondary
+    );
 
     font-size: var(--font-size-small);
     line-height: var(--spacing-200);
@@ -63,21 +66,21 @@ div.field--table {
 }
 
 .field__description--confirmation {
-    @include color-token(
+    @include token-mixins.color-token(
         field-description-confirmation-color,
         color-foreground-confirmation
     );
 }
 
 .field__description--information {
-    @include color-token(
+    @include token-mixins.color-token(
         field-description-information-color,
         color-foreground-information
     );
 }
 
 .field__description--attention {
-    @include color-token(
+    @include token-mixins.color-token(
         field-description-attention-color,
         color-foreground-attention
     );
@@ -155,7 +158,10 @@ div.field__description {
 }
 
 .field__label--disabled {
-    @include color-token(field-label-color-disabled, color-foreground-disabled);
+    @include token-mixins.color-token(
+        field-label-color-disabled,
+        color-foreground-disabled
+    );
 }
 
 .field--fluid,

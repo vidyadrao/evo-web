@@ -1,8 +1,8 @@
-@import "../variables/variables";
-@import "../mixins/private/bubble-mixins";
-@import "../mixins/private/filter-button-mixins";
-@import "../mixins/private/filter-menu-mixins";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/bubble-mixins";
+@use "../mixins/private/filter-button-mixins";
+@use "../mixins/private/filter-menu-mixins";
+@use "../mixins/private/token-mixins";
 
 /* .filter-group also exists in filter-button */
 /* todo: move to utility/layout class and/or mixin */
@@ -21,12 +21,12 @@ span.filter-menu-button {
 }
 
 button.filter-menu-button__button {
-    @include filter-button-base();
-    @include background-color-token(
+    @include filter-button-mixins.base;
+    @include token-mixins.background-color-token(
         filter-button-background-color,
         color-background-secondary
     );
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         filter-button-selected-border-color,
         color-stroke-default
     );
@@ -34,7 +34,7 @@ button.filter-menu-button__button {
     &:focus,
     &:hover,
     &:active {
-        @include background-color-token(
+        @include token-mixins.background-color-token(
             filter-button-background-color,
             color-state-secondary-hover
         );
@@ -47,7 +47,7 @@ button.filter-menu-button__button {
     svg.icon--12 {
         align-self: center;
         margin-inline-start: 8px;
-        @include color-token(
+        @include token-mixins.color-token(
             filter-menu-button-icon-color,
             color-foreground-primary
         );
@@ -67,7 +67,7 @@ button.filter-menu-button__button {
 }
 
 button.filter-menu-button__button[aria-pressed="true"] {
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         filter-button-foreground-color,
         color-stroke-strong
     );
@@ -79,7 +79,7 @@ button.filter-menu-button__button[disabled],
 button.filter-menu-button__button[aria-disabled="true"],
 button.filter-menu-button__button[aria-pressed="true"][disabled],
 button.filter-menu-button__button[aria-pressed="true"][aria-disabled="true"] {
-    @include color-token(
+    @include token-mixins.color-token(
         filter-button-disabled-foreground-color,
         color-background-disabled
     );
@@ -89,18 +89,18 @@ button.filter-menu-button__button[aria-pressed="true"][aria-disabled="true"] {
     /* todo: we can elimate the need for these overrides by using :not([disabled]) in place where defining hover states */
     &:hover,
     &:focus {
-        @include background-color-token(
+        @include token-mixins.background-color-token(
             filter-button-background-color,
             color-background-secondary
         );
-        @include color-token(
+        @include token-mixins.color-token(
             filter-button-disabled-foreground-color,
             color-background-disabled
         );
     }
 
     & .filter-menu-button__button-cell > svg.icon {
-        @include color-token(
+        @include token-mixins.color-token(
             filter-button-disabled-foreground-color,
             color-foreground-disabled
         );
@@ -110,14 +110,14 @@ button.filter-menu-button__button[aria-pressed="true"][aria-disabled="true"] {
 /* todo: we can elimate the need for these overrides by using :not([disabled]) in place where defining hover states */
 button.filter-menu-button__button[aria-pressed="true"][disabled]:hover,
 button.filter-menu-button__button[aria-pressed="true"][aria-disabled="true"]:hover {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         filter-button-selected-background-color,
         color-background-secondary
     );
 }
 
 .filter-menu-button__menu {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         filter-menu-item-background-color,
         color-background-elevated
     );
@@ -167,7 +167,7 @@ span.filter-menu-button__radio {
 
 span.filter-menu-button__checkbox {
     svg.icon--unchecked {
-        @include color-token(
+        @include token-mixins.color-token(
             filter-menu-item-unchecked-color,
             color-foreground-secondary
         );
@@ -178,7 +178,7 @@ span.filter-menu-button__checkbox {
     }
 
     svg.icon--checked {
-        @include color-token(
+        @include token-mixins.color-token(
             filter-menu-item-checked-color,
             color-foreground-primary
         );
@@ -191,7 +191,7 @@ span.filter-menu-button__checkbox {
 
 span.filter-menu-button__radio {
     svg.icon--unchecked {
-        @include color-token(
+        @include token-mixins.color-token(
             filter-menu-item-unchecked-color,
             color-foreground-primary
         );
@@ -202,7 +202,7 @@ span.filter-menu-button__radio {
     }
 
     svg.icon--checked {
-        @include color-token(
+        @include token-mixins.color-token(
             filter-menu-item-checked-color,
             color-foreground-primary
         );
@@ -214,7 +214,7 @@ span.filter-menu-button__radio {
 }
 
 .filter-menu-button__item {
-    @include filter-menu-item-base();
+    @include filter-menu-mixins.base;
 
     outline-offset: -4px;
     padding: 8px 16px;
@@ -236,28 +236,28 @@ span.filter-menu-button__radio {
     }
 
     svg.checkbox__unchecked {
-        @include color-token(
+        @include token-mixins.color-token(
             filter-menu-item-unchecked-color,
             color-foreground-secondary
         );
     }
 
     svg.checkbox__checked {
-        @include color-token(
+        @include token-mixins.color-token(
             filter-menu-item-checked-color,
             color-foreground-primary
         );
     }
 
     svg.radio__unchecked {
-        @include color-token(
+        @include token-mixins.color-token(
             filter-menu-item-unchecked-color,
             color-foreground-secondary
         );
     }
 
     svg.radio__checked {
-        @include color-token(
+        @include token-mixins.color-token(
             filter-menu-item-checked-color,
             color-foreground-primary
         );
@@ -269,7 +269,7 @@ span.filter-menu-button__item {
 }
 
 button.filter-menu-button__footer {
-    @include filter-menu-item-base();
+    @include filter-menu-mixins.base;
 
     border: none;
     border-top-style: solid;
@@ -278,7 +278,10 @@ button.filter-menu-button__footer {
     outline-offset: -10;
     padding: 16px;
     transform: translateZ(0);
-    @include border-color-token(filter-menu-border-color, color-stroke-subtle);
+    @include token-mixins.border-color-token(
+        filter-menu-border-color,
+        color-stroke-subtle
+    );
 
     &:focus,
     &:hover {

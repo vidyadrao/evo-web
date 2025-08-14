@@ -1,8 +1,11 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/token-mixins";
 
 .select {
-    @include color-token(select-foreground-color, color-foreground-primary);
+    @include token-mixins.color-token(
+        select-foreground-color,
+        color-foreground-primary
+    );
 
     font-size: var(--font-size-default);
     position: relative;
@@ -23,11 +26,14 @@ span.select {
     height: 40px;
     padding: 0 var(--spacing-400) 0 var(--spacing-200);
     vertical-align: middle;
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         select-background-color,
         color-background-secondary
     );
-    @include border-color-token(select-border-color, color-stroke-default);
+    @include token-mixins.border-color-token(
+        select-border-color,
+        color-stroke-default
+    );
 }
 
 .select svg.icon--12 {
@@ -64,18 +70,18 @@ span.select {
 }
 
 .select select:focus {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         select-focus-background-color,
         color-background-primary
     );
 }
 
 .select select:focus:not(:read-only) {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         select-focus-background-color,
         color-background-primary
     );
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         select-focus-border-color,
         color-stroke-default
     );
@@ -90,11 +96,11 @@ span.select {
 }
 
 .select select[disabled] {
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         textbox-disabled-border-color,
         color-background-disabled
     );
-    @include color-token(
+    @include token-mixins.color-token(
         select-disabled-foregound-color,
         color-foreground-disabled
     );
@@ -103,7 +109,7 @@ span.select {
 }
 
 .select select[disabled] + svg {
-    @include color-token(
+    @include token-mixins.color-token(
         select-disabled-foregound-color,
         color-foreground-on-disabled
     );
@@ -115,7 +121,7 @@ span.select {
 }
 
 .select select[aria-invalid="true"] {
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         select-invalid-border-color,
         color-stroke-attention
     );
@@ -124,11 +130,11 @@ span.select {
     border-width: 1px;
 
     &:focus {
-        @include background-color-token(
+        @include token-mixins.background-color-token(
             select-focus-background-color,
             color-background-primary
         );
-        @include border-color-token(
+        @include token-mixins.border-color-token(
             select-focus-border-color,
             color-stroke-default
         );

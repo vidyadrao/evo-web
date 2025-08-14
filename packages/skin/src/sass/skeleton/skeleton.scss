@@ -1,6 +1,6 @@
-@import "../variables/variables";
-@import "../mixins/private/button-mixins";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/button-mixins";
+@use "../mixins/private/token-mixins";
 
 @keyframes skeleton-fade-out {
     from {
@@ -40,7 +40,10 @@
 .skeleton__text,
 .skeleton__image,
 .skeleton__textbox {
-    @include background-token(skeleton-background, color-loading-fill);
+    @include token-mixins.background-token(
+        skeleton-background,
+        color-loading-fill
+    );
 
     width: 100%;
 }
@@ -53,18 +56,27 @@
 }
 
 .skeleton__button {
-    border-radius: var(--btn-border-radius, calc($button-height-regular / 2));
-    height: $button-height-regular;
+    border-radius: var(
+        --btn-border-radius,
+        calc(button-mixins.$button-height-regular / 2)
+    );
+    height: button-mixins.$button-height-regular;
 }
 
 .skeleton__button--small {
-    border-radius: var(--btn-border-radius, calc($button-height-small / 2));
-    height: $button-height-small;
+    border-radius: var(
+        --btn-border-radius,
+        calc(button-mixins.$button-height-small / 2)
+    );
+    height: button-mixins.$button-height-small;
 }
 
 .skeleton__button--large {
-    border-radius: var(--btn-border-radius, calc($button-height-large / 2));
-    height: $button-height-large;
+    border-radius: var(
+        --btn-border-radius,
+        calc(button-mixins.$button-height-large / 2)
+    );
+    height: button-mixins.$button-height-large;
 }
 
 .skeleton__text {
@@ -105,13 +117,19 @@
 }
 
 .skeleton__textbox {
-    @include border-radius-token(textbox-border-radius, border-radius-50);
+    @include token-mixins.border-radius-token(
+        textbox-border-radius,
+        border-radius-50
+    );
 
     height: 48px;
 }
 
 .skeleton__image {
-    @include border-radius-token(image-border-radius, border-radius-50);
+    @include token-mixins.border-radius-token(
+        image-border-radius,
+        border-radius-50
+    );
 
     height: 100%;
     max-width: initial;
@@ -210,7 +228,10 @@ div.skeleton__textbox:not(:last-child) {
 /* A progressive enhancement to make the skeleton image rounded */
 @container skeleton-container (width > 79px) {
     .skeleton__image {
-        @include border-radius-token(image-border-radius, border-radius-100);
+        @include token-mixins.border-radius-token(
+            image-border-radius,
+            border-radius-100
+        );
     }
 }
 

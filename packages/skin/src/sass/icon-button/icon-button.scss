@@ -1,5 +1,5 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/token-mixins";
 
 a.icon-link {
     align-items: center;
@@ -12,7 +12,7 @@ a.icon-link {
 
 button.icon-btn,
 a.icon-link {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         icon-button-background-color,
         color-background-secondary
     );
@@ -29,7 +29,7 @@ a.icon-link {
     width: 40px;
 
     > svg {
-        @include fill-token(
+        @include token-mixins.fill-token(
             icon-button-icon-foreground-color,
             color-foreground-primary
         );
@@ -54,12 +54,15 @@ a.icon-link {
 
 button.icon-btn.icon-btn--primary,
 a.icon-link.icon-link--primary {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         btn-primary-background-color,
         color-background-accent
     );
-    @include border-color-token(btn-primary-border-color, color-stroke-accent);
-    @include color-token(
+    @include token-mixins.border-color-token(
+        btn-primary-border-color,
+        color-stroke-accent
+    );
+    @include token-mixins.color-token(
         btn-primary-foreground-color,
         color-foreground-on-accent
     );
@@ -67,7 +70,7 @@ a.icon-link.icon-link--primary {
 
 button.icon-btn.icon-btn--primary > svg,
 a.icon-link.icon-link--primary > svg {
-    @include fill-token(
+    @include token-mixins.fill-token(
         icon-button-icon-foreground-color,
         color-foreground-on-accent
     );
@@ -75,7 +78,7 @@ a.icon-link.icon-link--primary > svg {
 
 button.icon-btn.icon-btn--secondary > svg,
 a.icon-link.icon-link--secondary > svg {
-    @include fill-token(
+    @include token-mixins.fill-token(
         icon-button-icon-foreground-color,
         color-foreground-accent
     );
@@ -116,7 +119,7 @@ a.icon-link--transparent {
 }
 
 a.icon-link:visited > svg {
-    @include fill-token(
+    @include token-mixins.fill-token(
         icon-button-icon-foreground-color,
         color-foreground-primary
     );
@@ -128,19 +131,19 @@ a:not([href]).icon-link,
 a[aria-disabled="true"].icon-link {
     > svg {
         background-color: transparent;
-        @include fill-token(color-background-disabled);
+        @include token-mixins.fill-token(color-background-disabled);
     }
 
     &:focus > svg,
     &:hover > svg {
-        @include fill-token(color-background-disabled);
+        @include token-mixins.fill-token(color-background-disabled);
     }
 }
 
 a.icon-link:visited {
     &:hover > svg,
     &:focus > svg {
-        @include fill-token(
+        @include token-mixins.fill-token(
             icon-button-icon-hover-foreground-color,
             color-foreground-primary
         );
@@ -148,7 +151,7 @@ a.icon-link:visited {
 }
 
 a.icon-link.icon-link--primary:visited > svg {
-    @include fill-token(
+    @include token-mixins.fill-token(
         icon-button-icon-foreground-color,
         color-foreground-on-accent
     );
@@ -173,9 +176,9 @@ button.icon-btn > svg.icon--confirmation-filled-24,
 button.icon-btn > svg.icon--confirmation-filled-16,
 a.icon-link > svg.icon--confirmation-filled-24,
 a.icon-link > svg.icon--confirmation-filled-16 {
-    @include fill-token(color-foreground-confirmation);
+    @include token-mixins.fill-token(color-foreground-confirmation);
     &:hover {
-        @include fill-token(color-foreground-confirmation);
+        @include token-mixins.fill-token(color-foreground-confirmation);
     }
 }
 
@@ -183,9 +186,9 @@ button.icon-btn > svg.icon--attention-filled-24,
 button.icon-btn > svg.icon--attention-filled-16,
 a.icon-link > svg.icon--attention-filled-24,
 a.icon-link > svg.icon--attention-filled-16 {
-    @include fill-token(color-foreground-attention);
+    @include token-mixins.fill-token(color-foreground-attention);
     &:hover {
-        @include fill-token(color-foreground-attention);
+        @include token-mixins.fill-token(color-foreground-attention);
     }
 }
 
@@ -193,9 +196,9 @@ button.icon-btn > svg.icon--information-filled-24,
 button.icon-btn > svg.icon--information-filled-16,
 a.icon-link > svg.icon--information-filled-24,
 a.icon-link > svg.icon--information-filled-16 {
-    @include fill-token(color-foreground-information);
+    @include token-mixins.fill-token(color-foreground-information);
     &:hover {
-        @include fill-token(color-foreground-information);
+        @include token-mixins.fill-token(color-foreground-information);
     }
 }
 
@@ -212,11 +215,11 @@ button[disabled].icon-btn.icon-btn--primary,
 button[aria-disabled="true"].icon-btn.icon-btn--primary,
 a:not([href]).icon-link.icon-link--primary,
 a[aria-disabled="true"].icon-link.icon-link--primary {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         icon-button-disabled-background-color,
         color-background-disabled
     );
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         btn-primary-disabled-border-color,
         color-stroke-disabled
     );
@@ -226,7 +229,7 @@ button[disabled].icon-btn.icon-btn--primary > svg,
 button[aria-disabled="true"].icon-btn.icon-btn--primary > svg,
 a:not([href]).icon-link.icon-link--primary > svg,
 a[aria-disabled="true"].icon-link.icon-link--primary > svg {
-    @include fill-token(
+    @include token-mixins.fill-token(
         icon-button-icon-foreground-color,
         color-foreground-on-accent
     );
@@ -241,11 +244,11 @@ a.icon-link.icon-link--primary .progress-spinner {
 button.icon-btn.icon-btn--secondary,
 a.icon-link.icon-link--secondary {
     background-color: transparent;
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         btn-secondary-border-color,
         color-stroke-accent
     );
-    @include color-token(
+    @include token-mixins.color-token(
         btn-secondary-foreground-color,
         color-foreground-accent
     );
@@ -275,7 +278,7 @@ button[disabled].icon-btn.icon-btn--secondary,
 button[aria-disabled="true"].icon-btn.icon-btn--secondary,
 a:not([href]).icon-link.icon-link--secondary,
 a[aria-disabled="true"].icon-link.icon-link--secondary {
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         btn-secondary-disabled-border-color,
         color-stroke-disabled
     );
@@ -285,7 +288,7 @@ button[disabled].icon-btn.icon-btn--secondary > svg,
 button[aria-disabled="true"].icon-btn.icon-btn--secondary > svg,
 a:not([href]).icon-link.icon-blinktn--secondary > svg,
 a[aria-disabled="true"].icon-link.icon-link--secondary > svg {
-    @include fill-token(
+    @include token-mixins.fill-token(
         icon-button-icon-foreground-color,
         color-foreground-disabled
     );
@@ -306,15 +309,21 @@ a.icon-link.icon-link--secondary:not([disabled], [aria-disabled="true"]) {
 button.icon-btn.icon-btn--tertiary,
 a.icon-link.icon-link--tertiary {
     background-color: transparent;
-    @include border-color-token(btn-primary-border-color, color-stroke-default);
-    @include color-token(btn-primary-foreground-color, color-foreground-accent);
+    @include token-mixins.border-color-token(
+        btn-primary-border-color,
+        color-stroke-default
+    );
+    @include token-mixins.color-token(
+        btn-primary-foreground-color,
+        color-foreground-accent
+    );
 }
 
 button[disabled].icon-btn.icon-btn--tertiary,
 button[aria-disabled="true"].icon-btn.icon-btn--tertiary,
 a:not([href]).icon-link.icon-link--tertiary,
 a[aria-disabled="true"].icon-link.icon-link--tertiary {
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         btn-tertiary-disabled-border-color,
         color-stroke-disabled
     );

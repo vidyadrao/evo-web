@@ -1,14 +1,14 @@
-@import "../variables/variables";
-@import "../mixins/public/utility-mixins";
+@use "../variables/variables";
+@use "../mixins/public/utility-mixins";
 
 /* these exclude the top/bottom padding */
 $density-compact-cell-height: 64px;
 $density-default-cell-height: 80px;
 $density-relaxed-cell-height: 112px;
 /* these exclude the 16px padding for top/bottom */
-$density-compact-padding: $spacing-150;
-$density-default-padding: $spacing-150;
-$density-relaxed-padding: $spacing-200;
+$density-compact-padding: variables.$spacing-150;
+$density-default-padding: variables.$spacing-150;
+$density-relaxed-padding: variables.$spacing-200;
 /* these are for image sizes in cells */
 $density-compact-img-size: 40px;
 $density-default-img-size: 56px;
@@ -27,7 +27,7 @@ $density-relaxed-img-radius: 8px;
     position: relative;
 }
 
-@include scrollbars-permanent(".table");
+@include utility-mixins.scrollbars-permanent(".table");
 
 .table table {
     border-collapse: separate;
@@ -280,17 +280,20 @@ $density-relaxed-img-radius: 8px;
 
 .table-cell__multiline {
     max-height: $density-default-cell-height;
-    max-width: $cell-max-width - $density-default-cell-height - $spacing-200;
+    max-width: $cell-max-width - $density-default-cell-height -
+        variables.$spacing-200;
 }
 
 .table--density-compact .table-cell__multiline {
     max-height: $density-compact-cell-height;
-    max-width: $cell-max-width - $density-compact-cell-height - $spacing-200;
+    max-width: $cell-max-width - $density-compact-cell-height -
+        variables.$spacing-200;
 }
 
 .table--density-relaxed .table-cell__multiline {
     max-height: $density-relaxed-cell-height;
-    max-width: $cell-max-width - $density-relaxed-cell-height - $spacing-200;
+    max-width: $cell-max-width - $density-relaxed-cell-height -
+        variables.$spacing-200;
 }
 
 .table-cell__layout .table-cell__multiline .table-cell__data {

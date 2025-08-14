@@ -1,4 +1,4 @@
-@import "../sass/variables/variables";
+@use "../sass/variables/variables";
 
 header {
     background-color: var(--color-background-accent);
@@ -296,7 +296,7 @@ svg.icon.mobile-menu__close {
     display: block;
 }
 
-@media screen and (min-width: $_screen-size-SM) {
+@media screen and (min-width: variables.$screen-size-SM) {
     .app-bar {
         grid-area: 1 / 1 / span 1 / span 16;
     }
@@ -306,7 +306,7 @@ svg.icon.mobile-menu__close {
     }
 }
 
-@media screen and (min-width: $_screen-size-MD) {
+@media screen and (min-width: variables.$screen-size-MD) {
     header {
         box-shadow: none;
         position: static;
@@ -369,13 +369,13 @@ svg.icon.mobile-menu__close {
     }
 }
 
-@media screen and (min-width: $_screen-size-XL) {
+@media screen and (min-width: variables.$screen-size-XL) {
     #about dl {
         column-count: 2;
     }
 }
 
-@media screen and (min-width: $_screen-size-XL3) {
+@media screen and (min-width: variables.$screen-size-XL3) {
     .app-bar {
         padding-left: 0;
         padding-right: 0;

@@ -1,12 +1,12 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/token-mixins";
 
 .section-notice {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         section-notice-default-background-color,
         color-background-secondary
     );
-    @include border-radius-token(
+    @include token-mixins.border-radius-token(
         section-notice-border-radius,
         border-radius-50
     );
@@ -25,7 +25,7 @@ section.section-notice {
 
 /* TODO: Remove in 18.0.0 since Education Notice is now its own module. */
 .section-notice--education {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         section-notice-education-background-color,
         color-background-education
     );
@@ -52,7 +52,7 @@ span[role="region"].section-notice {
 }
 
 .section-notice button.fake-link {
-    @include color-token(
+    @include token-mixins.color-token(
         section-notice-foreground-color,
         color-foreground-primary
     );
@@ -62,14 +62,14 @@ span[role="region"].section-notice {
 }
 
 .section-notice button.fake-link:hover {
-    @include color-token(
+    @include token-mixins.color-token(
         section-notice-foreground-color,
         color-foreground-primary
     );
 }
 
 .section-notice a {
-    @include color-token(
+    @include token-mixins.color-token(
         section-notice-foreground-color,
         color-foreground-primary
     );
@@ -79,7 +79,7 @@ span[role="region"].section-notice {
 }
 
 .section-notice a:hover {
-    @include color-token(
+    @include token-mixins.color-token(
         section-notice-foreground-color,
         color-foreground-primary
     );
@@ -135,7 +135,7 @@ p.section-notice__cta {
 
 /* LARGE SCREEN ADJUSTMENTS */
 
-@media (min-width: $_screen-size-SM) {
+@media (min-width: variables.$screen-size-SM) {
     section.section-notice,
     div[role="region"].section-notice {
         margin: var(--spacing-200) 0;

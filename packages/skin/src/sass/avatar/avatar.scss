@@ -1,5 +1,5 @@
-@import "../variables/variables";
-@import "../mixins/public/utility-mixins";
+@use "../variables/variables";
+@use "../mixins/public/utility-mixins";
 
 /* These are temporary colors until we get the new palette */
 $_avatar-teal-foreground-color: #002a69;
@@ -20,7 +20,7 @@ $_avatar-magenta-foreground-color: #3e135f;
 $_avatar-magenta-background-color: #cc9ef0;
 
 .avatar {
-    @include image-treatment(50%, inline-flex);
+    @include utility-mixins.image-treatment(50%, inline-flex);
 
     align-items: center;
     border-radius: 50%;

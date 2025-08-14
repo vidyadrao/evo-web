@@ -1,5 +1,4 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
+@use "../mixins/private/token-mixins";
 
 @keyframes chevron-bounce-open {
     0% {
@@ -61,7 +60,7 @@ ul.accordion details .details__content {
 }
 
 ul.accordion summary.details__summary span.details__icon svg {
-    @include fill-token(
+    @include token-mixins.fill-token(
         details-secondary-foreground-color,
         color-foreground-secondary
     );

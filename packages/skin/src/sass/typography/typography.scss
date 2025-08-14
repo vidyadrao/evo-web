@@ -1,37 +1,37 @@
-@import "../variables/variables";
-@import "../mixins/public/typography-mixins";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/public/typography-mixins";
+@use "../mixins/private/token-mixins";
 
 .giant-text-3 {
-    @include typography-giant-3();
+    @include typography-mixins.typography-giant-3;
 }
 
 .giant-text-2 {
-    @include typography-giant-2();
+    @include typography-mixins.typography-giant-2;
 }
 
 .giant-text-1 {
-    @include typography-giant-1();
+    @include typography-mixins.typography-giant-1;
 }
 
 .large-text-2 {
-    @include typography-large-2();
+    @include typography-mixins.typography-large-2;
 }
 
 .large-text-1 {
-    @include typography-large-1();
+    @include typography-mixins.typography-large-1;
 }
 
 .medium-text {
-    @include typography-medium();
+    @include typography-mixins.typography-medium;
 }
 
 .regular-text {
-    @include typography-regular();
+    @include typography-mixins.typography-regular;
 }
 
 .small-text {
-    @include typography-small();
+    @include typography-mixins.typography-small;
 }
 
 .bold-text {
@@ -39,7 +39,7 @@
 }
 
 .secondary-text {
-    @include color-token(
+    @include token-mixins.color-token(
         typography-secondary-text-color,
         color-foreground-secondary
     );
@@ -63,22 +63,22 @@
 
 .giant-product-title,
 .giant-section-title {
-    @include title-giant-screen-small();
+    @include typography-mixins.title-giant-screen-small;
 }
 
 .large-product-title,
 .large-section-title {
-    @include title-large-screen-small();
+    @include typography-mixins.title-large-screen-small;
 }
 
 .medium-product-title,
 .medium-section-title {
-    @include title-medium-screen-small();
+    @include typography-mixins.title-medium-screen-small;
 }
 
 .small-product-title,
 .small-section-title {
-    @include title-small-screen-small();
+    @include typography-mixins.title-small-screen-small;
 }
 
 .giant-section-title,
@@ -88,24 +88,24 @@
     font-weight: var(--font-weight-bold);
 }
 
-@media (min-width: $_screen-size-SM) {
+@media (min-width: variables.$screen-size-SM) {
     .giant-product-title,
     .giant-section-title {
-        @include title-giant-screen-large();
+        @include typography-mixins.title-giant-screen-large;
     }
 
     .large-product-title,
     .large-section-title {
-        @include title-large-screen-large();
+        @include typography-mixins.title-large-screen-large;
     }
 
     .medium-product-title,
     .medium-section-title {
-        @include title-medium-screen-large();
+        @include typography-mixins.title-medium-screen-large;
     }
 
     .small-product-title,
     .small-section-title {
-        @include title-small-screen-large();
+        @include typography-mixins.title-small-screen-large;
     }
 }

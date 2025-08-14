@@ -1,9 +1,12 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/token-mixins";
 
 summary.details__summary {
-    @include border-radius-token(expand-btn-border-radius, border-radius-50);
-    @include color-token(
+    @include token-mixins.border-radius-token(
+        expand-btn-border-radius,
+        border-radius-50
+    );
+    @include token-mixins.color-token(
         details-summary-foreground-color,
         color-foreground-primary
     );

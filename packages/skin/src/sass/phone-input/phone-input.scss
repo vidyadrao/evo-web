@@ -1,5 +1,5 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/token-mixins";
 
 .phone-input,
 .phone-input .listbox-button {
@@ -69,29 +69,38 @@
 
 .phone-input--readonly .listbox-button button[aria-disabled="true"],
 .phone-input--readonly .listbox-button button[disabled] {
-    @include border-color-token(textbox-border-color, color-stroke-default);
+    @include token-mixins.border-color-token(
+        textbox-border-color,
+        color-stroke-default
+    );
 }
 
 .phone-input--readonly .textbox span:first-child {
-    @include color-token(
+    @include token-mixins.color-token(
         textbox-disabled-foreground-color,
         color-foreground-secondary
     );
 }
 
 .phone-input.phone-input--readonly .textbox.textbox {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         textbox-background-color,
         color-background-secondary
     );
-    @include border-color-token(textbox-border-color, color-stroke-default);
+    @include token-mixins.border-color-token(
+        textbox-border-color,
+        color-stroke-default
+    );
 
     border-style: solid;
     border-width: 1px;
 }
 
 .phone-input--readonly input.textbox__control[readonly] {
-    @include color-token(textbox-foreground-color, color-foreground-secondary);
+    @include token-mixins.color-token(
+        textbox-foreground-color,
+        color-foreground-secondary
+    );
 }
 
 .phone-input--disabled span.fflag,
@@ -100,25 +109,25 @@
 }
 
 .phone-input--disabled .textbox {
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         textbox-disabled-border-color,
         color-background-disabled
     );
 }
 
 .phone-input--disabled .textbox span:first-child {
-    @include color-token(
+    @include token-mixins.color-token(
         textbox-disabled-foreground-color,
         color-foreground-disabled
     );
 }
 
 .phone-input.phone-input--error .textbox.textbox {
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         textbox-invalid-foreground-color,
         color-stroke-attention
     );
-    @include border-left-color-token(
+    @include token-mixins.border-left-color-token(
         textbox-border-color,
         color-stroke-default
     );
@@ -139,7 +148,7 @@
     padding-top: 23px;
 }
 
-@media screen and (min-width: $_screen-size-XS) {
+@media screen and (min-width: variables.$screen-size-XS) {
     .phone-input .listbox-button__value span:nth-of-type(1),
     .phone-input .listbox__value span:nth-of-type(1) {
         max-width: 50vw;

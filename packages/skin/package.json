@@ -54,7 +54,7 @@
         "lint": "npm run lint:sass && npm run lint:css && npm run lint:js",
         "lint:css": "stylelint dist --config .stylelintrc",
         "lint:js": "eslint 'src/routes/main.js' > lint.log && eslint 'src/sass/**/stories/*.js' >> lint.log ",
-        "lint:sass": "stylelint docs/src/sass src/sass --config .stylelintrc",
+        "lint:sass": "stylelint src/routes/**/*.scss src/sass --config .stylelintrc",
         "postcss": "postcss dist/**/*.css -r ",
         "prepublishOnly": "node scripts gen",
         "preview": "marko-run preview",

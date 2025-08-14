@@ -1,7 +1,7 @@
 @use "./bubble-mixins";
 @use "./token-mixins";
 
-@mixin dropdown-base($component) {
+@mixin base($component) {
     @include token-mixins.background-color-token(
         #{$component}-background-color,
         color-background-elevated
@@ -38,7 +38,7 @@
     }
 }
 
-@mixin dropdown-reverse() {
+@mixin reverse() {
     left: unset;
     right: 0;
 
@@ -48,7 +48,7 @@
     }
 }
 
-@mixin dropdown-item-border-radius($component) {
+@mixin item-border-radius($component) {
     &:first-child {
         @include token-mixins.border-top-left-radius-token(
             #{$component}-border-radius,

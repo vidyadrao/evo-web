@@ -1,11 +1,11 @@
 /*! DEPRECATED COMPONENT. Will be removed next major version */
 
-@import "../variables/variables";
-@import "../mixins/private/dialog-mixins";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/dialog-mixins";
+@use "../mixins/private/token-mixins";
 
 .fullscreen-dialog[role="dialog"] {
-    @include dialog-base();
+    @include dialog-mixins.base;
 }
 
 .fullscreen-dialog--no-mask[role="dialog"] {
@@ -13,7 +13,7 @@
 }
 
 .fullscreen-dialog__window {
-    @include dialog-window();
+    @include dialog-mixins.window;
 
     -webkit-overflow-scrolling: touch;
     overflow-y: auto;
@@ -21,7 +21,7 @@
 }
 
 .fullscreen-dialog__header {
-    @include dialog-header-content();
+    @include dialog-mixins.header-content;
 }
 
 .fullscreen-dialog__header .fake-link {
@@ -31,13 +31,13 @@
 }
 
 .fullscreen-dialog__main {
-    @include dialog-body-content();
+    @include dialog-mixins.body-content;
 
     min-height: auto;
 }
 
 .fullscreen-dialog__footer {
-    @include dialog-footer-content();
+    @include dialog-mixins.footer-content;
 }
 
 button.icon-btn.fullscreen-dialog__close {

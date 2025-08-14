@@ -1,17 +1,17 @@
-@import "../variables/variables";
-@import "../mixins/private/dialog-mixins";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/dialog-mixins";
+@use "../mixins/private/token-mixins";
 
 .toast-dialog {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         toast-dialog-background-color,
         color-background-information
     );
-    @include border-top-left-radius-token(
+    @include token-mixins.border-top-left-radius-token(
         toast-dialog-border-radius,
         border-radius-100
     );
-    @include border-top-right-radius-token(
+    @include token-mixins.border-top-right-radius-token(
         toast-dialog-border-radius,
         border-radius-100
     );
@@ -27,14 +27,14 @@
     width: 100vw;
     will-change: opacity, transform;
     z-index: 2;
-    @include color-token(
+    @include token-mixins.color-token(
         toast-dialog-foreground-color,
         color-foreground-on-information
     );
 }
 
 .toast-dialog a {
-    @include color-token(
+    @include token-mixins.color-token(
         toast-dialog-foreground-color,
         color-foreground-on-information
     );
@@ -86,7 +86,7 @@ button.toast-dialog__close {
     flex-shrink: 0;
     margin-inline-start: auto;
     padding: 0;
-    @include color-token(
+    @include token-mixins.color-token(
         toast-dialog-foreground-color,
         color-foreground-on-information
     );
@@ -115,7 +115,7 @@ button.toast-dialog__close > svg {
 
     button.btn--primary,
     button.btn--secondary {
-        @include border-color-token(
+        @include token-mixins.border-color-token(
             toast-dialog-foreground-color,
             color-foreground-on-accent
         );
@@ -126,11 +126,11 @@ button.toast-dialog__close > svg {
     }
 
     button.btn--primary {
-        @include background-color-token(
+        @include token-mixins.background-color-token(
             toast-dialog-foreground-color,
             color-background-primary
         );
-        @include color-token(
+        @include token-mixins.color-token(
             toast-dialog-background-color,
             color-foreground-accent
         );
@@ -140,7 +140,7 @@ button.toast-dialog__close > svg {
         background-color: transparent;
         font-weight: 700;
         margin-inline-end: var(--spacing-100);
-        @include color-token(
+        @include token-mixins.color-token(
             toast-dialog-foreground-color,
             color-background-primary
         );
@@ -166,11 +166,11 @@ button.toast-dialog__close > svg {
         &:focus,
         &:hover {
             background-color: var(--color-state-accent-hover);
-            @include border-color-token(
+            @include token-mixins.border-color-token(
                 toast-dialog-foreground-color,
                 color-foreground-on-accent
             );
-            @include color-token(
+            @include token-mixins.color-token(
                 toast-dialog-foreground-color,
                 color-background-primary
             );
@@ -179,15 +179,15 @@ button.toast-dialog__close > svg {
         /* prettier-ignore */
         &:active {
             background-color: var(--color-state-accent-active);
-            @include border-color-token(toast-dialog-foreground-color, color-foreground-on-accent);
-            @include color-token(toast-dialog-foreground-color, color-background-primary);
+            @include token-mixins.border-color-token(toast-dialog-foreground-color, color-foreground-on-accent);
+            @include token-mixins.color-token(toast-dialog-foreground-color, color-background-primary);
         }
     }
 }
 
-@media (min-width: $_screen-size-SM) {
+@media (min-width: variables.$screen-size-SM) {
     .toast-dialog {
-        @include border-radius-token(
+        @include token-mixins.border-radius-token(
             toast-dialog-border-radius,
             border-radius-100
         );

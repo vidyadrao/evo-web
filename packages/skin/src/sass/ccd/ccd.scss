@@ -1,4 +1,4 @@
-@import "../variables/variables";
+@use "../variables/variables";
 
 // This file does not use variables since this component is fixed to this size and font.
 // This is because this component needs specific sizes to be complient with European Union regulations.
@@ -9,7 +9,7 @@
 
 .ccd {
     display: inline-flex;
-    font-family: "Reddit Sans Condensed Bold", $font-family-default;
+    font-family: "Reddit Sans Condensed Bold", variables.$font-family-default;
     gap: 8px;
 }
 

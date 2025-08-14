@@ -1,7 +1,7 @@
 @use "./token-mixins";
 @use "./selection-list-mixins";
 
-@mixin menu-menuitem-base($component) {
+@mixin base($component) {
     @include token-mixins.border-color-token(
         #{$component}-menuitem-border-color,
         color-background-primary
@@ -12,7 +12,7 @@
         color-foreground-primary
     );
 
-    @include selection-list-mixins.selection-list-item-base();
+    @include selection-list-mixins.base;
 
     &:hover {
         background-color: var(--color-state-primary-hover);
@@ -27,11 +27,11 @@
     }
 }
 
-@mixin menu-menuitem-status() {
-    @include selection-list-mixins.selection-list-item-status();
+@mixin status() {
+    @include selection-list-mixins.status;
 }
 
-@mixin menu-footer() {
+@mixin footer() {
     align-items: center;
     background-color: var(--color-background-elevated);
     border: none;
@@ -43,7 +43,7 @@
     padding: var(--spacing-200);
 }
 
-@mixin menu-filter() {
+@mixin filter() {
     &[role="menuitemcheckbox"][aria-checked="true"],
     &[role="menuitemradio"][aria-checked="true"] {
         svg.icon--unchecked {

@@ -1,5 +1,4 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
+@use "../mixins/private/token-mixins";
 
 :root {
     --input-default-height: 40px;
@@ -7,16 +6,22 @@
 }
 
 .textbox {
-    @include color-token(
+    @include token-mixins.color-token(
         textbox-foreground-color,
         color-foreground-on-secondary
     );
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         textbox-background-color,
         color-background-secondary
     );
-    @include border-color-token(textbox-border-color, color-stroke-default);
-    @include border-radius-token(textbox-border-radius, border-radius-50);
+    @include token-mixins.border-color-token(
+        textbox-border-color,
+        color-stroke-default
+    );
+    @include token-mixins.border-radius-token(
+        textbox-border-radius,
+        border-radius-50
+    );
 
     align-items: center;
     border-style: solid;
@@ -43,11 +48,11 @@
         :has(> .textbox__control[readonly])
     ) {
     box-shadow: 0 0 0 1px var(--color-stroke-strong);
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         textbox-focus-border-color,
         color-stroke-strong
     );
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         textbox-focus-background-color,
         color-background-primary
     );
@@ -63,11 +68,11 @@
 /* `.textbox--disabled` should be removed after full browser support for `:has` */
 .textbox--disabled,
 .textbox:has(> .textbox__control[disabled]) {
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         textbox-disabled-border-color,
         color-background-disabled
     );
-    @include color-token(
+    @include token-mixins.color-token(
         textbox-disabled-foreground-color,
         color-foreground-disabled
     );
@@ -76,7 +81,7 @@
 /* `.textbox--invalid` should be removed after full browser support for `:has` */
 .textbox--invalid,
 .textbox:has(> .textbox__control[aria-invalid="true"]) {
-    @include border-color-token(
+    @include token-mixins.border-color-token(
         textbox-invalid-border-color,
         color-stroke-attention
     );
@@ -123,31 +128,31 @@ textarea.textbox__control {
     outline: none;
 
     &[disabled] {
-        @include border-color-token(
+        @include token-mixins.border-color-token(
             textbox-disabled-border-color,
             color-background-disabled
         );
-        @include color-token(
+        @include token-mixins.color-token(
             textbox-disabled-foreground-color,
             color-foreground-disabled
         );
 
         &::-webkit-input-placeholder {
-            @include color-token(
+            @include token-mixins.color-token(
                 textbox-disabled-placeholder-color,
                 color-foreground-ghost
             );
         }
 
         &::-moz-placeholder {
-            @include color-token(
+            @include token-mixins.color-token(
                 textbox-disabled-placeholder-color,
                 color-foreground-ghost
             );
         }
 
         &:-ms-input-placeholder {
-            @include color-token(
+            @include token-mixins.color-token(
                 textbox-disabled-placeholder-color,
                 color-foreground-ghost
             );
@@ -155,14 +160,14 @@ textarea.textbox__control {
     }
 
     &[aria-invalid="true"] {
-        @include border-color-token(
+        @include token-mixins.border-color-token(
             textbox-invalid-foreground-color,
             color-stroke-attention
         );
     }
 
     &::-webkit-input-placeholder {
-        @include color-token(
+        @include token-mixins.color-token(
             textbox-placeholder-color,
             color-foreground-on-secondary
         );
@@ -171,7 +176,7 @@ textarea.textbox__control {
     }
 
     &::-moz-placeholder {
-        @include color-token(
+        @include token-mixins.color-token(
             textbox-placeholder-color,
             color-foreground-on-secondary
         );
@@ -180,7 +185,7 @@ textarea.textbox__control {
     }
 
     &:-ms-input-placeholder {
-        @include color-token(
+        @include token-mixins.color-token(
             textbox-placeholder-color,
             color-foreground-on-secondary
         );
@@ -189,7 +194,7 @@ textarea.textbox__control {
     }
 
     &::placeholder {
-        @include color-token(
+        @include token-mixins.color-token(
             textbox-placeholder-color,
             color-foreground-secondary
         );
@@ -209,12 +214,18 @@ input.textbox__control {
 
 .textbox > svg,
 .textbox .icon-btn > svg {
-    @include color-token(textbox-icon-color, color-foreground-secondary);
+    @include token-mixins.color-token(
+        textbox-icon-color,
+        color-foreground-secondary
+    );
 
     display: inline-flex;
     height: 1lh;
     pointer-events: none;
-    @include fill-token(textbox-icon-color, color-foreground-secondary);
+    @include token-mixins.fill-token(
+        textbox-icon-color,
+        color-foreground-secondary
+    );
 }
 
 .textbox > svg:first-child,

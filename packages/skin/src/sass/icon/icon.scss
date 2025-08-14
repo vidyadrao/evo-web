@@ -1,9 +1,9 @@
-@import "../mixins/private/icon-mixins";
-@import "../mixins/private/token-mixins";
+@use "../mixins/private/icon-mixins";
+@use "../mixins/private/token-mixins";
 
 svg {
     &.icon {
-        @include icon-base-mixin();
+        @include icon-mixins.base;
     }
     &.icon--12,
     &.icon--12-fit {
@@ -99,12 +99,12 @@ svg {
         filter: var(--color-media-disabled-filter);
     }
     &.icon--attention-filled {
-        @include color-token(color-foreground-attention);
+        @include token-mixins.color-token(color-foreground-attention);
     }
     &.icon--confirmation-filled {
-        @include color-token(color-foreground-confirmation);
+        @include token-mixins.color-token(color-foreground-confirmation);
     }
     &.icon--information-filled {
-        @include color-token(color-foreground-information);
+        @include token-mixins.color-token(color-foreground-information);
     }
 }

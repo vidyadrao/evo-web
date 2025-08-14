@@ -2,7 +2,7 @@ $icon-spinner-large-height: 60px;
 $icon-spinner-large-width: 60px;
 
 /* base styles for BEM svg.icon block */
-@mixin icon-base-mixin() {
+@mixin base() {
     display: inline-block;
     fill: currentColor;
     pointer-events: none;

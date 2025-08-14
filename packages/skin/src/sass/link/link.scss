@@ -1,9 +1,9 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/token-mixins";
 
 a.nav-link,
 a.standalone-link {
-    @include color-token(
+    @include token-mixins.color-token(
         nav-link-foreground-color,
         color-foreground-link-primary
     );
@@ -11,14 +11,14 @@ a.standalone-link {
     text-decoration: none;
 
     &:visited {
-        @include color-token(
+        @include token-mixins.color-token(
             link-foreground-color-default,
             color-foreground-link-primary
         );
     }
 
     &:hover {
-        @include color-token(
+        @include token-mixins.color-token(
             nav-link-foreground-hover-color,
             color-foreground-secondary
         );
@@ -28,7 +28,7 @@ a.standalone-link {
 
     &:not([href]),
     &[aria-disabled="true"] {
-        @include color-token(
+        @include token-mixins.color-token(
             link-forground-color-disabled,
             color-foreground-disabled
         );
@@ -44,13 +44,13 @@ button.fake-link {
     font-size: inherit;
     padding: 0;
     text-decoration: underline;
-    @include color-token(
+    @include token-mixins.color-token(
         fake-link-foreground-color,
         color-foreground-link-primary
     );
 
     &:hover {
-        @include color-token(
+        @include token-mixins.color-token(
             fake-link-foreground-color-hover,
             color-foreground-secondary
         );
@@ -58,7 +58,7 @@ button.fake-link {
 
     &[disabled],
     &[aria-disabled="true"] {
-        @include color-token(
+        @include token-mixins.color-token(
             fake-link-foreground-disabled-color,
             color-foreground-disabled
         );
@@ -67,7 +67,7 @@ button.fake-link {
 
 a.legal-link,
 button.legal-link {
-    @include color-token(
+    @include token-mixins.color-token(
         legal-link-foreground-color,
         color-foreground-link-legal
     );
@@ -78,7 +78,7 @@ button.legal-link {
     // This is done so that the link does not inherit the hover and visited state defined in global
     &:hover,
     &:visited {
-        @include color-token(
+        @include token-mixins.color-token(
             legal-link-foreground-color,
             color-foreground-link-legal
         );

@@ -1,5 +1,5 @@
-@import "../mixins/private/token-mixins";
-@import "../variables/variables";
+@use "../mixins/private/token-mixins";
+@use "../variables/variables";
 
 .file-preview-card {
     display: flex;
@@ -7,12 +7,12 @@
 }
 
 .file-preview-card__body {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         file-preview-card-background-color,
         color-background-secondary
     );
 
-    @include border-radius-token(
+    @include token-mixins.border-radius-token(
         file-preview-card-border-radius,
         border-radius-100
     );
@@ -32,7 +32,7 @@
 
 img.file-preview-card__asset,
 video.file-preview-card__asset {
-    @include border-radius-token(
+    @include token-mixins.border-radius-token(
         file-preview-card-border-radius,
         border-radius-100
     );
@@ -71,14 +71,14 @@ video.file-preview-card__asset {
 }
 
 .icon-btn.file-preview-card__action:not(:hover) {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         file-preview-card-action-background-color,
         color-background-primary
     );
 }
 
 .file-preview-card__info {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         file-preview-card-info-background-color,
         color-background-primary
     );
@@ -107,12 +107,12 @@ video.file-preview-card__asset {
 }
 
 .file-preview-card__see-more {
-    @include color-token(
+    @include token-mixins.color-token(
         file-preview-card-see-more-color,
         color-foreground-on-strong
     );
 
-    @include background-color-rgba-token(
+    @include token-mixins.background-color-rgba-token(
         0.5,
         file-preview-card-see-more-background-color-rgb,
         color-background-strong-rgb
@@ -136,7 +136,7 @@ video.file-preview-card__asset {
 .file-preview-card__see-more:active,
 .file-preview-card__see-more:focus-visible,
 .file-preview-card__see-more:hover {
-    @include color-token(
+    @include token-mixins.color-token(
         file-preview-card-see-more-interactive-color,
         color-foreground-primary
     );
@@ -144,7 +144,7 @@ video.file-preview-card__asset {
 
 .file-preview-card__see-more:focus-visible,
 .file-preview-card__see-more:hover {
-    @include background-color-rgba-token(
+    @include token-mixins.background-color-rgba-token(
         0.5,
         file-preview-card-see-more-interactive-background-color-rgb,
         color-state-secondary-hover-rgb
@@ -152,7 +152,7 @@ video.file-preview-card__asset {
 }
 
 .file-preview-card__see-more:active {
-    @include background-color-rgba-token(
+    @include token-mixins.background-color-rgba-token(
         0.5,
         file-preview-card-see-more-interactive-active-background-color-rgb,
         color-state-secondary-active-rgb

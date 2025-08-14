@@ -1,5 +1,4 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
+@use "../mixins/private/token-mixins";
 
 .tabs,
 .fake-tabs {
@@ -49,7 +48,7 @@ div.tabs__item[role="tab"] > span {
 
 div.tabs__item[role="tab"] > span,
 li.fake-tabs__item > a {
-    @include color-token(
+    @include token-mixins.color-token(
         tabs-item-foreground-color,
         color-foreground-secondary
     );
@@ -70,7 +69,7 @@ li.fake-tabs__item > a {
 
 div.tabs__item[role="tab"][aria-selected="true"] > span,
 li.fake-tabs__item > a[aria-current] {
-    @include color-token(
+    @include token-mixins.color-token(
         tabs-item-selected-foreground-color,
         color-foreground-primary
     );
@@ -92,7 +91,7 @@ div.tabs__item[role="tab"]:not([aria-selected="true"]):focus > span,
 div.tabs__item[role="tab"]:not([aria-selected="true"]):hover > span,
 li.fake-tabs__item > a:not([aria-current]):focus,
 li.fake-tabs__item > a:not([aria-current]):hover {
-    @include color-token(
+    @include token-mixins.color-token(
         tabs-item-hover-foreground-color,
         color-foreground-secondary
     );

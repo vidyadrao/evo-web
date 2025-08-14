@@ -1,4 +1,4 @@
-@import "../variables/variables";
+@use "../variables/variables";
 
 // Recursive Mixin to build repetative class delcarations for explicit dev overrides for various breakpoints
 @mixin toggle-button-grid-templates($breakpoint, $repeatTo, $i: 1) {
@@ -52,7 +52,7 @@
 // These provide a generic override for the number of buttons per line
 // for containers under 320px wide. No more than 3 should be needed.
 @supports not (contain: inline-size) {
-    @media (max-width: $_screen-size-XS) {
+    @media (max-width: variables.$screen-size-XS) {
         .toggle-button-group[data-columns-min="1"] ul {
             grid-template-columns: repeat(1, 1fr);
         }
@@ -67,7 +67,7 @@
     }
 }
 
-@container toggle-buttons-container (inline-size < #{$_screen-size-XS}) {
+@container toggle-buttons-container (inline-size < #{variables.$screen-size-XS}) {
     .toggle-button-group[data-columns-min="1"] ul {
         grid-template-columns: repeat(1, 1fr);
     }
@@ -187,7 +187,7 @@
 /* Responsive Layouts */
 // first, we define media queries as a fallback for browsers not supporting container queries
 @supports not (contain: inline-size) {
-    @media (min-width: $_screen-size-XS) {
+    @media (min-width: variables.$screen-size-XS) {
         // Responsive columns based on XS breakpoint per button type
         .toggle-button-group ul {
             grid-template-columns: repeat(
@@ -214,7 +214,7 @@
         @include toggle-button-grid-templates(xs, 16);
     }
 
-    @media (min-width: $_screen-size-SM) {
+    @media (min-width: variables.$screen-size-SM) {
         // Responsive columns based on SM breakpoint per button type
         .toggle-button-group ul {
             grid-template-columns: repeat(
@@ -241,7 +241,7 @@
         @include toggle-button-grid-templates(sm, 16);
     }
 
-    @media (min-width: $_screen-size-MD) {
+    @media (min-width: variables.$screen-size-MD) {
         // Responsive columns based on MD breakpoint per button type
         .toggle-button-group ul {
             grid-template-columns: repeat(
@@ -268,7 +268,7 @@
         @include toggle-button-grid-templates(md, 16);
     }
 
-    @media (min-width: $_screen-size-XL) {
+    @media (min-width: variables.$screen-size-XL) {
         // Responsive columns based on XL breakpoint per button type
         .toggle-button-group ul {
             grid-template-columns: repeat(
@@ -297,7 +297,7 @@
 }
 
 // For browsers that DO support container queries
-@container toggle-buttons-container (inline-size >= #{$_screen-size-XS}) {
+@container toggle-buttons-container (inline-size >= #{variables.$screen-size-XS}) {
     // Responsive columns based on XS breakpoint per button type
     .toggle-button-group ul {
         grid-template-columns: repeat(var(--row-min-toggle-buttons-xs), 1fr);
@@ -318,7 +318,7 @@
     @include toggle-button-grid-templates(xs, 16);
 }
 
-@container toggle-buttons-container (inline-size >= #{$_screen-size-SM}) {
+@container toggle-buttons-container (inline-size >= #{variables.$screen-size-SM}) {
     // Responsive columns based on SM breakpoint per button type
     .toggle-button-group ul {
         grid-template-columns: repeat(var(--row-min-toggle-buttons-sm), 1fr);
@@ -339,7 +339,7 @@
     @include toggle-button-grid-templates(sm, 16);
 }
 
-@container toggle-buttons-container (inline-size >= #{$_screen-size-MD}) {
+@container toggle-buttons-container (inline-size >= #{variables.$screen-size-MD}) {
     // Responsive columns based on MD breakpoint per button type
     .toggle-button-group ul {
         grid-template-columns: repeat(var(--row-min-toggle-buttons-md), 1fr);
@@ -360,7 +360,7 @@
     @include toggle-button-grid-templates(md, 16);
 }
 
-@container toggle-buttons-container (inline-size >= #{$_screen-size-XL}) {
+@container toggle-buttons-container (inline-size >= #{variables.$screen-size-XL}) {
     // Responsive columns based on XL breakpoint per button type
     .toggle-button-group ul {
         grid-template-columns: repeat(var(--row-min-toggle-buttons-xl), 1fr);

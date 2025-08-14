@@ -1,11 +1,11 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/token-mixins";
 
 body {
-    @include background-color-token(color-background-primary);
-    @include color-token(color-foreground-primary);
+    @include token-mixins.background-color-token(color-background-primary);
+    @include token-mixins.color-token(color-foreground-primary);
 
-    font-family: $font-family-default;
+    font-family: variables.$font-family-default;
     font-size: var(--font-size-default);
     line-height: var(--font-line-height-default);
     /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
@@ -26,20 +26,20 @@ legend {
 }
 
 a {
-    @include color-token(
+    @include token-mixins.color-token(
         link-foreground-color-default,
         color-foreground-link-primary
     );
 
     &:visited {
-        @include color-token(
+        @include token-mixins.color-token(
             link-foreground-color-visited,
             color-foreground-link-visited
         );
     }
 
     &:hover {
-        @include color-token(
+        @include token-mixins.color-token(
             link-foreground-color-hover,
             color-foreground-secondary
         );
@@ -47,7 +47,7 @@ a {
 
     &:not([href]),
     &[aria-disabled="true"] {
-        @include color-token(
+        @include token-mixins.color-token(
             link-forground-color-disabled,
             color-foreground-disabled
         );

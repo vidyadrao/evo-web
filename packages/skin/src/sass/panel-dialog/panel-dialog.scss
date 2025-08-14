@@ -1,9 +1,9 @@
-@import "../variables/variables";
-@import "../mixins/private/dialog-mixins";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/dialog-mixins";
+@use "../mixins/private/token-mixins";
 
 .panel-dialog[role="dialog"] {
-    @include dialog-base();
+    @include dialog-mixins.base;
 
     flex-direction: column;
 
@@ -13,7 +13,7 @@
 }
 
 .panel-dialog__window {
-    @include dialog-window();
+    @include dialog-mixins.window;
 
     border-right: 1px solid rgb(153 153 153 / 0.18);
     -webkit-overflow-scrolling: touch;
@@ -27,7 +27,7 @@
 }
 
 .panel-dialog__header {
-    @include dialog-header-content();
+    @include dialog-mixins.header-content;
 }
 
 .panel-dialog__header .fake-link {
@@ -37,14 +37,14 @@
 }
 
 .panel-dialog__main {
-    @include dialog-body-content();
+    @include dialog-mixins.body-content;
 
     height: 1px;
     overflow-y: auto;
 }
 
 .panel-dialog__footer {
-    @include dialog-footer-content();
+    @include dialog-mixins.footer-content;
 }
 
 /* inherits from .icon-btn */
@@ -144,7 +144,7 @@ button.icon-btn.panel-dialog__prev {
 /* MEDIA QUERIES */
 /* ----------------------------- */
 
-@media (min-width: $_screen-size-SM) {
+@media (min-width: variables.$screen-size-SM) {
     .panel-dialog__window {
         width: 384px;
     }

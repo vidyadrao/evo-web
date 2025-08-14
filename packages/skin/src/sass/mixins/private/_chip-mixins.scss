@@ -31,7 +31,7 @@
 }
 
 @mixin interactive() {
-    @include button-mixins.btn-animations();
+    @include button-mixins.animations;
 
     background-color: var(--color-background-primary);
     background-position: center;

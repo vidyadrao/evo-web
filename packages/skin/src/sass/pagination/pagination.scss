@@ -1,11 +1,11 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
-@import "../mixins/public/utility-mixins";
+@use "../variables/variables";
+@use "../mixins/private/token-mixins";
+@use "../mixins/public/utility-mixins";
 
 nav.pagination {
-    @include inline-flex-items-centered();
+    @include utility-mixins.inline-flex-items-centered;
 
-    @include color-token(
+    @include token-mixins.color-token(
         pagination-item-foreground-color,
         color-foreground-secondary
     );
@@ -23,7 +23,7 @@ nav.pagination button {
 }
 
 ol.pagination__items {
-    @include inline-flex-items-centered();
+    @include utility-mixins.inline-flex-items-centered;
 
     box-sizing: border-box;
     height: 44px;
@@ -32,7 +32,7 @@ ol.pagination__items {
     padding: 0;
 
     li:not([hidden]) {
-        @include flex-items-centered();
+        @include utility-mixins.flex-items-centered;
     }
 }
 
@@ -40,7 +40,7 @@ a.pagination__next,
 a.pagination__previous,
 button.pagination__next,
 button.pagination__previous {
-    @include inline-flex-items-centered();
+    @include utility-mixins.inline-flex-items-centered;
 }
 
 a.pagination__next,
@@ -54,7 +54,7 @@ button.pagination__previous {
 }
 
 .pagination__item {
-    @include inline-flex-items-centered();
+    @include utility-mixins.inline-flex-items-centered;
 
     box-sizing: border-box;
     font-weight: var(--font-weight-regular);
@@ -89,7 +89,7 @@ button.pagination__item {
     }
 
     &[aria-current="page"] {
-        @include color-token(
+        @include token-mixins.color-token(
             pagination-item-current-foreground-color,
             color-foreground-primary
         );
@@ -103,7 +103,7 @@ button.pagination__item {
 
     &:not([aria-current="page"]) {
         &:active {
-            @include color-token(
+            @include token-mixins.color-token(
                 pagination-item-active-foreground-color,
                 color-foreground-primary
             );
@@ -111,7 +111,7 @@ button.pagination__item {
 
         &:focus,
         &:hover {
-            @include color-token(
+            @include token-mixins.color-token(
                 pagination-item-hover-foreground-color,
                 color-foreground-accent
             );
@@ -159,7 +159,7 @@ nav.pagination--fluid ol.pagination__items li {
     }
 }
 
-@media (min-width: $_screen-size-MD) {
+@media (min-width: variables.$screen-size-MD) {
     nav.pagination {
         margin: var(--spacing-200) 0;
     }

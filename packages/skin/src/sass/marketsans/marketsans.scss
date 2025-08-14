@@ -1,4 +1,4 @@
-@import "../variables/variables";
+@use "../variables/variables";
 
 /* eot: IE9 Compat Modes */
 /* eot?#iefix: IE6-IE8 */
@@ -9,18 +9,18 @@
 
 @font-face {
     font-display: swap;
-    font-family: $marketsans-fontname;
+    font-family: variables.$marketsans-fontname;
     font-style: normal;
     font-weight: normal;
-    src: url("#{$marketsans-url}#{$marketsans-filename-regular}.woff2")
+    src: url("#{variables.$marketsans-url}#{variables.$marketsans-filename-regular}.woff2")
         format("woff2");
 }
 
 @font-face {
     font-display: swap;
-    font-family: $marketsans-fontname;
+    font-family: variables.$marketsans-fontname;
     font-style: normal;
     font-weight: bold;
-    src: url("#{$marketsans-url}#{$marketsans-filename-bold}.woff2")
+    src: url("#{variables.$marketsans-url}#{variables.$marketsans-filename-bold}.woff2")
         format("woff2");
 }

@@ -1,10 +1,10 @@
-@import "../variables/variables";
-@import "../mixins/private/filter-menu-mixins";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/filter-menu-mixins";
+@use "../mixins/private/token-mixins";
 
 .filter-menu,
 .filter-menu-form {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         filter-menu-item-background-color,
         color-background-primary
     );
@@ -38,7 +38,7 @@ span.filter-menu__radio {
     width: 18px;
 
     svg {
-        @include color-token(
+        @include token-mixins.color-token(
             filter-menu-item-icon-color,
             color-foreground-primary
         );
@@ -56,7 +56,7 @@ span.filter-menu__radio {
     justify-content: center;
 
     .checkbox__icon > svg {
-        @include color-token(
+        @include token-mixins.color-token(
             filter-menu-item-checked-color,
             color-foreground-primary
         );
@@ -72,7 +72,7 @@ span.filter-menu-form__item {
 .filter-menu-form__item {
     padding: 8px 16px;
 
-    @include filter-menu-item-base();
+    @include filter-menu-mixins.base;
     &:last-child {
         margin-bottom: 8px;
     }
@@ -117,8 +117,11 @@ button.filter-menu-form__footer[type="submit"] {
     border-top-width: 1px;
     bottom: 0;
     padding: 16px;
-    @include border-color-token(filter-menu-border-color, color-stroke-subtle);
-    @include filter-menu-item-base();
+    @include token-mixins.border-color-token(
+        filter-menu-border-color,
+        color-stroke-subtle
+    );
+    @include filter-menu-mixins.base;
 
     &:hover {
         background-color: var(--color-state-primary-hover);

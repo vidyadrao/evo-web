@@ -1,5 +1,5 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/token-mixins";
 
 $color-star-rating-icon-unfilled-foreground: transparent;
 $color-star-rating-icon-filled-foreground: var(--color-foreground-primary);

@@ -1,18 +1,18 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/token-mixins";
 
 .progress-bar {
     border: none;
     height: 4px;
     margin: var(--spacing-100) 0;
-    @include color-token(
+    @include token-mixins.color-token(
         progress-bar-foreground-color,
         color-foreground-accent
     );
 }
 
 .progress-bar::-webkit-progress-bar {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         progress-bar-background-color,
         color-stroke-subtle
     );
@@ -21,7 +21,7 @@
 }
 
 .progress-bar::-webkit-progress-value {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         progress-bar-foreground-color,
         color-background-accent
     );
@@ -31,7 +31,7 @@
 }
 
 .progress-bar::-moz-progress-bar {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         progress-bar-foreground-color,
         color-background-accent
     );
@@ -43,7 +43,7 @@
     width: 100%;
 }
 
-@media (min-width: $_screen-size-SM) {
+@media (min-width: variables.$screen-size-SM) {
     .progress-bar {
         margin: var(--spacing-200) 0;
     }

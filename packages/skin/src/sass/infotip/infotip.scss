@@ -1,6 +1,6 @@
-@import "../variables/variables";
-@import "../mixins/private/bubble-mixins";
-@import "../mixins/private/token-mixins";
+@use "../variables/variables";
+@use "../mixins/private/bubble-mixins";
+@use "../mixins/private/token-mixins";
 
 .infotip {
     position: relative;
@@ -11,23 +11,29 @@ span.infotip {
 }
 
 .infotip__overlay {
-    @include bubble();
-    @include background-color-token(
+    @include bubble-mixins.base;
+    @include token-mixins.background-color-token(
         infotip-background-color,
         color-background-elevated
     );
-    @include color-token(infotip-foreground-color, color-foreground-primary);
+    @include token-mixins.color-token(
+        infotip-foreground-color,
+        color-foreground-primary
+    );
 
     display: none;
 }
 
 .infotip__mask {
-    @include bubble-mask();
-    @include background-color-token(
+    @include bubble-mixins.mask;
+    @include token-mixins.background-color-token(
         infotip-background-color,
         color-background-elevated
     );
-    @include color-token(infotip-foreground-color, color-foreground-primary);
+    @include token-mixins.color-token(
+        infotip-foreground-color,
+        color-foreground-primary
+    );
 }
 
 span.infotip__mask {
@@ -35,68 +41,68 @@ span.infotip__mask {
 }
 
 .infotip__cell {
-    @include bubble-cell();
+    @include bubble-mixins.cell;
 }
 
 .infotip__content {
-    @include bubble-content();
+    @include bubble-mixins.content;
 }
 
 .infotip__pointer {
-    @include background-color-token(
+    @include token-mixins.background-color-token(
         infotip-background-color,
         color-background-elevated
     );
 
-    @include pointer-base();
+    @include bubble-mixins.pointer-base;
 }
 
 .infotip__pointer--top-left {
-    @include pointer-top-left();
+    @include bubble-mixins.pointer-top-left;
 }
 
 .infotip__pointer--top {
-    @include pointer-top-center();
+    @include bubble-mixins.pointer-top-center;
 }
 
 .infotip__pointer--top-right {
-    @include pointer-top-right();
+    @include bubble-mixins.pointer-top-right;
 }
 
 .infotip__pointer--bottom-left {
-    @include pointer-bottom-left();
+    @include bubble-mixins.pointer-bottom-left;
 }
 
 .infotip__pointer--bottom {
-    @include pointer-bottom-center();
+    @include bubble-mixins.pointer-bottom-center;
 }
 
 .infotip__pointer--bottom-right {
-    @include pointer-bottom-right();
+    @include bubble-mixins.pointer-bottom-right;
 }
 
 .infotip__pointer--left {
-    @include pointer-left();
+    @include bubble-mixins.pointer-left;
 }
 
 .infotip__pointer--left-bottom {
-    @include pointer-left-bottom();
+    @include bubble-mixins.pointer-left-bottom;
 }
 
 .infotip__pointer--left-top {
-    @include pointer-left-top();
+    @include bubble-mixins.pointer-left-top;
 }
 
 .infotip__pointer--right {
-    @include pointer-right();
+    @include bubble-mixins.pointer-right;
 }
 
 .infotip__pointer--right-bottom {
-    @include pointer-right-bottom();
+    @include bubble-mixins.pointer-right-bottom;
 }
 
 .infotip__pointer--right-top {
-    @include pointer-right-top();
+    @include bubble-mixins.pointer-right-top;
 }
 
 .infotip__heading {
@@ -129,8 +135,8 @@ button.infotip__close,
     margin-left: var(--spacing-200);
 }
 
-@media (min-width: $_screen-size-SM) {
+@media (min-width: variables.$screen-size-SM) {
     .infotip__overlay {
-        @include bubble-large-screen();
+        @include bubble-mixins.large-screen;
     }
 }

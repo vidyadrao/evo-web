@@ -1,5 +1,4 @@
-@import "../variables/variables";
-@import "../mixins/private/token-mixins";
+@use "../mixins/private/token-mixins";
 
 .signal {
     border: 1px solid;
@@ -17,20 +16,29 @@
 }
 
 .signal--trustworthy {
-    @include color-token(signal-trustworthy-color, color-foreground-accent);
+    @include token-mixins.color-token(
+        signal-trustworthy-color,
+        color-foreground-accent
+    );
 }
 
 .signal--recent {
-    @include color-token(signal-recent-color, color-foreground-confirmation);
+    @include token-mixins.color-token(
+        signal-recent-color,
+        color-foreground-confirmation
+    );
 }
 
 .signal--time-sensitive {
-    @include color-token(
+    @include token-mixins.color-token(
         signal-time-sensitive-color,
         color-foreground-attention
     );
 }
 
 .signal--neutral {
-    @include color-token(signal-neutral-color, color-foreground-secondary);
+    @include token-mixins.color-token(
+        signal-neutral-color,
+        color-foreground-secondary
+    );
 }
