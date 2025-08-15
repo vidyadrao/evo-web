@@ -14,6 +14,9 @@ import SeparatorTemplate from "./examples/separator.marko";
 import SeparatorTemplateCode from "./examples/separator.marko?raw";
 import PrefixLabelTemplate from "./examples/prefix-label.marko";
 import PrefixLabelTemplateCode from "./examples/prefix-label.marko?raw";
+import FilterTemplate from "./examples/filter.marko";
+import FilterTemplateCode from "./examples/filter.marko?raw";
+
 import Component from "./index.marko";
 import { Story } from "@storybook/marko";
 import type { Input } from "./component";
@@ -107,7 +110,7 @@ export default {
         },
         variant: {
             control: { type: "select" },
-            options: ["overflow", "form", "button", "icon"],
+            options: ["overflow", "form", "button", "icon", "filter"],
             table: {
                 defaultValue: {
                     summary: "button",
@@ -141,6 +144,15 @@ export default {
             control: { type: "text" },
             description:
                 "The label to add before each selected item on the button. Cannot be used with `prefix-id, Only works when @label is passed`",
+        },
+        status: {
+            name: "@status",
+            description:
+                "Used to render status of filter menu button. Will pass back {count, selectedList[]} to allow users to render a status of the filter. Usually in the format of \"(+3)\" where 3 is the amount of selected filters.",
+
+            table: {
+                category: "@attribute tags",
+            },
         },
         label: {
             name: "@label",
@@ -261,6 +273,12 @@ export const Badged = buildExtensionTemplate(
     BadgedTemplate,
     BadgedTemplateCode,
 );
+
+export const Filter = buildExtensionTemplate(
+    FilterTemplate,
+    FilterTemplateCode,
+);
+
 export const PrefixLabel = buildExtensionTemplate(
     PrefixLabelTemplate,
     PrefixLabelTemplateCode,

@@ -1,5 +1,6 @@
 import { processHtmlAttributes } from "../../common/html-attributes";
 import IconButton from "<ebay-icon-button>";
+import FilterChip from "<ebay-filter-chip>";
 import Button, { type Input as ButtonInput } from "<ebay-button>";
 $ const {
     class: inputClass,
@@ -25,11 +26,13 @@ $ const {
     split,
     collapseOnSelect,
     transparent,
+    status,
     ...htmlInput
 } = input;
 $ var labelId = prefixId && component.getElId("label");
 $ var isFormVariant = inputVariant === "form";
-$ var variant: "form" | undefined;
+$ var isFilterVariant = inputVariant === "filter";
+$ var variant: "form" | "menu" | undefined;
 $ var isOverflowVariant = inputVariant === "overflow";
 $ var isButtonVariant = false;
 $ var priority: (typeof input)["priority"] | null = null;
@@ -48,6 +51,9 @@ $ if (isIconVariant) {
 } else if (isFormVariant) {
     variant = "form";
     isButtonVariant = true;
+} else if (isFilterVariant) {
+    tagName = FilterChip;
+    variant = "menu";
 } else {
     isButtonVariant = true;
     priority = inputPriority;
@@ -67,9 +73,10 @@ $ var separatorCount = 0;
         size=size
         priority=priority as ButtonInput["priority"]
         borderless=borderless
-        variant=variant
+        variant=(variant as any)
         aria-expanded="false"
         aria-haspopup="true"
+        selected=isFilterVariant && state.isSelected
         transparent=isIconVariant && transparent
         aria-label=a11yText
         aria-labelledby=labelId && `${prefixId} ${labelId}`
@@ -105,6 +112,9 @@ $ var separatorCount = 0;
                         ${text}
                     </span>
                 </if>
+                <if(isFilterVariant && status)>
+                    <${status}(state.selectedCount, state.checkedItems || [])/>
+                </if>
             </else>
             <if(isButtonVariant && !noToggleIcon)>
                 <ebay-chevron-down-12-icon/>
@@ -114,6 +124,7 @@ $ var separatorCount = 0;
     <ebay-menu
         classPrefix="menu-button"
         fixed=strategy === "fixed"
+        variant=isFilterVariant ? "filter" : "none"
         type=type
         fixWidth=fixWidth
         tabindex=-1

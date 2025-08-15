@@ -21,12 +21,11 @@ export interface MenuButtonEvent {
     index?: number;
 }
 
-interface MenuButtonInput
-    extends BaseMenuInput,
+interface MenuButtonInput extends Omit<BaseMenuInput, 'variant'>,
         Omit<Marko.HTML.Span, `on${string}`> {
     "collapse-on-select"?: boolean;
     "prefix-id"?: string;
-    variant?: "overflow" | "form" | "button" | "icon";
+    variant?: "overflow" | "form" | "button" | "icon" | "filter";
     borderless?: boolean;
     partiallyDisabled?: EbayButtonInput["partiallyDisabled"];
     priority?: "primary" | "secondary" | "tertiary" | "delete" | "none";
@@ -41,6 +40,7 @@ interface MenuButtonInput
     }>;
     "prefix-label"?: AttrString;
     icon?: Marko.AttrTag<{ renderBody?: Marko.Body }>;
+    status?: Marko.AttrTag<{ renderBody?: Marko.Body<[number, Boolean[]]> }>;
     text?: AttrString;
     reverse?: boolean;
     strategy?: "absolute" | "fixed";
@@ -56,6 +56,7 @@ export interface Input extends WithNormalizedProps<MenuButtonInput> {}
 
 export default class extends MenuUtils<Input, MenuState> {
     declare expander: any;
+    declare isExpanded?: boolean;
     declare dropdownUtil: DropdownUtil;
 
     onCreate() {
@@ -232,6 +233,9 @@ export default class extends MenuUtils<Input, MenuState> {
             collapseOnHostReFocus: true,
         });
 
+        this.expander.expanded = this.isExpanded;
+        delete this.isExpanded;
+
         this.dropdownUtil = new DropdownUtil(
             this.getEl("button"),
             this.getEl("content"),
@@ -245,6 +249,7 @@ export default class extends MenuUtils<Input, MenuState> {
     _cleanupMakeup() {
         if (this.expander) {
             this.expander.destroy();
+            this.isExpanded = this.expander.expanded;
         }
 
         this.dropdownUtil?.cleanup?.();
