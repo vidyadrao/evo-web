@@ -54,17 +54,16 @@
         "version": "npm run importSVG && npm run build:readme"
     },
     "dependencies": {
-        "@ebay/skin": "^19.11.0",
         "@floating-ui/dom": "^1.7.3",
         "@google/model-viewer": "^4.1.0",
         "@marko-tags/subscribe": "^0.5.2",
         "highcharts": "^11.4.8",
         "makeup-active-descendant": "0.7.9",
         "makeup-expander": "~0.11.8",
-        "makeup-floating-label": "~0.4.7",
+        "makeup-floating-label": "~0.4.8",
         "makeup-focusables": "~0.4.5",
         "makeup-key-emitter": "~0.4.6",
-        "makeup-keyboard-trap": "~0.5.5",
+        "makeup-keyboard-trap": "~0.5.6",
         "makeup-prevent-scroll-keys": "~0.3.4",
         "makeup-roving-tabindex": "~0.7.6",
         "makeup-screenreader-trap": "~0.5.5",
@@ -73,10 +72,10 @@
     },
     "devDependencies": {
         "@marko/compiler": "^5.39.33",
-        "marko": "^5.37.44"
+        "marko": "^5.37.45"
     },
     "peerDependencies": {
-        "@ebay/skin": "^19.2.0",
+        "@ebay/skin": "^19.12.0",
         "marko": "^4.27.0 || ^5.31.12"
     },
     "publishConfig": {
