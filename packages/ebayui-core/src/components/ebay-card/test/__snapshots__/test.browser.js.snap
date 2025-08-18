@@ -415,6 +415,8 @@ exports[`card > default > then it matches the snapshot 1`] = `
       </div>
       <div style="margin-block-start: var(--spacing-200)">
         <button style="
+          align-content: center;
+          align-items: center;
           border-bottom-style: solid;
           border-bottom-width: 1px;
           border-bottom: 1px solid;
@@ -432,10 +434,10 @@ exports[`card > default > then it matches the snapshot 1`] = `
           min-width: 88px;
           overflow-x: hidden;
           overflow-y: hidden;
-          padding-bottom: 9.5px;
+          padding-bottom: 0px;
           padding-left: 20px;
           padding-right: 20px;
-          padding-top: 9.5px;
+          padding-top: 0px;
           position: relative;
           transition: all var(--motion-duration-short-3)
                   var(--motion-easing-quick-enter);
@@ -534,6 +536,8 @@ exports[`card > default aspect 5:4 > then it matches the snapshot 1`] = `
       </div>
       <div style="margin-block-start: var(--spacing-200)">
         <button style="
+          align-content: center;
+          align-items: center;
           border-bottom-style: solid;
           border-bottom-width: 1px;
           border-bottom: 1px solid;
@@ -551,10 +555,10 @@ exports[`card > default aspect 5:4 > then it matches the snapshot 1`] = `
           min-width: 88px;
           overflow-x: hidden;
           overflow-y: hidden;
-          padding-bottom: 9.5px;
+          padding-bottom: 0px;
           padding-left: 20px;
           padding-right: 20px;
-          padding-top: 9.5px;
+          padding-top: 0px;
           position: relative;
           transition: all var(--motion-duration-short-3)
                   var(--motion-easing-quick-enter);
@@ -653,6 +657,8 @@ exports[`card > default aspect 16:9 > then it matches the snapshot 1`] = `
       </div>
       <div style="margin-block-start: var(--spacing-200)">
         <button style="
+          align-content: center;
+          align-items: center;
           border-bottom-style: solid;
           border-bottom-width: 1px;
           border-bottom: 1px solid;
@@ -670,10 +676,10 @@ exports[`card > default aspect 16:9 > then it matches the snapshot 1`] = `
           min-width: 88px;
           overflow-x: hidden;
           overflow-y: hidden;
-          padding-bottom: 9.5px;
+          padding-bottom: 0px;
           padding-left: 20px;
           padding-right: 20px;
-          padding-top: 9.5px;
+          padding-top: 0px;
           position: relative;
           transition: all var(--motion-duration-short-3)
                   var(--motion-easing-quick-enter);

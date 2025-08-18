@@ -8,6 +8,7 @@ a.cta-btn {
         color-background-primary
     );
 
+    align-content: center;
     border-color: currentColor;
     border-radius: var(
         --cta-btn-border-radius,
@@ -16,6 +17,7 @@ a.cta-btn {
     display: inline-block;
     font-size: var(--font-size-default);
     max-width: 100%;
+    min-height: button-mixins.$button-height-regular;
     padding: button-mixins.$button-padding-vertical 20px;
     @include token-mixins.color-token(
         cta-btn-foreground-color,

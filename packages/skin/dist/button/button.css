@@ -1,5 +1,7 @@
 a.fake-btn,
 button.btn {
+    align-content: center;
+    align-items: center;
     background-color: initial;
     border: 1px solid;
     border-radius: var(--btn-border-radius, 20px);
@@ -11,38 +13,10 @@ button.btn {
     margin: 0;
     min-height: 40px;
     min-width: 88px;
-    overflow: hidden;
-    padding: 9.5px 20px;
-    position: relative;
+    padding: 0 20px;
     text-align: center;
     text-decoration: none;
     vertical-align: bottom;
-}
-a.fake-btn:after,
-button.btn:after {
-    background-color: var(--state-layer-neutral);
-    content: "";
-    inset: 0;
-    pointer-events: none;
-    position: absolute;
-}
-a.fake-btn:not([disabled], [aria-disabled="true"]):hover:after,
-a.fake-btn[href]:hover:after,
-button.btn:not([disabled], [aria-disabled="true"]):hover:after,
-button.btn[href]:hover:after {
-    background-color: var(--state-layer-hover);
-}
-a.fake-btn:not([disabled], [aria-disabled="true"]):focus:after,
-a.fake-btn[href]:focus:after,
-button.btn:not([disabled], [aria-disabled="true"]):focus:after,
-button.btn[href]:focus:after {
-    background-color: var(--state-layer-focus);
-}
-a.fake-btn:not([disabled], [aria-disabled="true"]):active:after,
-a.fake-btn[href]:active:after,
-button.btn:not([disabled], [aria-disabled="true"]):active:after,
-button.btn[href]:active:after {
-    background-color: var(--state-layer-pressed);
 }
 a.fake-btn--fixed-height,
 a.fake-btn--truncated,
@@ -199,12 +173,40 @@ button.btn--primary {
         var(--color-foreground-on-accent)
     );
     font-weight: 700;
+    overflow: hidden;
+    position: relative;
     transition: all var(--motion-duration-short-3)
         var(--motion-easing-quick-enter);
 }
 a.fake-btn--primary:active,
 button.btn--primary:active {
     transform: scale(0.97);
+}
+a.fake-btn--primary:after,
+button.btn--primary:after {
+    background-color: var(--state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+a.fake-btn--primary:not([disabled], [aria-disabled="true"]):hover:after,
+a.fake-btn--primary[href]:hover:after,
+button.btn--primary:not([disabled], [aria-disabled="true"]):hover:after,
+button.btn--primary[href]:hover:after {
+    background-color: var(--state-layer-hover);
+}
+a.fake-btn--primary:not([disabled], [aria-disabled="true"]):focus:after,
+a.fake-btn--primary[href]:focus:after,
+button.btn--primary:not([disabled], [aria-disabled="true"]):focus:after,
+button.btn--primary[href]:focus:after {
+    background-color: var(--state-layer-focus);
+}
+a.fake-btn--primary:not([disabled], [aria-disabled="true"]):active:after,
+a.fake-btn--primary[href]:active:after,
+button.btn--primary:not([disabled], [aria-disabled="true"]):active:after,
+button.btn--primary[href]:active:after {
+    background-color: var(--state-layer-pressed);
 }
 
 a.fake-btn--primary {
@@ -233,6 +235,52 @@ button.btn--primary.btn--destructive {
         var(--color-foreground-on-attention)
     );
     font-weight: 700;
+    overflow: hidden;
+    position: relative;
+}
+a.fake-btn--primary.fake-btn--destructive:after,
+button.btn--primary.btn--destructive:after {
+    background-color: var(--state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+a.fake-btn--primary.fake-btn--destructive:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):hover:after,
+a.fake-btn--primary.fake-btn--destructive[href]:hover:after,
+button.btn--primary.btn--destructive:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):hover:after,
+button.btn--primary.btn--destructive[href]:hover:after {
+    background-color: var(--state-layer-hover);
+}
+a.fake-btn--primary.fake-btn--destructive:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus:after,
+a.fake-btn--primary.fake-btn--destructive[href]:focus:after,
+button.btn--primary.btn--destructive:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):focus:after,
+button.btn--primary.btn--destructive[href]:focus:after {
+    background-color: var(--state-layer-focus);
+}
+a.fake-btn--primary.fake-btn--destructive:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):active:after,
+a.fake-btn--primary.fake-btn--destructive[href]:active:after,
+button.btn--primary.btn--destructive:not(
+        [disabled],
+        [aria-disabled="true"]
+    ):active:after,
+button.btn--primary.btn--destructive[href]:active:after {
+    background-color: var(--state-layer-pressed);
 }
 
 button.btn--primary.btn--destructive[aria-disabled="true"],
@@ -275,12 +323,12 @@ button.btn[aria-expanded="true"] svg.icon--12 {
 
 a.fake-btn--large svg.icon,
 button.btn--large svg.icon {
-    max-height: 22px;
+    max-height: 48px;
 }
 
 a.fake-btn--small svg.icon,
 button.btn--small svg.icon {
-    max-height: 20px;
+    max-height: 32px;
 }
 
 button.btn--primary[aria-disabled="true"],
@@ -330,12 +378,40 @@ button.btn--secondary {
         --btn-secondary-foreground-color,
         var(--color-foreground-accent)
     );
+    overflow: hidden;
+    position: relative;
     transition: all var(--motion-duration-short-3)
         var(--motion-easing-quick-enter);
 }
 a.fake-btn--secondary:active,
 button.btn--secondary:active {
     transform: scale(0.97);
+}
+a.fake-btn--secondary:after,
+button.btn--secondary:after {
+    background-color: var(--state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+a.fake-btn--secondary:not([disabled], [aria-disabled="true"]):hover:after,
+a.fake-btn--secondary[href]:hover:after,
+button.btn--secondary:not([disabled], [aria-disabled="true"]):hover:after,
+button.btn--secondary[href]:hover:after {
+    background-color: var(--state-layer-hover);
+}
+a.fake-btn--secondary:not([disabled], [aria-disabled="true"]):focus:after,
+a.fake-btn--secondary[href]:focus:after,
+button.btn--secondary:not([disabled], [aria-disabled="true"]):focus:after,
+button.btn--secondary[href]:focus:after {
+    background-color: var(--state-layer-focus);
+}
+a.fake-btn--secondary:not([disabled], [aria-disabled="true"]):active:after,
+a.fake-btn--secondary[href]:active:after,
+button.btn--secondary:not([disabled], [aria-disabled="true"]):active:after,
+button.btn--secondary[href]:active:after {
+    background-color: var(--state-layer-pressed);
 }
 
 a.fake-btn--secondary:visited {
@@ -404,12 +480,40 @@ a.fake-btn--secondary[aria-disabled="true"] {
 a.fake-btn--tertiary,
 button.btn--tertiary {
     border-color: var(--btn-tertiary-border-color, var(--color-stroke-default));
+    overflow: hidden;
+    position: relative;
     transition: all var(--motion-duration-short-3)
         var(--motion-easing-quick-enter);
 }
 a.fake-btn--tertiary:active,
 button.btn--tertiary:active {
     transform: scale(0.97);
+}
+a.fake-btn--tertiary:after,
+button.btn--tertiary:after {
+    background-color: var(--state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+a.fake-btn--tertiary:not([disabled], [aria-disabled="true"]):hover:after,
+a.fake-btn--tertiary[href]:hover:after,
+button.btn--tertiary:not([disabled], [aria-disabled="true"]):hover:after,
+button.btn--tertiary[href]:hover:after {
+    background-color: var(--state-layer-hover);
+}
+a.fake-btn--tertiary:not([disabled], [aria-disabled="true"]):focus:after,
+a.fake-btn--tertiary[href]:focus:after,
+button.btn--tertiary:not([disabled], [aria-disabled="true"]):focus:after,
+button.btn--tertiary[href]:focus:after {
+    background-color: var(--state-layer-focus);
+}
+a.fake-btn--tertiary:not([disabled], [aria-disabled="true"]):active:after,
+a.fake-btn--tertiary[href]:active:after,
+button.btn--tertiary:not([disabled], [aria-disabled="true"]):active:after,
+button.btn--tertiary[href]:active:after {
+    background-color: var(--state-layer-pressed);
 }
 
 a.fake-btn--tertiary:not([href]),
@@ -454,7 +558,7 @@ button.btn--large {
     border-radius: var(--btn-border-radius, 24px);
     font-size: var(--font-size-medium);
     min-height: 48px;
-    padding: 13px 20px;
+    padding: 0 20px;
 }
 
 a.fake-btn--small,
@@ -462,7 +566,7 @@ button.btn--small {
     border-radius: var(--btn-border-radius, 16px);
     font-size: var(--font-size-default);
     min-height: 32px;
-    padding: 6px 16px;
+    padding: 0 16px;
 }
 
 a.fake-btn--form,
@@ -470,14 +574,42 @@ button.btn--form {
     border-color: inherit;
     border-radius: var(--expand-btn-border-radius, var(--border-radius-50));
     max-width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+a.fake-btn--form:after,
+button.btn--form:after {
+    background-color: var(--state-layer-neutral);
+    content: "";
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+}
+a.fake-btn--form:not([disabled], [aria-disabled="true"]):hover:after,
+a.fake-btn--form[href]:hover:after,
+button.btn--form:not([disabled], [aria-disabled="true"]):hover:after,
+button.btn--form[href]:hover:after {
+    background-color: var(--state-layer-hover);
+}
+a.fake-btn--form:not([disabled], [aria-disabled="true"]):focus:after,
+a.fake-btn--form[href]:focus:after,
+button.btn--form:not([disabled], [aria-disabled="true"]):focus:after,
+button.btn--form[href]:focus:after {
+    background-color: var(--state-layer-focus);
+}
+a.fake-btn--form:not([disabled], [aria-disabled="true"]):active:after,
+a.fake-btn--form[href]:active:after,
+button.btn--form:not([disabled], [aria-disabled="true"]):active:after,
+button.btn--form[href]:active:after {
+    background-color: var(--state-layer-pressed);
 }
 
 button.btn--form.btn--large {
-    padding: 13px 20px;
+    padding: 0 20px;
 }
 
 button.btn--form.btn--small {
-    padding: 6px 16px;
+    padding: 0 16px;
 }
 a.fake-btn--transparent,
 a.fake-btn--transparent:focus,
@@ -488,16 +620,10 @@ button.btn--transparent:hover {
     background-color: initial;
 }
 
-a.fake-btn--fixed-height,
-button.btn--fixed-height {
-    padding-top: calc(21.5px - 0.75em);
-}
-
 a.fake-btn--large-fixed-height,
 button.btn--large-fixed-height {
     height: 48px;
     min-height: 48px;
-    padding-top: calc(27px - 0.75em);
 }
 
 a.fake-btn--truncated,
@@ -515,7 +641,7 @@ button.btn--large-truncated {
     font-size: var(--font-size-medium);
     height: 48px;
     min-height: 48px;
-    padding: 13px 20px;
+    padding: 0 20px;
 }
 a.fake-btn--large-truncated,
 a.fake-btn--large-truncated span,
@@ -539,11 +665,6 @@ button.btn--split-end {
     min-width: 40px;
     padding-left: 8px;
     padding-right: 8px;
-}
-
-a.fake-btn.fake-btn--tertiary.fake-btn--split-end,
-button.btn.btn--tertiary.btn--split-end {
-    margin-left: -2px;
 }
 a.fake-btn.fake-btn--primary.fake-btn--split-end,
 a.fake-btn.fake-btn--primary.fake-btn--split-end:focus,

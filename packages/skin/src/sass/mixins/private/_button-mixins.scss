@@ -1,15 +1,16 @@
 $button-height-small: 32px;
 $button-height-regular: 40px;
 $button-height-large: 48px;
-$button-padding-vertical-small: 6px;
+$button-padding-vertical-small: 0;
 $button-padding-horizontal-small: 16px;
-$button-padding-vertical: 9.5px;
+$button-padding-vertical: 0;
 $button-padding-horizontal: 20px;
-$button-padding-vertical-large: 13px;
+$button-padding-vertical-large: 0;
 $button-padding-horizontal-large: 20px;
 $button-border-radius-large: 24px;
 
 @mixin base() {
+    align-items: center;
     border: 1px solid;
     box-sizing: border-box;
     font-family: inherit;

@@ -5,6 +5,7 @@
 
 button.btn,
 a.fake-btn {
+    align-content: center;
     background-color: transparent;
     border-radius: var(
         --btn-border-radius,
@@ -18,7 +19,6 @@ a.fake-btn {
     padding: button-mixins.$button-padding-vertical
         button-mixins.$button-padding-horizontal;
 
-    @include state-layer.button;
     @include button-mixins.base;
 }
 
@@ -134,6 +134,7 @@ a.fake-btn--primary {
     );
 
     @include button-mixins.animations;
+    @include state-layer.button;
 
     font-weight: bold;
 }
@@ -165,6 +166,8 @@ a.fake-btn--primary.fake-btn--destructive {
         btn-primary-destructive-foreground-color,
         color-foreground-on-attention
     );
+
+    @include state-layer.button;
 
     font-weight: bold;
 }
@@ -271,6 +274,7 @@ a.fake-btn--secondary {
     );
 
     @include button-mixins.animations;
+    @include state-layer.button;
 }
 
 a.fake-btn--secondary:visited {
@@ -344,6 +348,7 @@ a.fake-btn--tertiary {
     );
 
     @include button-mixins.animations;
+    @include state-layer.button;
 }
 
 button.btn--tertiary[disabled],
@@ -408,6 +413,7 @@ a.fake-btn--form {
         expand-btn-border-radius,
         border-radius-50
     );
+    @include state-layer.button;
 }
 
 button.btn--form.btn--large {
@@ -430,16 +436,10 @@ a.fake-btn--transparent {
     }
 }
 
-button.btn--fixed-height,
-a.fake-btn--fixed-height {
-    padding-top: calc(21.5px - 0.75em);
-}
-
 button.btn--large-fixed-height,
 a.fake-btn--large-fixed-height {
     height: button-mixins.$button-height-large;
     min-height: button-mixins.$button-height-large;
-    padding-top: calc(27px - 0.75em);
 }
 
 button.btn--truncated,
@@ -470,11 +470,6 @@ a.fake-btn--split-end {
     min-width: 40px;
     padding-left: 8px;
     padding-right: 8px;
-}
-
-button.btn.btn--tertiary.btn--split-end,
-a.fake-btn.fake-btn--tertiary.fake-btn--split-end {
-    margin-left: -2px;
 }
 
 button.btn.btn--primary.btn--split-end,

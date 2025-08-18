@@ -1,4 +1,6 @@
 a.cta-btn {
+    align-content: center;
+    align-items: center;
     background-color: var(
         --cta-btn-background-color,
         var(--color-background-primary)
@@ -12,7 +14,8 @@ a.cta-btn {
     font-size: var(--font-size-default);
     margin: 0;
     max-width: 100%;
-    padding: 9.5px 20px;
+    min-height: 40px;
+    padding: 0 20px;
     text-align: center;
     text-decoration: none;
     vertical-align: bottom;
