@@ -20,13 +20,6 @@ import type { Input as TooltipInput } from "./tooltip.marko";
 import type HighchartsTypes from "highcharts";
 declare const Highcharts: typeof HighchartsTypes;
 
-// Extend highcharts series data with a label property
-declare module "highcharts" {
-    export interface Point {
-        label?: string;
-    }
-}
-
 interface AreaChartInput extends Omit<Marko.HTML.Div, `on${string}`> {
     title?: Highcharts.TitleOptions["text"];
     description?: Highcharts.SeriesAccessibilityOptionsObject["description"];

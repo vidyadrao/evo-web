@@ -1,7 +1,8 @@
-import type HighchartsTypes from "highcharts";
+import type { Point } from 'highcharts';
+
 export interface Input {
     date: string;
-    points: HighchartsTypes.TooltipFormatterContextObject[] | undefined;
+    points?: Array<Point & { label?: string }>;
     total: number;
     valueFormatter: (value: number | string) => string;
 }
@@ -9,12 +10,12 @@ export interface Input {
 <b>${input.date}</b>
 <for|points| of=input.points || []>
     <div class="ebay-area-chart__tooltip-value">
-        <span>${points.point.series.name}</span>
-        <if(points.point.label)>
-            <span>${points.point.label}</span>
+        <span>${points.series.name}</span>
+        <if(points.label)>
+            <span>${points.label}</span>
         </if>
-        <else-if(points.point.y != null)>
-            <span>${input.valueFormatter(points.point.y)}</span>
+        <else-if(points.y != null)>
+            <span>${input.valueFormatter(points.y)}</span>
         </else-if>
     </div>
 </for>

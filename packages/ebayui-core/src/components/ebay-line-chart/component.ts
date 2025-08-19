@@ -21,16 +21,18 @@ import { debounce } from "../../common/event-utils";
 import type { WithNormalizedProps } from "../../global";
 import tooltipTemplate from "./tooltip.marko";
 import type HighchartsTypes from "highcharts";
+
 declare const Highcharts: typeof HighchartsTypes;
 
-interface SeriesLineOptions extends Highcharts.PlotLineOptions {
+interface SeriesLineOptions {
     data: Highcharts.PointOptionsObject[];
     type: "line";
+    marker?: Highcharts.PointMarkerOptionsObject;
 }
 
 interface LineChartInput extends Omit<Marko.HTML.Div, `on${string}` | "title"> {
     title?: Highcharts.TitleOptions["text"];
-    description?: Highcharts.PlotLineOptions["description"];
+    description?: string;
     "x-axis-label-format"?: Highcharts.XAxisLabelsOptions["format"];
     "x-axis-positioner"?: Highcharts.XAxisOptions["tickPositioner"];
     "y-axis-labels"?: Highcharts.YAxisLabelsOptions["format"][];
@@ -66,7 +68,7 @@ class LineChart extends Marko.Component<Input> {
 
     onMount() {
         highChartsLoad()
-            .then(({ highcharts, accessibility, patternFill }: any) => {
+            .then(() => {
                 this.handleSuccess();
             })
             .catch((e: Error) => {

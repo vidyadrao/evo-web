@@ -163,8 +163,8 @@ class DonutChart extends Marko.Component<Input> {
         return {
             formatter: function (a) {
                 return tooltipTemplate.renderToString({
-                    name: this.point.name,
-                    value: `${this.point.y}`,
+                    name: this.name,
+                    value: `${this.y}`,
                 });
             },
             hideDelay: 250,
