@@ -16,7 +16,8 @@ import PrefixLabelTemplate from "./examples/prefix-label.marko";
 import PrefixLabelTemplateCode from "./examples/prefix-label.marko?raw";
 import FilterTemplate from "./examples/filter.marko";
 import FilterTemplateCode from "./examples/filter.marko?raw";
-
+import FooterTemplate from "./examples/footer.marko";
+import FooterTemplateCode from "./examples/footer.marko?raw";
 import Component from "./index.marko";
 import { Story } from "@storybook/marko";
 import type { Input } from "./component";
@@ -163,6 +164,14 @@ export default {
                 category: "@attribute tags",
             },
         },
+        footerButton: {
+            name: "@footerButton",
+            table: {
+                category: "@attribute tags",
+            },
+            description:
+                "The footer content. Renders an ebay-button component. Used for filter type generally.",
+        },
         item: {
             name: "@item",
             table: {
@@ -198,6 +207,16 @@ export default {
                 category: "Events",
                 defaultValue: {
                     summary: "",
+                },
+            },
+        },
+        "onFooter-button-click": {
+            action: "on-footer-button-click",
+            description: "Triggered on click of footer button",
+            table: {
+                category: "Events",
+                defaultValue: {
+                    summary: "{ originalEvent }",
                 },
             },
         },
@@ -277,6 +296,11 @@ export const Badged = buildExtensionTemplate(
 export const Filter = buildExtensionTemplate(
     FilterTemplate,
     FilterTemplateCode,
+);
+
+export const Footer = buildExtensionTemplate(
+    FooterTemplate,
+    FooterTemplateCode,
 );
 
 export const PrefixLabel = buildExtensionTemplate(
