@@ -6,6 +6,13 @@ exports[`accordion > given the accordion in the default state > then it matches 
   transition-delay: 0.1s;
   transition-duration: 0.1s
 ">
+  <style>@scope{:scope{
+    &::details-content {
+      animation-duration: 0.1s;
+      transition-delay: 0.1s;
+      transition-duration: 0.1s
+    }
+  }}</style>
   <ul style="
     animation-duration: 0.1s;
     margin-bottom: 0px;
@@ -15,6 +22,13 @@ exports[`accordion > given the accordion in the default state > then it matches 
     transition-duration: 0.1s;
     width: 100%
   ">
+    <style>@scope{:scope{
+      &::details-content {
+        animation-duration: 0.1s;
+        transition-delay: 0.1s;
+        transition-duration: 0.1s
+      }
+    }}</style>
     <li style="
       animation-duration: 0.1s;
       border-bottom: 1px solid var(--color-stroke-subtle);
@@ -22,6 +36,11 @@ exports[`accordion > given the accordion in the default state > then it matches 
       transition-duration: 0.1s
     ">
       <style>@scope{:scope{
+        &::details-content {
+          animation-duration: 0.1s;
+          transition-delay: 0.1s;
+          transition-duration: 0.1s
+        }
         &::marker {font-size: 0px}
       }}</style>
       <details style="
@@ -33,9 +52,12 @@ exports[`accordion > given the accordion in the default state > then it matches 
       ">
         <style>@scope{:scope{
           &::details-content {
+            animation-duration: 0.1s;
             opacity: 0;
             overflow-x: clip;
             overflow-y: clip;
+            transition-delay: 0.1s;
+            transition-duration: 0.1s;
             transition: height var(--motion-duration-medium-3) var(--motion-easing-standard),
                         content-visibility var(--motion-duration-medium-2)
                             var(--motion-easing-continuous) allow-discrete,
@@ -67,6 +89,11 @@ exports[`accordion > given the accordion in the default state > then it matches 
           transition-duration: 0.1s
         ">
           <style>@scope{:scope{
+            &::details-content {
+              animation-duration: 0.1s;
+              transition-delay: 0.1s;
+              transition-duration: 0.1s
+            }
             &::marker {font-size: 0px}
           }}</style>
           <span style="
@@ -75,6 +102,11 @@ exports[`accordion > given the accordion in the default state > then it matches 
             transition-duration: 0.1s
           ">
             <style>@scope{:scope{
+              &::details-content {
+                animation-duration: 0.1s;
+                transition-delay: 0.1s;
+                transition-duration: 0.1s
+              }
               &::marker {font-size: 0px}
             }}</style>
             Item 1
@@ -90,6 +122,11 @@ exports[`accordion > given the accordion in the default state > then it matches 
             "
           >
             <style>@scope{:scope{
+              &::details-content {
+                animation-duration: 0.1s;
+                transition-delay: 0.1s;
+                transition-duration: 0.1s
+              }
               &::marker {font-size: 0px}
             }}</style>
             <svg
@@ -114,6 +151,11 @@ exports[`accordion > given the accordion in the default state > then it matches 
               "
             >
               <style>@scope{:scope{
+                &::details-content {
+                  animation-duration: 0.1s;
+                  transition-delay: 0.1s;
+                  transition-duration: 0.1s
+                }
                 &::marker {font-size: 0px}
               }}</style>
               <use
@@ -125,6 +167,11 @@ exports[`accordion > given the accordion in the default state > then it matches 
                 "
               >
                 <style>@scope{:scope{
+                  &::details-content {
+                    animation-duration: 0.1s;
+                    transition-delay: 0.1s;
+                    transition-duration: 0.1s
+                  }
                   &::marker {font-size: 0px}
                 }}</style>
               </use>
@@ -142,6 +189,11 @@ exports[`accordion > given the accordion in the default state > then it matches 
           transition-duration: 0.1s
         ">
           <style>@scope{:scope{
+            &::details-content {
+              animation-duration: 0.1s;
+              transition-delay: 0.1s;
+              transition-duration: 0.1s
+            }
             &::marker {font-size: 0px}
           }}</style>
           <p style="
@@ -150,6 +202,11 @@ exports[`accordion > given the accordion in the default state > then it matches 
             transition-duration: 0.1s
           ">
             <style>@scope{:scope{
+              &::details-content {
+                animation-duration: 0.1s;
+                transition-delay: 0.1s;
+                transition-duration: 0.1s
+              }
               &::marker {font-size: 0px}
             }}</style>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -164,6 +221,11 @@ exports[`accordion > given the accordion in the default state > then it matches 
       transition-duration: 0.1s
     ">
       <style>@scope{:scope{
+        &::details-content {
+          animation-duration: 0.1s;
+          transition-delay: 0.1s;
+          transition-duration: 0.1s
+        }
         &::marker {font-size: 0px}
       }}</style>
       <details style="
@@ -175,9 +237,12 @@ exports[`accordion > given the accordion in the default state > then it matches 
       ">
         <style>@scope{:scope{
           &::details-content {
+            animation-duration: 0.1s;
             opacity: 0;
             overflow-x: clip;
             overflow-y: clip;
+            transition-delay: 0.1s;
+            transition-duration: 0.1s;
             transition: height var(--motion-duration-medium-3) var(--motion-easing-standard),
                         content-visibility var(--motion-duration-medium-2)
                             var(--motion-easing-continuous) allow-discrete,
@@ -209,6 +274,11 @@ exports[`accordion > given the accordion in the default state > then it matches 
           transition-duration: 0.1s
         ">
           <style>@scope{:scope{
+            &::details-content {
+              animation-duration: 0.1s;
+              transition-delay: 0.1s;
+              transition-duration: 0.1s
+            }
             &::marker {font-size: 0px}
           }}</style>
           <span style="
@@ -217,6 +287,11 @@ exports[`accordion > given the accordion in the default state > then it matches 
             transition-duration: 0.1s
           ">
             <style>@scope{:scope{
+              &::details-content {
+                animation-duration: 0.1s;
+                transition-delay: 0.1s;
+                transition-duration: 0.1s
+              }
               &::marker {font-size: 0px}
             }}</style>
             Item 2
@@ -232,6 +307,11 @@ exports[`accordion > given the accordion in the default state > then it matches 
             "
           >
             <style>@scope{:scope{
+              &::details-content {
+                animation-duration: 0.1s;
+                transition-delay: 0.1s;
+                transition-duration: 0.1s
+              }
               &::marker {font-size: 0px}
             }}</style>
             <svg
@@ -256,6 +336,11 @@ exports[`accordion > given the accordion in the default state > then it matches 
               "
             >
               <style>@scope{:scope{
+                &::details-content {
+                  animation-duration: 0.1s;
+                  transition-delay: 0.1s;
+                  transition-duration: 0.1s
+                }
                 &::marker {font-size: 0px}
               }}</style>
               <use
@@ -267,6 +352,11 @@ exports[`accordion > given the accordion in the default state > then it matches 
                 "
               >
                 <style>@scope{:scope{
+                  &::details-content {
+                    animation-duration: 0.1s;
+                    transition-delay: 0.1s;
+                    transition-duration: 0.1s
+                  }
                   &::marker {font-size: 0px}
                 }}</style>
               </use>
@@ -284,6 +374,11 @@ exports[`accordion > given the accordion in the default state > then it matches 
           transition-duration: 0.1s
         ">
           <style>@scope{:scope{
+            &::details-content {
+              animation-duration: 0.1s;
+              transition-delay: 0.1s;
+              transition-duration: 0.1s
+            }
             &::marker {font-size: 0px}
           }}</style>
           <p style="
@@ -292,6 +387,11 @@ exports[`accordion > given the accordion in the default state > then it matches 
             transition-duration: 0.1s
           ">
             <style>@scope{:scope{
+              &::details-content {
+                animation-duration: 0.1s;
+                transition-delay: 0.1s;
+                transition-duration: 0.1s
+              }
               &::marker {font-size: 0px}
             }}</style>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -305,6 +405,11 @@ exports[`accordion > given the accordion in the default state > then it matches 
       transition-duration: 0.1s
     ">
       <style>@scope{:scope{
+        &::details-content {
+          animation-duration: 0.1s;
+          transition-delay: 0.1s;
+          transition-duration: 0.1s
+        }
         &::marker {font-size: 0px}
       }}</style>
       <details style="
@@ -316,9 +421,12 @@ exports[`accordion > given the accordion in the default state > then it matches 
       ">
         <style>@scope{:scope{
           &::details-content {
+            animation-duration: 0.1s;
             opacity: 0;
             overflow-x: clip;
             overflow-y: clip;
+            transition-delay: 0.1s;
+            transition-duration: 0.1s;
             transition: height var(--motion-duration-medium-3) var(--motion-easing-standard),
                         content-visibility var(--motion-duration-medium-2)
                             var(--motion-easing-continuous) allow-discrete,
@@ -350,6 +458,11 @@ exports[`accordion > given the accordion in the default state > then it matches 
           transition-duration: 0.1s
         ">
           <style>@scope{:scope{
+            &::details-content {
+              animation-duration: 0.1s;
+              transition-delay: 0.1s;
+              transition-duration: 0.1s
+            }
             &::marker {font-size: 0px}
           }}</style>
           <span style="
@@ -358,6 +471,11 @@ exports[`accordion > given the accordion in the default state > then it matches 
             transition-duration: 0.1s
           ">
             <style>@scope{:scope{
+              &::details-content {
+                animation-duration: 0.1s;
+                transition-delay: 0.1s;
+                transition-duration: 0.1s
+              }
               &::marker {font-size: 0px}
             }}</style>
             Item 3
@@ -373,6 +491,11 @@ exports[`accordion > given the accordion in the default state > then it matches 
             "
           >
             <style>@scope{:scope{
+              &::details-content {
+                animation-duration: 0.1s;
+                transition-delay: 0.1s;
+                transition-duration: 0.1s
+              }
               &::marker {font-size: 0px}
             }}</style>
             <svg
@@ -397,6 +520,11 @@ exports[`accordion > given the accordion in the default state > then it matches 
               "
             >
               <style>@scope{:scope{
+                &::details-content {
+                  animation-duration: 0.1s;
+                  transition-delay: 0.1s;
+                  transition-duration: 0.1s
+                }
                 &::marker {font-size: 0px}
               }}</style>
               <use
@@ -408,6 +536,11 @@ exports[`accordion > given the accordion in the default state > then it matches 
                 "
               >
                 <style>@scope{:scope{
+                  &::details-content {
+                    animation-duration: 0.1s;
+                    transition-delay: 0.1s;
+                    transition-duration: 0.1s
+                  }
                   &::marker {font-size: 0px}
                 }}</style>
               </use>
@@ -425,6 +558,11 @@ exports[`accordion > given the accordion in the default state > then it matches 
           transition-duration: 0.1s
         ">
           <style>@scope{:scope{
+            &::details-content {
+              animation-duration: 0.1s;
+              transition-delay: 0.1s;
+              transition-duration: 0.1s
+            }
             &::marker {font-size: 0px}
           }}</style>
           <p style="
@@ -433,6 +571,11 @@ exports[`accordion > given the accordion in the default state > then it matches 
             transition-duration: 0.1s
           ">
             <style>@scope{:scope{
+              &::details-content {
+                animation-duration: 0.1s;
+                transition-delay: 0.1s;
+                transition-duration: 0.1s
+              }
               &::marker {font-size: 0px}
             }}</style>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -445,8 +588,8 @@ exports[`accordion > given the accordion in the default state > then it matches 
 `;
 
 exports[`accordion > given the accordion in the default state > when first section toggled > should open the clicked section 1`] = `
-"@@ -21,16 +21,19 @@
-       <style>@scope{:scope{
+"@@ -40,17 +40,20 @@
+         }
          &::marker {font-size: 0px}
        }}</style>
 -       <details style="
@@ -468,12 +611,13 @@ exports[`accordion > given the accordion in the default state > when first secti
 +       >
          <style>@scope{:scope{
            &::details-content {
+             animation-duration: 0.1s;
 -             opacity: 0;
 +             height: auto;
              overflow-x: clip;
              overflow-y: clip;
-             transition: height var(--motion-duration-medium-3) var(--motion-easing-standard),
-@@ -44,6 +47,7 @@
+             transition-delay: 0.1s;
+@@ -66,6 +69,7 @@
          <summary style="
            align-items: center;
            animation-duration: 0.1s;
@@ -481,7 +625,7 @@ exports[`accordion > given the accordion in the default state > when first secti
            box-sizing: border-box;
            color: var(
                    --details-summary-foreground-color,
-@@ -82,6 +86,7 @@
+@@ -114,6 +118,7 @@
                animation-duration: 0.1s;
                display: inline-flex;
                margin-inline-start: 8px;
@@ -489,7 +633,7 @@ exports[`accordion > given the accordion in the default state > when first secti
                transition-delay: 0.1s;
                transition-duration: 0.1s
              "
-@@ -93,8 +98,8 @@
+@@ -130,8 +135,8 @@
                focusable="false"
                style="
                  animation-duration: 0.1s;
@@ -504,7 +648,7 @@ exports[`accordion > given the accordion in the default state > when first secti
 `;
 
 exports[`accordion > given the accordion in the default state > when first section toggled > when another section is opened > should close an open section when clicked again > Should have no changes from initial 1`] = `
-"@@ -44,6 +44,7 @@
+"@@ -66,6 +66,7 @@
          <summary style="
            align-items: center;
            animation-duration: 0.1s;
@@ -516,8 +660,8 @@ exports[`accordion > given the accordion in the default state > when first secti
 `;
 
 exports[`accordion > given the accordion with autocollapse enabled > when first section toggled > should open as normal 1`] = `
-"@@ -21,16 +21,19 @@
-       <style>@scope{:scope{
+"@@ -40,17 +40,20 @@
+         }
          &::marker {font-size: 0px}
        }}</style>
 -       <details style="
@@ -539,12 +683,13 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
 +       >
          <style>@scope{:scope{
            &::details-content {
+             animation-duration: 0.1s;
 -             opacity: 0;
 +             height: auto;
              overflow-x: clip;
              overflow-y: clip;
-             transition: height var(--motion-duration-medium-3) var(--motion-easing-standard),
-@@ -44,6 +47,7 @@
+             transition-delay: 0.1s;
+@@ -66,6 +69,7 @@
          <summary style="
            align-items: center;
            animation-duration: 0.1s;
@@ -552,7 +697,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
            box-sizing: border-box;
            color: var(
                    --details-summary-foreground-color,
-@@ -82,6 +86,7 @@
+@@ -114,6 +118,7 @@
                animation-duration: 0.1s;
                display: inline-flex;
                margin-inline-start: 8px;
@@ -560,7 +705,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                transition-delay: 0.1s;
                transition-duration: 0.1s
              "
-@@ -93,8 +98,8 @@
+@@ -130,8 +135,8 @@
                focusable="false"
                style="
                  animation-duration: 0.1s;
@@ -575,7 +720,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
 `;
 
 exports[`accordion > given the accordion with autocollapse enabled > when first section toggled > when another section is opened > should collapse previous section when new section is opened 1`] = `
-"@@ -47,7 +47,6 @@
+"@@ -69,7 +69,6 @@
          <summary style="
            align-items: center;
            animation-duration: 0.1s;
@@ -583,8 +728,8 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
            box-sizing: border-box;
            color: var(
                    --details-summary-foreground-color,
-@@ -168,16 +167,19 @@
-       <style>@scope{:scope{
+@@ -230,17 +229,20 @@
+         }
          &::marker {font-size: 0px}
        }}</style>
 -       <details style="
@@ -606,12 +751,13 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
 +       >
          <style>@scope{:scope{
            &::details-content {
+             animation-duration: 0.1s;
 -             opacity: 0;
 +             height: auto;
              overflow-x: clip;
              overflow-y: clip;
-             transition: height var(--motion-duration-medium-3) var(--motion-easing-standard),
-@@ -191,6 +193,7 @@
+             transition-delay: 0.1s;
+@@ -256,6 +258,7 @@
          <summary style="
            align-items: center;
            animation-duration: 0.1s;
@@ -619,7 +765,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
            box-sizing: border-box;
            color: var(
                    --details-summary-foreground-color,
-@@ -229,6 +232,7 @@
+@@ -304,6 +307,7 @@
                animation-duration: 0.1s;
                display: inline-flex;
                margin-inline-start: 8px;
@@ -627,7 +773,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                transition-delay: 0.1s;
                transition-duration: 0.1s
              "
-@@ -240,8 +244,8 @@
+@@ -320,8 +324,8 @@
                focusable="false"
                style="
                  animation-duration: 0.1s;

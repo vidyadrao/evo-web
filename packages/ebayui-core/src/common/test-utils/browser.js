@@ -46,7 +46,7 @@ const fastAnimations = {
         }
 
         this.fastAnimationStyle = document.createElement("style");
-        this.fastAnimationStyle.innerHTML = `* {
+        this.fastAnimationStyle.innerHTML = `*,*::details-content,*::before,*::after {
                 animation-duration: 0.1s !important;
                 transition-duration: 0.1s !important;
                 transition-delay: 0.1s !important;
