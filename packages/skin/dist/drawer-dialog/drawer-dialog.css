@@ -11,7 +11,6 @@
     left: 0;
     -webkit-overflow-scrolling: touch;
     align-items: flex-end;
-    overflow-y: auto;
     overflow: hidden;
     position: fixed;
     right: 0;
