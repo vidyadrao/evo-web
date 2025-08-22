@@ -2,10 +2,12 @@
 
 exports[`accordion > given the accordion in the default state > then it matches the snapshot 1`] = `
 "<div style="
+  animation-duration: 0.1s;
   transition-delay: 0.1s;
   transition-duration: 0.1s
 ">
   <ul style="
+    animation-duration: 0.1s;
     margin-bottom: 0px;
     margin-top: 0px;
     padding-left: 0px;
@@ -14,6 +16,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
     width: 100%
   ">
     <li style="
+      animation-duration: 0.1s;
       border-bottom: 1px solid var(--color-stroke-subtle);
       transition-delay: 0.1s;
       transition-duration: 0.1s
@@ -22,6 +25,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
         &::marker {font-size: 0px}
       }}</style>
       <details style="
+        animation-duration: 0.1s;
         overflow-x: hidden;
         overflow-y: hidden;
         transition-delay: 0.1s;
@@ -42,6 +46,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
         }}</style>
         <summary style="
           align-items: center;
+          animation-duration: 0.1s;
           box-sizing: border-box;
           color: var(
                   --details-summary-foreground-color,
@@ -65,6 +70,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
             &::marker {font-size: 0px}
           }}</style>
           <span style="
+            animation-duration: 0.1s;
             transition-delay: 0.1s;
             transition-duration: 0.1s
           ">
@@ -76,6 +82,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
           <span
             hidden
             style="
+              animation-duration: 0.1s;
               display: inline-flex;
               margin-inline-start: 8px;
               transition-delay: 0.1s;
@@ -88,6 +95,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
             <svg
               focusable="false"
               style="
+                animation-duration: 0.1s;
                 animation: chevron-bounce-close var(--motion-duration-medium-1)
                         var(--motion-easing-standard);
                 display: inline-block;
@@ -111,6 +119,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
               <use
                 href="#icon-chevron-down-16"
                 style="
+                  animation-duration: 0.1s;
                   transition-delay: 0.1s;
                   transition-duration: 0.1s
                 "
@@ -123,6 +132,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
           </span>
         </summary>
         <div style="
+          animation-duration: 0.1s;
           margin-bottom: 6px;
           margin-left: 16px;
           margin-right: 16px;
@@ -135,6 +145,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
             &::marker {font-size: 0px}
           }}</style>
           <p style="
+            animation-duration: 0.1s;
             transition-delay: 0.1s;
             transition-duration: 0.1s
           ">
@@ -147,6 +158,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
       </details>
     </li>
     <li style="
+      animation-duration: 0.1s;
       border-bottom: 1px solid var(--color-stroke-subtle);
       transition-delay: 0.1s;
       transition-duration: 0.1s
@@ -155,6 +167,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
         &::marker {font-size: 0px}
       }}</style>
       <details style="
+        animation-duration: 0.1s;
         overflow-x: hidden;
         overflow-y: hidden;
         transition-delay: 0.1s;
@@ -175,6 +188,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
         }}</style>
         <summary style="
           align-items: center;
+          animation-duration: 0.1s;
           box-sizing: border-box;
           color: var(
                   --details-summary-foreground-color,
@@ -198,6 +212,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
             &::marker {font-size: 0px}
           }}</style>
           <span style="
+            animation-duration: 0.1s;
             transition-delay: 0.1s;
             transition-duration: 0.1s
           ">
@@ -209,6 +224,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
           <span
             hidden
             style="
+              animation-duration: 0.1s;
               display: inline-flex;
               margin-inline-start: 8px;
               transition-delay: 0.1s;
@@ -221,6 +237,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
             <svg
               focusable="false"
               style="
+                animation-duration: 0.1s;
                 animation: chevron-bounce-close var(--motion-duration-medium-1)
                         var(--motion-easing-standard);
                 display: inline-block;
@@ -244,6 +261,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
               <use
                 href="#icon-chevron-down-16"
                 style="
+                  animation-duration: 0.1s;
                   transition-delay: 0.1s;
                   transition-duration: 0.1s
                 "
@@ -256,6 +274,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
           </span>
         </summary>
         <div style="
+          animation-duration: 0.1s;
           margin-bottom: 6px;
           margin-left: 16px;
           margin-right: 16px;
@@ -268,6 +287,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
             &::marker {font-size: 0px}
           }}</style>
           <p style="
+            animation-duration: 0.1s;
             transition-delay: 0.1s;
             transition-duration: 0.1s
           ">
@@ -280,6 +300,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
       </details>
     </li>
     <li style="
+      animation-duration: 0.1s;
       transition-delay: 0.1s;
       transition-duration: 0.1s
     ">
@@ -287,6 +308,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
         &::marker {font-size: 0px}
       }}</style>
       <details style="
+        animation-duration: 0.1s;
         overflow-x: hidden;
         overflow-y: hidden;
         transition-delay: 0.1s;
@@ -307,6 +329,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
         }}</style>
         <summary style="
           align-items: center;
+          animation-duration: 0.1s;
           box-sizing: border-box;
           color: var(
                   --details-summary-foreground-color,
@@ -330,6 +353,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
             &::marker {font-size: 0px}
           }}</style>
           <span style="
+            animation-duration: 0.1s;
             transition-delay: 0.1s;
             transition-duration: 0.1s
           ">
@@ -341,6 +365,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
           <span
             hidden
             style="
+              animation-duration: 0.1s;
               display: inline-flex;
               margin-inline-start: 8px;
               transition-delay: 0.1s;
@@ -353,6 +378,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
             <svg
               focusable="false"
               style="
+                animation-duration: 0.1s;
                 animation: chevron-bounce-close var(--motion-duration-medium-1)
                         var(--motion-easing-standard);
                 display: inline-block;
@@ -376,6 +402,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
               <use
                 href="#icon-chevron-down-16"
                 style="
+                  animation-duration: 0.1s;
                   transition-delay: 0.1s;
                   transition-duration: 0.1s
                 "
@@ -388,6 +415,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
           </span>
         </summary>
         <div style="
+          animation-duration: 0.1s;
           margin-bottom: 6px;
           margin-left: 16px;
           margin-right: 16px;
@@ -400,6 +428,7 @@ exports[`accordion > given the accordion in the default state > then it matches 
             &::marker {font-size: 0px}
           }}</style>
           <p style="
+            animation-duration: 0.1s;
             transition-delay: 0.1s;
             transition-duration: 0.1s
           ">
@@ -416,11 +445,12 @@ exports[`accordion > given the accordion in the default state > then it matches 
 `;
 
 exports[`accordion > given the accordion in the default state > when first section toggled > should open the clicked section 1`] = `
-"@@ -18,15 +18,18 @@
+"@@ -21,16 +21,19 @@
        <style>@scope{:scope{
          &::marker {font-size: 0px}
        }}</style>
 -       <details style="
+-         animation-duration: 0.1s;
 -         overflow-x: hidden;
 -         overflow-y: hidden;
 -         transition-delay: 0.1s;
@@ -429,6 +459,7 @@ exports[`accordion > given the accordion in the default state > when first secti
 +       <details
 +         open
 +         style="
++           animation-duration: 0.1s;
 +           overflow-x: hidden;
 +           overflow-y: hidden;
 +           transition-delay: 0.1s;
@@ -442,26 +473,26 @@ exports[`accordion > given the accordion in the default state > when first secti
              overflow-x: clip;
              overflow-y: clip;
              transition: height var(--motion-duration-medium-3) var(--motion-easing-standard),
-@@ -39,6 +42,7 @@
-         }}</style>
+@@ -44,6 +47,7 @@
          <summary style="
            align-items: center;
+           animation-duration: 0.1s;
 +           background-color: var(--color-state-secondary-hover);
            box-sizing: border-box;
            color: var(
                    --details-summary-foreground-color,
-@@ -75,6 +79,7 @@
-             style="
+@@ -82,6 +86,7 @@
+               animation-duration: 0.1s;
                display: inline-flex;
                margin-inline-start: 8px;
 +               transform: rotate(180deg);
                transition-delay: 0.1s;
                transition-duration: 0.1s
              "
-@@ -85,8 +90,8 @@
-             <svg
+@@ -93,8 +98,8 @@
                focusable="false"
                style="
+                 animation-duration: 0.1s;
 -                 animation: chevron-bounce-close var(--motion-duration-medium-1)
 -                         var(--motion-easing-standard);
 +                 animation: chevron-bounce-open var(--motion-duration-medium-1)
@@ -473,10 +504,10 @@ exports[`accordion > given the accordion in the default state > when first secti
 `;
 
 exports[`accordion > given the accordion in the default state > when first section toggled > when another section is opened > should close an open section when clicked again > Should have no changes from initial 1`] = `
-"@@ -39,6 +39,7 @@
-         }}</style>
+"@@ -44,6 +44,7 @@
          <summary style="
            align-items: center;
+           animation-duration: 0.1s;
 +           background-color: var(--color-state-secondary-hover);
            box-sizing: border-box;
            color: var(
@@ -485,11 +516,12 @@ exports[`accordion > given the accordion in the default state > when first secti
 `;
 
 exports[`accordion > given the accordion with autocollapse enabled > when first section toggled > should open as normal 1`] = `
-"@@ -18,15 +18,18 @@
+"@@ -21,16 +21,19 @@
        <style>@scope{:scope{
          &::marker {font-size: 0px}
        }}</style>
 -       <details style="
+-         animation-duration: 0.1s;
 -         overflow-x: hidden;
 -         overflow-y: hidden;
 -         transition-delay: 0.1s;
@@ -498,6 +530,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
 +       <details
 +         open
 +         style="
++           animation-duration: 0.1s;
 +           overflow-x: hidden;
 +           overflow-y: hidden;
 +           transition-delay: 0.1s;
@@ -511,26 +544,26 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
              overflow-x: clip;
              overflow-y: clip;
              transition: height var(--motion-duration-medium-3) var(--motion-easing-standard),
-@@ -39,6 +42,7 @@
-         }}</style>
+@@ -44,6 +47,7 @@
          <summary style="
            align-items: center;
+           animation-duration: 0.1s;
 +           background-color: var(--color-state-secondary-hover);
            box-sizing: border-box;
            color: var(
                    --details-summary-foreground-color,
-@@ -75,6 +79,7 @@
-             style="
+@@ -82,6 +86,7 @@
+               animation-duration: 0.1s;
                display: inline-flex;
                margin-inline-start: 8px;
 +               transform: rotate(180deg);
                transition-delay: 0.1s;
                transition-duration: 0.1s
              "
-@@ -85,8 +90,8 @@
-             <svg
+@@ -93,8 +98,8 @@
                focusable="false"
                style="
+                 animation-duration: 0.1s;
 -                 animation: chevron-bounce-close var(--motion-duration-medium-1)
 -                         var(--motion-easing-standard);
 +                 animation: chevron-bounce-open var(--motion-duration-medium-1)
@@ -542,19 +575,20 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
 `;
 
 exports[`accordion > given the accordion with autocollapse enabled > when first section toggled > when another section is opened > should collapse previous section when new section is opened 1`] = `
-"@@ -42,7 +42,6 @@
-         }}</style>
+"@@ -47,7 +47,6 @@
          <summary style="
            align-items: center;
+           animation-duration: 0.1s;
 -           background-color: var(--color-state-secondary-hover);
            box-sizing: border-box;
            color: var(
                    --details-summary-foreground-color,
-@@ -156,15 +155,18 @@
+@@ -168,16 +167,19 @@
        <style>@scope{:scope{
          &::marker {font-size: 0px}
        }}</style>
 -       <details style="
+-         animation-duration: 0.1s;
 -         overflow-x: hidden;
 -         overflow-y: hidden;
 -         transition-delay: 0.1s;
@@ -563,6 +597,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
 +       <details
 +         open
 +         style="
++           animation-duration: 0.1s;
 +           overflow-x: hidden;
 +           overflow-y: hidden;
 +           transition-delay: 0.1s;
@@ -576,26 +611,26 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
              overflow-x: clip;
              overflow-y: clip;
              transition: height var(--motion-duration-medium-3) var(--motion-easing-standard),
-@@ -177,6 +179,7 @@
-         }}</style>
+@@ -191,6 +193,7 @@
          <summary style="
            align-items: center;
+           animation-duration: 0.1s;
 +           background-color: var(--color-state-secondary-hover);
            box-sizing: border-box;
            color: var(
                    --details-summary-foreground-color,
-@@ -213,6 +216,7 @@
-             style="
+@@ -229,6 +232,7 @@
+               animation-duration: 0.1s;
                display: inline-flex;
                margin-inline-start: 8px;
 +               transform: rotate(180deg);
                transition-delay: 0.1s;
                transition-duration: 0.1s
              "
-@@ -223,8 +227,8 @@
-             <svg
+@@ -240,8 +244,8 @@
                focusable="false"
                style="
+                 animation-duration: 0.1s;
 -                 animation: chevron-bounce-close var(--motion-duration-medium-1)
 -                         var(--motion-easing-standard);
 +                 animation: chevron-bounce-open var(--motion-duration-medium-1)
