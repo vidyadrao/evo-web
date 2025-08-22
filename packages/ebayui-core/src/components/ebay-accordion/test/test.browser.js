@@ -7,7 +7,7 @@ import {
     it,
     expect,
 } from "vitest";
-import { render, cleanup, waitFor } from "@marko/testing-library";
+import { render, cleanup } from "@marko/testing-library";
 import { userEvent } from "@vitest/browser/context";
 import { fastAnimations } from "../../../common/test-utils/browser";
 import { diffHTML, visualHTML } from "../../../common/test-utils/snapshots";
@@ -47,9 +47,7 @@ describe("accordion", () => {
             });
 
             it("should open the clicked section", async () => {
-                await waitFor(() =>
-                    expect(initialHTML(component.container)).toMatchSnapshot(),
-                );
+                expect(initialHTML(component.container)).toMatchSnapshot();
             });
 
             describe("when another section is opened", () => {
@@ -59,12 +57,8 @@ describe("accordion", () => {
                 });
 
                 it("should close an open section when clicked again", async () => {
-                    await waitFor(() =>
-                        expect(
-                            initialHTML(component.container),
-                        ).toMatchSnapshot(
-                            "Should have no changes from initial",
-                        ),
+                    expect(initialHTML(component.container)).toMatchSnapshot(
+                        "Should have no changes from initial",
                     );
                 });
             });
@@ -83,9 +77,7 @@ describe("accordion", () => {
             });
 
             it("should open as normal", async () => {
-                await waitFor(() =>
-                    expect(initialHTML(component.container)).toMatchSnapshot(),
-                );
+                expect(initialHTML(component.container)).toMatchSnapshot();
             });
 
             describe("when another section is opened", () => {
@@ -96,11 +88,7 @@ describe("accordion", () => {
                 });
                 it("should collapse previous section when new section is opened", async () => {
                     // Verify first section closed and second section opened
-                    await waitFor(() =>
-                        expect(
-                            initialHTML(component.container),
-                        ).toMatchSnapshot(),
-                    );
+                    expect(initialHTML(component.container)).toMatchSnapshot();
                 });
             });
         });
