@@ -40,16 +40,17 @@ async function pressKey(el, info) {
 
 const fastAnimations = {
     // Adds an style to the document which forces all transitions to run more quickly for the tests.
-    start() {
+    start(disable) {
         if (this.fastAnimationStyle) {
             return;
         }
+        const time = disable ? 0 : 1;
 
         this.fastAnimationStyle = document.createElement("style");
-        this.fastAnimationStyle.innerHTML = `*,*::details-content,*::before,*::after {
-                animation-duration: 0.1s !important;
-                transition-duration: 0.1s !important;
-                transition-delay: 0.1s !important;
+        this.fastAnimationStyle.innerHTML = `*,details::details-content,*::before,*::after {
+                animation-duration: ${time}ms !important;
+                transition-duration: ${time}ms !important;
+                transition-delay: ${time}ms !important;
                 scroll-behavior: auto !important;
             }`;
         document.head.appendChild(this.fastAnimationStyle);

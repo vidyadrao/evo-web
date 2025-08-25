@@ -15,7 +15,7 @@ import { composeStories } from "@storybook/marko";
 import * as stories from "../accordion.stories"; // import all stories from the stories file
 const { Default, AutoCollapsed } = composeStories(stories);
 
-beforeAll(() => fastAnimations.start());
+beforeAll(() => fastAnimations.start(true));
 afterAll(() => fastAnimations.stop());
 afterEach(cleanup);
 let component;
