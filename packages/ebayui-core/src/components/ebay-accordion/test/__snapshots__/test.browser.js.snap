@@ -586,63 +586,15 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
 `;
 
 exports[`accordion > given the accordion with autocollapse enabled > when first section toggled > when another section is opened > should collapse previous section when new section is opened 1`] = `
-"@@ -21,20 +21,17 @@
-       <style>@scope{:scope{
-         &::marker {font-size: 0px}
-       }}</style>
--       <details
--         open
--         style="
--           animation-duration: 0ms;
--           overflow-x: hidden;
--           overflow-y: hidden;
--           transition-delay: 0ms;
--           transition-duration: 0ms
--         "
--       >
-+       <details style="
-+         animation-duration: 0ms;
-+         overflow-x: hidden;
-+         overflow-y: hidden;
-+         transition-delay: 0ms;
-+         transition-duration: 0ms
-+       ">
-         <style>@scope{:scope{
-           &::details-content {
-             animation-duration: 0ms;
--             height: auto;
-+             opacity: 0;
-             overflow-x: clip;
-             overflow-y: clip;
-             transition-delay: 0ms;
-@@ -50,7 +47,6 @@
+"@@ -47,6 +47,7 @@
          <summary style="
            align-items: center;
            animation-duration: 0ms;
--           background-color: var(--color-state-secondary-hover);
++           background-color: var(--color-state-secondary-hover);
            box-sizing: border-box;
            color: var(
                    --details-summary-foreground-color,
-@@ -89,7 +85,6 @@
-               animation-duration: 0ms;
-               display: inline-flex;
-               margin-inline-start: 8px;
--               transform: rotate(180deg);
-               transition-delay: 0ms;
-               transition-duration: 0ms
-             "
-@@ -101,8 +96,8 @@
-               focusable="false"
-               style="
-                 animation-duration: 0ms;
--                 animation: chevron-bounce-open var(--motion-duration-medium-1)
--                         var(--motion-easing-standard) var(--motion-duration-short-1);
-+                 animation: chevron-bounce-close var(--motion-duration-medium-1)
-+                         var(--motion-easing-standard);
-                 display: inline-block;
-                 fill: var(
-                         --details-secondary-foreground-color,
-@@ -171,17 +166,20 @@
+@@ -166,17 +167,20 @@
        <style>@scope{:scope{
          &::marker {font-size: 0px}
        }}</style>
@@ -671,7 +623,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
              overflow-x: clip;
              overflow-y: clip;
              transition-delay: 0ms;
-@@ -197,6 +195,7 @@
+@@ -192,6 +196,7 @@
          <summary style="
            align-items: center;
            animation-duration: 0ms;
@@ -679,7 +631,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
            box-sizing: border-box;
            color: var(
                    --details-summary-foreground-color,
-@@ -235,6 +234,7 @@
+@@ -230,6 +235,7 @@
                animation-duration: 0ms;
                display: inline-flex;
                margin-inline-start: 8px;
@@ -687,7 +639,7 @@ exports[`accordion > given the accordion with autocollapse enabled > when first 
                transition-delay: 0ms;
                transition-duration: 0ms
              "
-@@ -246,8 +246,8 @@
+@@ -241,8 +247,8 @@
                focusable="false"
                style="
                  animation-duration: 0ms;

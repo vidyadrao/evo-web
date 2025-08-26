@@ -74,6 +74,7 @@ describe("accordion", () => {
         describe("when first section toggled", () => {
             beforeEach(async () => {
                 await user.click(component.getByText("Item 1"));
+                await user.hover(component.getByText("Item 1"));
             });
 
             it("should open as normal", async () => {
@@ -82,9 +83,9 @@ describe("accordion", () => {
 
             describe("when another section is opened", () => {
                 beforeEach(async () => {
-                    initialHTML = diffHTML(component.container);
                     // Open second section
                     await user.click(component.getByText("Item 2"));
+                    await user.hover(component.getByText("Item 1"));
                 });
                 it("should collapse previous section when new section is opened", async () => {
                     // Verify first section closed and second section opened
