@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Render <EbaySkeleton /> component should render the EbaySkeleton color blue component 1`] = `
 <div
