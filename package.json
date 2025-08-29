@@ -117,7 +117,7 @@
     "jest-junit": "^16.0.0",
     "jest-pnp-resolver": "^1.2.3",
     "jsdom": "^26.1.0",
-    "libphonenumber-js": "^1.12.14",
+    "libphonenumber-js": "^1.12.15",
     "lint-staged": "^16.1.5",
     "lintspaces-cli": "^1.0.0",
     "makeup-alert-dialog": "~0.3.8",
