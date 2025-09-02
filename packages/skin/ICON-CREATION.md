@@ -22,11 +22,7 @@ The viewbox given will be translated to the `width` and `height` that the icons 
 
 ## Step 2: Run scripts
 
-To properly setup the icon after it is placed in the `src/svg/icon` directory, run `node scripts genSVG` from the root of the skin project. This will properly setup the icon in docs, in the `icon.svg` bundle, and generate the CSS needed for the icon.
-
-If you get an error saying an executable doesn't exist, it probably means you'll need to install Playwright. To do so, run `npx playwright install` and try again.
-
-Afterward, you should run `npm run build` in order to also copy all those files to `dist` as well as to the docs.
+To properly setup the icon after it is placed in the `src/svg/icon` directory, run `node run build` from the root of the skin project. This will properly setup the icon in docs, in the `icon.svg` bundle, generate the CSS needed for the icon, and copy all the SVGs into the dist folder.
 
 ## Appendix
 

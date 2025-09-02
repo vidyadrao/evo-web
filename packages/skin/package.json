@@ -35,8 +35,9 @@
     ],
     "scripts": {
         "prebuild": "npm run clean",
-        "build": "npm run build:css && npm run lint:js && npm run copy && tsx scripts gen-build",
+        "build": "npm run build:css && npm run lint:js && npm run build:icons && npm run copy && tsx scripts gen-build",
         "build:css": "npm run lint:sass && rimraf dist && npm run bundle && npm run postcss && tsx scripts/add-y-comments && prettier dist --write && npm run lint:css",
+        "build:icons": "tsx scripts genSVG && prettier src/components/data/icons.json --write",
         "build:snapshots": "npm run copy:assetsToStorybook && storybook build -o ./.storybook-percy",
         "build:storybook": "npm run copy:assetsToStorybook && storybook build -o ./_site/public/storybook",
         "bundle": "sass src/sass:dist --no-source-map",
@@ -70,7 +71,7 @@
         "storybook": "npm run copy:assetsToStorybook && storybook dev -c .storybook --no-open",
         "test": "npm run build",
         "verify": "tsx scripts verify",
-        "version": "tsx scripts genSVG && npm run build"
+        "version": "npm run build"
     },
     "commitlint": {
         "extends": "@commitlint/config-conventional"

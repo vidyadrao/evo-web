@@ -186,7 +186,7 @@ class GenerateImages {
                 width,
             });
         }
-        console.log("Processing SVG:", symbol, filename);
+        // console.log("Processing SVG:", symbol, filename);
         // Need to parse it before pushing
         this.masterList.push(this.processSymbolToSVG(symbol, filename));
 
