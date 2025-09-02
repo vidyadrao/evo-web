@@ -1,4 +1,4 @@
-const { spawn } = require("child_process");
+import { spawn } from "child_process";
 
 async function executeProcess(cmd, arg) {
     return new Promise((resolve, reject) => {
@@ -51,4 +51,4 @@ async function verifyBuild() {
     );
 }
 
-module.exports = { verifyBuild };
+export { verifyBuild };

@@ -1,18 +1,18 @@
 #!/usr/bin/env node
 /* eslint-disable no-console */
-const glob = require("glob");
-const path = require("path");
-const sass = require("sass");
-const fs = require("fs");
-const pkg = require("../package.json");
-const rimraf = require("rimraf");
-const CleanCSS = require("clean-css");
+import glob from "glob";
+import path from "path";
+import sass from "sass";
+import fs from "fs";
+import pkg from "../package.json";
+import { rimraf } from "rimraf";
+import CleanCSS from "clean-css";
 const cleanCSSInstance = new CleanCSS({
     advanced: true,
     promise: true,
 });
 const currentDir = path.dirname(__dirname);
-const { exec } = require("child_process");
+import { exec } from "child_process";
 const bodyMatch = new RegExp("body ?({(?:.|\\s|\\S)*?})", "m");
 const rootMatch = new RegExp(":root ?({(?:.|\\s|\\S)*?})", "m");
 
@@ -20,10 +20,25 @@ const rootMatch = new RegExp(":root ?({(?:.|\\s|\\S)*?})", "m");
 const tokensList = [["evo-core", "evo-light"]];
 const tokensDirList = ["evo"];
 
+interface Args {
+    name: string;
+    scopeClass: string;
+    minify: boolean;
+    verbose: boolean;
+    scopeSpecificty: number;
+    modules: string[];
+}
 /**
  * Main Processing class. Holds info about args passed and ds version
  */
 class CssProcesser {
+    declare tokensFile: string;
+    declare tokensDir: string;
+    declare classDef: string;
+    declare processed: string[];
+    declare skipped: string[];
+    declare args: Args;
+
     constructor(tokensFile, tokensDir, args) {
         this.tokensFile = tokensFile;
         this.tokensDir = tokensDir;
@@ -56,7 +71,7 @@ class CssProcesser {
     }
 
     getDistCss() {
-        return new Promise((resolve, reject) => {
+        return new Promise<string[]>((resolve, reject) => {
             glob(`${currentDir}/dist/**/*.css`, (err, files) => {
                 if (err) {
                     return reject(err);
@@ -163,7 +178,7 @@ class CssProcesser {
     }
 
     generateSASS() {
-        return this.getDistCss(this.tokensFile).then((files) =>
+        return this.getDistCss().then((files) =>
             this.processFiles(files),
         );
     }
@@ -200,7 +215,7 @@ function getCDNPath(bundle) {
  * Runs npm build to get dist output
  */
 function prebuild() {
-    return new Promise((resolve, reject) => {
+    return new Promise<void>((resolve, reject) => {
         console.log("Running build...");
         exec("npm run build:css", (err) => {
             if (err) {
@@ -213,7 +228,7 @@ function prebuild() {
 }
 
 function makeDir(dirPath) {
-    return new Promise((resolve, reject) => {
+    return new Promise<void>((resolve, reject) => {
         fs.mkdir(dirPath, { recursive: true }, (err) => {
             if (err) {
                 return reject(err);
@@ -224,7 +239,7 @@ function makeDir(dirPath) {
 }
 
 function writeFile(file, data) {
-    return new Promise((resolve, reject) => {
+    return new Promise<void>((resolve, reject) => {
         fs.writeFile(file, data, (err) => {
             if (err) {
                 return reject(err);
@@ -282,7 +297,7 @@ async function listBundles(argv) {
     });
 }
 
-module.exports = {
+export {
     runCSSBuild,
     listBundles,
 };

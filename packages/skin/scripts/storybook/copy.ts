@@ -1,6 +1,6 @@
-const fs = require("fs");
-const path = require("path");
-const { rawSvgToHtml } = require("../util");
+import fs from "fs";
+import path from "path";
+import { rawSvgToHtml } from "../util";
 
 const SVG_ICONS_FILE = path.join(
     __dirname,
@@ -59,4 +59,4 @@ function copyCustomStyles() {
     fs.appendFileSync(STORYBOOK_HEADER_FILE, customStylesContent, "utf8");
 }
 
-module.exports = { copySVGIcons, copySVGFlags, copyCustomStyles };
+export { copySVGIcons, copySVGFlags, copyCustomStyles };

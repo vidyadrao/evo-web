@@ -1,22 +1,23 @@
-const fs = require("fs");
-const prettier = require("prettier");
-const path = require("path");
-const { removeFile } = require("../util");
+import fs from "fs";
+import type { Config, ConfigModules } from "./config";
+import prettier from "prettier";
+import path from "path";
+import { removeFile } from "../util";
 const currentDir = path.dirname(path.dirname(__dirname));
 
-function getBrowserFileName(filename, basePath) {
+function getBrowserFileName(filename, basePath = "") {
     if (filename === "index") {
-        return path.join(currentDir, basePath || "", `browser.json`);
+        return path.join(currentDir, basePath, `browser.json`);
     }
-    return path.join(currentDir, basePath || "", `${filename}.browser.json`);
+    return path.join(currentDir, basePath, `${filename}.browser.json`);
 }
 
-function getMJSFileName(filename, basePath) {
-    return path.join(currentDir, basePath || "", `${filename}.mjs`);
+function getMJSFileName(filename, basePath = "") {
+    return path.join(currentDir, basePath, `${filename}.mjs`);
 }
 
-function getFileName(filename, ext, basePath) {
-    return path.join(currentDir, basePath || "", `${filename}.${ext}`);
+function getFileName(filename, ext, basePath = "") {
+    return path.join(currentDir, basePath, `${filename}.${ext}`);
 }
 
 function getBrowserRequireSyntax(filename) {
@@ -47,13 +48,25 @@ function getMJSRequireSyntax(filepath, ext) {
     return `import './${fullFilePath}';\n`;
 }
 
+interface ModuleBuildOptions {
+    hasBaseModule?: boolean;
+    isNested?: boolean;
+    distDir?: string;
+    addIndexModules?: ConfigModules;
+}
+
 /* Options:
  *   hasBaseModule: true/false | if the base module should be included in the requires.
  *   isNested: true/fase | if this module has nested additioanl modules
  *   distDir: string | The distDir for modules
  */
 class ModuleBuilder {
-    constructor(moduleName, config, options) {
+    declare moduleName: string;
+    declare config: Config;
+    declare additionalModules: string[];
+    declare options: ModuleBuildOptions;
+
+    constructor(moduleName, config: Config, options: ModuleBuildOptions) {
         this.moduleName = moduleName;
         this.config = config;
         this.additionalModules = config.modules[moduleName] || [];
@@ -84,7 +97,9 @@ class ModuleBuilder {
     async clean() {
         if (this.options.isNested) {
             try {
-                await fs.promises.rm(this.moduleName, { recursive: true });
+                // Remove the as any when @types/node is upgraded past 14.x.
+                // This is due to changesets/cli bringing in an older version of node types
+                await (fs.promises as any).rm(this.moduleName, { recursive: true });
                 await removeFile(getFileName(this.moduleName, "js"));
                 await removeFile(getFileName(this.moduleName, "css"));
             } catch (e) {
@@ -120,7 +135,7 @@ class ModuleBuilder {
             });
             // Get all modules now in directory
             const moduleList = await fs.promises.readdir(
-                path.join(this.options.distDir, this.moduleName),
+                path.join(this.options.distDir!, this.moduleName),
             );
 
             if (this.options.addIndexModules) {
@@ -161,7 +176,7 @@ class ModuleBuilder {
         }
     }
 
-    async writeBrowserJSON(currentModule) {
+    async writeBrowserJSON(currentModule = "") {
         const additionalRequires = this.additionalModules.map((addFile) =>
             getBrowserRequireSyntax(addFile),
         );
@@ -176,29 +191,19 @@ class ModuleBuilder {
         return await fs.promises.writeFile(
             getBrowserFileName(
                 filename,
-                this.options.isNested && this.moduleName,
+                this.options.isNested ? this.moduleName : "",
             ),
             await prettier.format(JSON.stringify(content), { parser: "json" }),
         );
     }
 
-    async writeBaseModuleFiles(currentModule) {
-        await fs.promises.writeFile(
-            getFileName(mod, "mjs", baseDirectory),
-            this.parseAdditionalModules(getMJSRequireSyntax, "css", {
-                modules,
-                filename,
-            }),
-        );
-    }
-
-    async writeModuleFiles(currentModule) {
+    async writeModuleFiles(currentModule = "") {
         const modules = this.additionalModules;
         const mod = currentModule || this.moduleName;
         const filename = this.options.hasBaseModule
             ? this.getFilePath(mod)
             : null;
-        const baseDirectory = this.options.isNested ? this.moduleName : false;
+        const baseDirectory = this.options.isNested ? this.moduleName : "";
 
         await fs.promises.writeFile(
             getFileName(mod, "js", baseDirectory),
@@ -236,4 +241,4 @@ class ModuleBuilder {
     }
 }
 
-module.exports = { ModuleBuilder };
+export { ModuleBuilder };

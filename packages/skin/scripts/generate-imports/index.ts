@@ -1,8 +1,10 @@
-const fs = require("fs");
-const prettier = require("prettier");
-const path = require("path");
-const config = require("./config.json");
-const { removeFile } = require("../util");
+import fs from "fs";
+import prettier from "prettier";
+import path from "path";
+import config from "./config";
+import { removeFile } from "../util";
+
+import { ModuleBuilder } from "./module-builder";
 const currentDir = path.dirname(path.dirname(__dirname));
 const distDir = path.join(currentDir, "dist");
 const files = fs
@@ -19,7 +21,6 @@ const indexFiles = fs
             config.skipIndex.indexOf(filename) === -1,
     );
 
-const { ModuleBuilder } = require("./module-builder");
 
 async function generateTopLevelFiles() {
     const browser = {};
@@ -75,7 +76,7 @@ async function cleanTopLevelFiles() {
     await removeFile(path.join(currentDir, "svg.svg"));
 }
 
-const moduleData = [].concat(
+const moduleData:ModuleBuilder[] = ([] as ModuleBuilder[]).concat(
     files.map(
         (moduleName) =>
             new ModuleBuilder(moduleName, config, {
@@ -125,7 +126,7 @@ async function cleanTopLevel() {
     }
 }
 
-module.exports = {
+export {
     cleanTopLevel,
     generateTopLevel,
 };

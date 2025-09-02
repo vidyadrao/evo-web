@@ -1,12 +1,13 @@
 "use strict";
-const fs = require("fs");
-const path = require("path");
+import fs from "fs";
+import path from "path";
+import { html2xhtml } from "./util";
+import jsdom from "jsdom";
+import { Doc } from "prettier";
 const currentDir = path.dirname(__dirname);
 const svgDir = path.resolve(currentDir, "src", "svg");
 const svgIconDir = path.resolve(currentDir, "src", "svg", "icon");
 const masterIconPath = path.resolve(svgDir, "icons.svg");
-const jsdom = require("jsdom");
-const prettier = require("prettier");
 const { JSDOM } = jsdom;
 const configFilePath = path.resolve(
     currentDir,
@@ -17,13 +18,8 @@ const configFilePath = path.resolve(
 );
 const file = fs.readFileSync(configFilePath, "utf8");
 const config = JSON.parse(file);
-const { html2xhtml } = require("./util");
-const { query } = require("winston");
-const { size } = require("@floating-ui/dom");
 const genText = "This is a generated file, DO NOT EDIT";
 const supportedSizes = ["12", "16", "18", "20", "24", "32", "48", "64"];
-
-const defsList = [];
 
 async function getFiles(dir) {
     const dirents = await fs.promises.readdir(dir, { withFileTypes: true });
@@ -77,7 +73,7 @@ async function normalizeFiles(svgs) {
         const fileBase = path.parse(filePath).base;
         const data = await fs.promises.readFile(filePath, "utf8");
         const svgJsDom = new JSDOM(data, { contentType: "text/xml" });
-        const querySelector = svgJsDom.window.document.querySelector("svg");
+        const querySelector = svgJsDom.window.document.querySelector("svg")!;
 
         querySelector.hasAttribute("height") &&
             querySelector.removeAttribute("height");
@@ -108,9 +104,9 @@ function sortMethod({ id: a }, { id: b }) {
     return 0;
 }
 
-function sortMethodObj({ id: a }, { id: b }) {
-    const aName = a && a.name;
-    const bName = b && b.name;
+function sortMethodObj(a: ImageList, b: ImageList) {
+    const aName = a.name ?? "";
+    const bName = b.name ?? "";
 
     if (aName < bName) {
         return -1;
@@ -121,7 +117,21 @@ function sortMethodObj({ id: a }, { id: b }) {
     return 0;
 }
 
+interface ImageList {
+    name?: string;
+    size: string;
+    height: string;
+    width: string;
+}
+
 class GenerateImages {
+    declare imageList: ImageList[];
+    declare svgs: string[];
+    declare masterIconSymbols: jsdom.JSDOM;
+    declare masterDocument: Document;
+
+    declare masterList: SVGElement[];
+
     constructor(files, masterIconFile) {
         this.imageList = [];
         this.svgs = files.filter(
@@ -138,7 +148,7 @@ class GenerateImages {
             .replace("</svg", "</symbol");
 
         const svgJsDom = new JSDOM(newSVGCode, { contentType: "text/xml" });
-        const svgFragment = svgJsDom.window.document.querySelector("symbol");
+        const svgFragment = svgJsDom.window.document.querySelector("symbol")!;
         svgFragment.setAttribute("id", name);
         svgFragment.removeAttribute("xmlns");
         svgFragment.removeAttribute("width");
@@ -148,7 +158,6 @@ class GenerateImages {
             while (defs.firstChild) {
                 svgFragment.appendChild(defs.firstChild);
             }
-            // defsList.push(defs);
             defs.remove();
         }
 
@@ -196,7 +205,7 @@ class GenerateImages {
     }
 
     async run() {
-        const masterSvg = this.masterDocument.querySelector("svg");
+        const masterSvg = this.masterDocument.querySelector("svg")!;
 
         while (masterSvg.lastChild) {
             masterSvg.removeChild(masterSvg.lastChild);
@@ -209,17 +218,6 @@ class GenerateImages {
                 await this.processSvg(filePath, filename);
             }),
         );
-        if (defsList.length) {
-            const fragment = this.masterDocument.createDocumentFragment();
-            defsList.forEach((defs) => {
-                Array.from(defs.children).forEach((defChild) => {
-                    fragment.appendChild(defChild);
-                });
-            });
-            const defsEl = this.masterDocument.createElement("defs");
-            defsEl.appendChild(fragment);
-            masterSvg.appendChild(defsEl);
-        }
 
         this.imageList.sort(sortMethodObj);
         config.icons.list = this.imageList;
@@ -228,7 +226,7 @@ class GenerateImages {
 
         this.masterList.sort(sortMethod);
         this.masterList.forEach((symbol) => {
-            this.masterDocument.querySelector("svg").appendChild(symbol);
+            this.masterDocument.querySelector("svg")!.appendChild(symbol);
         });
 
         const fileOutput = await html2xhtml(this.masterIconSymbols);
@@ -236,7 +234,7 @@ class GenerateImages {
     }
 }
 
-function stripName(name, mappedPrefix, mappedPostfix) {
+function stripName(name) {
     const matcher = new RegExp(
         `^((?:icon-|program-badge-|star-rating-)?)([\\w-]+?)((?:|-small))$`,
     );
@@ -279,4 +277,4 @@ async function runGenerate() {
     await gen.run();
 }
 
-module.exports = { runGenerate };
+export { runGenerate };

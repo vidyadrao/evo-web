@@ -1,14 +1,14 @@
-const { parse } = require("parse5");
-const { serializeToString } = require("xmlserializer");
-const prettier = require("prettier");
-const fs = require("fs");
+import { parse } from "parse5";
+import { serializeToString } from "xmlserializer";
+import prettier from "prettier";
+import fs from "fs";
 
 /**
  * Convert a standard HTML5 string to XHTML-compliant string
  *
  * @param {string} htmlString : html string to convert to xhtml
  */
-function html2xhtml(html, skipHeader) {
+function html2xhtml(html, skipHeader = false) {
     const bodyHtml = html.window.document.documentElement.outerHTML;
     const dom = parse(bodyHtml);
     const xmlHeader = skipHeader
@@ -44,7 +44,7 @@ async function removeFile(file) {
     }
 }
 
-module.exports = {
+export {
     html2xhtml,
     html2xhtml2,
     rawSvgToHtml,

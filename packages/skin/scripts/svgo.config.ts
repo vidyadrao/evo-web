@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     gzip: true,
     multipass: true,
     original: false,

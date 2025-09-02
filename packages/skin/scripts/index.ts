@@ -1,38 +1,13 @@
-const { listBundles, runCSSBuild } = require("./generate-bundle");
-const { runGenerate } = require("./generate-images");
-const { runGenerateFlags } = require("./generate-flags");
-const { runImport } = require("./import-svgs");
-const { verifyBuild } = require("./verify-build");
-const { generateTopLevel, cleanTopLevel } = require("./generate-imports");
-const {
-    copySVGIcons,
-    copyCustomStyles,
-    copySVGFlags,
-} = require("./storybook/copy");
-const { splitter } = require("./split-icon");
-const yargs = require("yargs");
-const { hideBin } = require("yargs/helpers");
+import { listBundles, runCSSBuild } from "./generate-bundle";
+import { runGenerate } from "./generate-images";
+import { verifyBuild } from "./verify-build";
+import { generateTopLevel, cleanTopLevel } from "./generate-imports";
+import { copySVGIcons, copyCustomStyles, copySVGFlags } from "./storybook/copy";
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
 
 yargs(hideBin(process.argv))
     .usage("Usage: $0 <command> [options]")
-    .command(
-        "split <file>",
-        "generates less files with styles from svg icons",
-        (yargs) => {
-            yargs.positional("svg", {
-                describe: "SVG file",
-                demand: true,
-                default: "",
-            });
-        },
-        async (argv) => {
-            try {
-                await splitter(argv.file, argv);
-            } catch (e) {
-                console.log(e);
-            }
-        },
-    )
     .command(
         "genSVG",
         "generates less files with styles from svg icons",
@@ -40,52 +15,6 @@ yargs(hideBin(process.argv))
         () => {
             try {
                 runGenerate();
-            } catch (e) {
-                console.log(e);
-            }
-        },
-    )
-    .command(
-        "genFlags",
-        "generates less files with styles from svg flags",
-        () => {},
-        () => {
-            try {
-                runGenerateFlags();
-            } catch (e) {
-                console.log(e);
-            }
-        },
-    )
-
-    .command(
-        "importSVG <svg> <name> <file>",
-        "imports given svg into an icon pack or updates if it exists",
-        (yargs) => {
-            yargs.positional("svg", {
-                describe: "SVG file",
-                demand: true,
-                default: "",
-            });
-            yargs.positional("name", {
-                describe: "The ID of the SVG",
-                demand: true,
-                default: "",
-            });
-            yargs.positional("file", {
-                describe: "The file in skin to append the SVG to",
-                demand: true,
-                default: "",
-            });
-            yargs.option("keep-fill", {
-                describe: "If true, will keep fill property on svg",
-                type: "boolean",
-                default: "false",
-            });
-        },
-        async (argv) => {
-            try {
-                await runImport(argv.svg, argv.name, argv.file, argv);
             } catch (e) {
                 console.log(e);
             }
