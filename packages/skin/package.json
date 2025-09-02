@@ -70,7 +70,7 @@
         "storybook": "npm run copy:assetsToStorybook && storybook dev -c .storybook --no-open",
         "test": "npm run build",
         "verify": "tsx scripts verify",
-        "version": "npm run build"
+        "version": "tsx scripts genSVG && npm run build"
     },
     "commitlint": {
         "extends": "@commitlint/config-conventional"

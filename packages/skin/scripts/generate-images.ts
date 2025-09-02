@@ -3,7 +3,6 @@ import fs from "fs";
 import path from "path";
 import { html2xhtml } from "./util";
 import jsdom from "jsdom";
-import { Doc } from "prettier";
 const currentDir = path.dirname(__dirname);
 const svgDir = path.resolve(currentDir, "src", "svg");
 const svgIconDir = path.resolve(currentDir, "src", "svg", "icon");
@@ -18,7 +17,6 @@ const configFilePath = path.resolve(
 );
 const file = fs.readFileSync(configFilePath, "utf8");
 const config = JSON.parse(file);
-const genText = "This is a generated file, DO NOT EDIT";
 const supportedSizes = ["12", "16", "18", "20", "24", "32", "48", "64"];
 
 async function getFiles(dir) {
@@ -39,7 +37,7 @@ async function getFiles(dir) {
  */
 async function processFilePrefixing(dir) {
     const aFiles = await getFiles(dir);
-    const prefixedFiles = await normalizeFiles(aFiles);
+    await normalizeFiles(aFiles);
 
     // return prefixedFiles;
     return await getFiles(dir);
@@ -49,18 +47,11 @@ async function prefixIcon(fileDir, fileBase) {
     const renameFrom = fileDir + "/" + fileBase;
     const renameTo = fileDir + "/" + config.icons.prefix + "-" + fileBase;
 
-    await fs.rename(renameFrom, renameTo, (error) => {
-        if (error) return console.log(error);
-
-        console.log(
-            "Prefixed Icon: " +
-                fileBase +
-                " > " +
-                config.icons.prefix +
-                "-" +
-                fileBase,
-        );
-    });
+    try {
+        await fs.promises.rename(renameFrom, renameTo);
+    } catch (e) {
+        if (e) return console.log(e);
+    }
 }
 
 async function normalizeFiles(svgs) {
@@ -68,7 +59,7 @@ async function normalizeFiles(svgs) {
         (f) => f.endsWith(".svg") && f !== "icons.svg",
     );
 
-    await svgFiles.map(async (filePath) => {
+    for (let filePath of svgFiles) {
         const fileDir = path.parse(filePath).dir;
         const fileBase = path.parse(filePath).base;
         const data = await fs.promises.readFile(filePath, "utf8");
@@ -89,7 +80,7 @@ async function normalizeFiles(svgs) {
         ) {
             await prefixIcon(fileDir, fileBase);
         }
-    });
+    }
 
     return svgFiles;
 }
@@ -268,9 +259,9 @@ function stripName(name) {
 }
 
 async function runGenerate() {
-    await processFilePrefixing(svgIconDir);
+    const files = await processFilePrefixing(svgIconDir);
 
-    const files = await getFiles(svgIconDir);
+    // const files = await getFiles(svgIconDir);
     const masterIconFile = await fs.promises.readFile(masterIconPath);
 
     const gen = new GenerateImages(files, masterIconFile);
