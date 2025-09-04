@@ -48,16 +48,15 @@ span.tourtip__mask {
 }
 
 .tourtip__content {
-    @include bubble-mixins.content;
-
     flex-basis: 0;
+
+    @include bubble-mixins.content;
 }
 
 button.tourtip__close {
-    @include bubble-mixins.close;
-
     outline-offset: -2px;
 
+    @include bubble-mixins.close;
     svg.icon {
         @include token-mixins.fill-token(
             tourtip-foreground-color,

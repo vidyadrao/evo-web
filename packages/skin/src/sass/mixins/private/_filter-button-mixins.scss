@@ -5,6 +5,7 @@
     border: 1px solid transparent;
     border-radius: 16px;
     box-sizing: border-box;
+    color: var(--color-foreground-primary);
     display: inline-flex;
     flex: 0 1 auto;
     flex-direction: column;
@@ -19,10 +20,6 @@
     text-align: center;
     text-decoration: none;
     vertical-align: bottom;
-    @include token-mixins.color-token(
-        filter-button-foreground-color,
-        color-foreground-primary
-    );
 
     & + & {
         margin-left: 8px;

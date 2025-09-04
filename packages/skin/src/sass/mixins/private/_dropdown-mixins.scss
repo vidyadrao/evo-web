@@ -2,15 +2,8 @@
 @use "./token-mixins";
 
 @mixin base($component) {
-    @include token-mixins.background-color-token(
-        #{$component}-background-color,
-        color-background-elevated
-    );
-    @include token-mixins.border-radius-token(
-        #{$component}-border-radius,
-        border-radius-50
-    );
-
+    background-color: var(--color-background-elevated);
+    border-radius: var(--border-radius-50);
     box-shadow: var(--bubble-shadow);
     box-sizing: border-box;
     display: none;

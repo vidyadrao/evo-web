@@ -2,15 +2,10 @@
 @use "./selection-list-mixins";
 
 @mixin base() {
+    border-color: var(--color-background-primary);
+    color: var(--color-foreground-primary);
+
     @include selection-list-mixins.base;
-    @include token-mixins.border-color-token(
-        listbox-option-border-color,
-        color-background-primary
-    );
-    @include token-mixins.color-token(
-        listbox-option-foreground-color,
-        color-foreground-primary
-    );
 
     &[hidden] {
         display: none; /* https://css-tricks.com/the-hidden-attribute-is-visibly-weak/ */
@@ -18,10 +13,7 @@
 
     &:hover {
         background-color: var(--color-state-primary-hover);
-        @include token-mixins.color-token(
-            listbox-option-hover-foreground-color,
-            color-foreground-primary
-        );
+        color: var(--color-foreground-primary);
     }
 
     &:active {

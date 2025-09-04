@@ -16,10 +16,7 @@ exports[`given button is enabled > then it matches the snapshot 1`] = `
     border-top-style: solid;
     border-top-width: 1px;
     border-top: 1px solid;
-    color: var(
-            --btn-secondary-foreground-color,
-            var(--color-foreground-accent)
-        );
+    color: var(--color-foreground-accent);
     font-family: inherit;
     font-size: var(--font-size-default);
     min-height: 40px;

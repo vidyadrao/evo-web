@@ -6,12 +6,12 @@
     --dialog-lightbox-max-width: 616px;
 }
 .drawer-dialog[role="dialog"] {
+    align-items: flex-end;
     background-color: var(--dialog-scrim-color-show);
     bottom: 0;
     left: 0;
-    -webkit-overflow-scrolling: touch;
-    align-items: flex-end;
     overflow: hidden;
+    -webkit-overflow-scrolling: touch;
     position: fixed;
     right: 0;
     top: 0;

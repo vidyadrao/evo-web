@@ -31,9 +31,9 @@
 }
 
 .fullscreen-dialog__main {
-    @include dialog-mixins.body-content;
-
     min-height: auto;
+
+    @include dialog-mixins.body-content;
 }
 
 .fullscreen-dialog__footer {

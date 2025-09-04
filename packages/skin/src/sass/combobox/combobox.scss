@@ -41,11 +41,11 @@ span.combobox {
 }
 
 .combobox__option[role^="option"] {
-    @include listbox-mixins.base;
-    @include dropdown-mixins.item-border-radius(combobox-listbox);
-
     cursor: default; /* needed to override text cursor */
     position: relative; /* needed for icon to show properly */
+
+    @include listbox-mixins.base;
+    @include dropdown-mixins.item-border-radius(combobox-listbox);
 
     &:not(:last-child) {
         margin-bottom: 1px;
@@ -92,15 +92,15 @@ span.combobox {
 }
 
 .combobox__control > svg.icon--12 {
-    @include token-mixins.color-token(
-        combobox-textbox-icon-color,
-        color-foreground-primary
-    );
-
     pointer-events: none;
     position: absolute;
     right: 17px; /* +1 px for the border on the input box */
     top: calc(50% - 8px); /* 8px is half the height of dropdown icon size */
+
+    @include token-mixins.color-token(
+        combobox-textbox-icon-color,
+        color-foreground-primary
+    );
 }
 
 .combobox__control > input {

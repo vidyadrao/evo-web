@@ -25,10 +25,10 @@
 }
 
 @mixin lightbox-base() {
-    @include base;
-
     align-items: flex-start;
     justify-content: center;
+
+    @include base;
 }
 
 @mixin window() {

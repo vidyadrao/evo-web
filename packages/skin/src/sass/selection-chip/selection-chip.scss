@@ -5,11 +5,10 @@
 @include chip-mixins.background-keyframes;
 
 .selection-chip {
+    border-radius: var(--border-radius-50);
     @include chip-mixins.base;
     @include chip-mixins.interactive;
     @include state-layer.standard;
-
-    border-radius: var(--border-radius-50);
 }
 
 .selection-chip--animated .selection-chip__trailing {

@@ -16,21 +16,11 @@ span.filter-menu-button + span.filter-menu-button {
 
 button.filter-menu-button__button {
     align-items: center;
-    background-color: var(
-        --filter-button-background-color,
-        var(--color-background-secondary)
-    );
+    background-color: var(--color-background-secondary);
     border: 1px solid transparent;
-    border-color: var(
-        --filter-button-selected-border-color,
-        var(--color-stroke-default)
-    );
     border-radius: 16px;
     box-sizing: border-box;
-    color: var(
-        --filter-button-foreground-color,
-        var(--color-foreground-primary)
-    );
+    color: var(--color-foreground-primary);
     display: inline-flex;
     flex: 0 1 auto;
     flex-direction: column;
@@ -52,10 +42,7 @@ button.filter-menu-button__button + button.filter-menu-button__button {
 button.filter-menu-button__button:active,
 button.filter-menu-button__button:focus,
 button.filter-menu-button__button:hover {
-    background-color: var(
-        --filter-button-background-color,
-        var(--color-state-secondary-hover)
-    );
+    background-color: var(--color-state-secondary-hover);
 }
 
 .filter-menu-button__button-cell {
@@ -243,8 +230,6 @@ span.filter-menu-button__radio svg.icon--checked {
     justify-content: space-between;
     line-height: 1.4em;
     margin: 0;
-    outline-offset: -4px;
-    padding: 8px 16px;
     width: 100%;
 }
 .filter-menu-button__item:hover {
@@ -270,6 +255,10 @@ span.filter-menu-button__radio svg.icon--checked {
 .filter-menu-button__item:disabled:hover,
 .filter-menu-button__item[aria-disabled="true"]:hover {
     background-color: inherit;
+}
+.filter-menu-button__item {
+    outline-offset: -4px;
+    padding: 8px 16px;
 }
 .filter-menu-button__item:hover {
     background-color: var(--color-state-primary-hover);
@@ -319,8 +308,9 @@ button.filter-menu-button__footer {
         var(--color-background-elevated)
     );
     border: none;
-    border-top: 1px solid;
-    border-color: var(--filter-menu-border-color, var(--color-stroke-subtle));
+    border-color: var(--color-stroke-subtle);
+    border-top-style: solid;
+    border-top-width: 1px;
     bottom: 0;
     box-sizing: border-box;
     color: var(

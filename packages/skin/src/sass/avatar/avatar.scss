@@ -20,8 +20,6 @@ $_avatar-magenta-foreground-color: #3e135f;
 $_avatar-magenta-background-color: #cc9ef0;
 
 .avatar {
-    @include utility-mixins.image-treatment(50%, inline-flex);
-
     align-items: center;
     border-radius: 50%;
     font-size: var(--font-size-large-2);
@@ -31,6 +29,8 @@ $_avatar-magenta-background-color: #cc9ef0;
     line-height: 48px;
     overflow: hidden;
     width: 48px;
+
+    @include utility-mixins.image-treatment(50%, inline-flex);
 }
 .avatar > svg {
     height: 100%;

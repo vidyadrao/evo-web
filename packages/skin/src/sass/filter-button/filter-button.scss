@@ -11,16 +11,10 @@ div.filter-group {
 
 button.filter-button,
 a.filter-link {
-    @include filter-button-mixins.base;
+    background-color: var(--color-background-secondary);
+    border-color: var(--color-stroke-default);
 
-    @include token-mixins.background-color-token(
-        filter-button-background-color,
-        color-background-secondary
-    );
-    @include token-mixins.border-color-token(
-        filter-button-selected-border-color,
-        color-stroke-default
-    );
+    @include filter-button-mixins.base;
 
     &:focus,
     &:hover,

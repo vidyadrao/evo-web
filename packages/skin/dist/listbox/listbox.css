@@ -43,17 +43,11 @@ div.listbox__options--reverse[role="listbox"] {
 
 div.listbox__option[role="option"] {
     background-color: initial;
-    border-color: var(
-        --listbox-option-border-color,
-        var(--color-background-primary)
-    );
+    border-color: var(--color-background-primary);
     border-style: solid;
     border-width: 1px;
     box-sizing: border-box;
-    color: var(
-        --listbox-option-foreground-color,
-        var(--color-foreground-primary)
-    );
+    color: var(--color-foreground-primary);
     display: inline-grid;
     font-family: inherit;
     grid-template-columns: auto auto;
@@ -72,10 +66,7 @@ div.listbox__option[role="option"][hidden] {
 }
 div.listbox__option[role="option"]:hover {
     background-color: var(--color-state-primary-hover);
-    color: var(
-        --listbox-option-hover-foreground-color,
-        var(--color-foreground-primary)
-    );
+    color: var(--color-foreground-primary);
 }
 div.listbox__option[role="option"]:active {
     font-weight: 700;
@@ -99,12 +90,12 @@ span.listbox__value {
 
 div.listbox__option svg.icon {
     align-self: center;
+    margin-inline-start: var(--spacing-100);
     fill: currentColor;
     margin: 0 auto;
     opacity: 0;
     stroke: currentColor;
     stroke-width: 0;
-    margin-inline-start: var(--spacing-100);
 }
 
 div.listbox__options[role="listbox"]:focus

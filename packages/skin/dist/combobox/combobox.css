@@ -24,14 +24,8 @@ span.combobox {
 }
 
 .combobox__listbox {
-    background-color: var(
-        --combobox-listbox-background-color,
-        var(--color-background-elevated)
-    );
-    border-radius: var(
-        --combobox-listbox-border-radius,
-        var(--border-radius-50)
-    );
+    background-color: var(--color-background-elevated);
+    border-radius: var(--border-radius-50);
     box-shadow: var(--bubble-shadow);
     box-sizing: border-box;
     display: none;
@@ -70,17 +64,11 @@ span.combobox {
 
 .combobox__option[role^="option"] {
     background-color: initial;
-    border-color: var(
-        --listbox-option-border-color,
-        var(--color-background-primary)
-    );
+    border-color: var(--color-background-primary);
     border-style: solid;
     border-width: 1px;
     box-sizing: border-box;
-    color: var(
-        --listbox-option-foreground-color,
-        var(--color-foreground-primary)
-    );
+    color: var(--color-foreground-primary);
     cursor: default;
     display: inline-grid;
     font-family: inherit;
@@ -97,10 +85,7 @@ span.combobox {
     display: none;
 }
 .combobox__option[role^="option"]:hover {
-    color: var(
-        --listbox-option-hover-foreground-color,
-        var(--color-foreground-primary)
-    );
+    color: var(--color-foreground-primary);
 }
 .combobox__option[role^="option"]:active {
     font-weight: 700;

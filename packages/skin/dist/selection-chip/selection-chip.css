@@ -28,9 +28,7 @@
     justify-content: space-between;
     max-width: 296px;
     min-width: 32px;
-    overflow: hidden;
     padding: 0 var(--spacing-150);
-    position: relative;
     text-decoration: none;
     transition: all var(--motion-duration-short-3)
         var(--motion-easing-quick-enter);
@@ -38,6 +36,10 @@
 }
 .selection-chip:active {
     transform: scale(0.97);
+}
+.selection-chip {
+    overflow: hidden;
+    position: relative;
 }
 .selection-chip:after {
     background-color: var(--state-layer-neutral);

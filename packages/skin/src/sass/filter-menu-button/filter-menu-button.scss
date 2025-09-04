@@ -21,23 +21,15 @@ span.filter-menu-button {
 }
 
 button.filter-menu-button__button {
+    background-color: var(--color-background-secondary);
+    border-color: var(--color-stroke-default);
+
     @include filter-button-mixins.base;
-    @include token-mixins.background-color-token(
-        filter-button-background-color,
-        color-background-secondary
-    );
-    @include token-mixins.border-color-token(
-        filter-button-selected-border-color,
-        color-stroke-default
-    );
 
     &:focus,
     &:hover,
     &:active {
-        @include token-mixins.background-color-token(
-            filter-button-background-color,
-            color-state-secondary-hover
-        );
+        background-color: var(--color-state-secondary-hover);
     }
 }
 
@@ -269,19 +261,16 @@ span.filter-menu-button__item {
 }
 
 button.filter-menu-button__footer {
-    @include filter-menu-mixins.base;
-
     border: none;
+    border-color: var(--color-stroke-subtle);
     border-top-style: solid;
     border-top-width: 1px;
     bottom: 0;
     outline-offset: -10;
     padding: 16px;
     transform: translateZ(0);
-    @include token-mixins.border-color-token(
-        filter-menu-border-color,
-        color-stroke-subtle
-    );
+
+    @include filter-menu-mixins.base;
 
     &:focus,
     &:hover {

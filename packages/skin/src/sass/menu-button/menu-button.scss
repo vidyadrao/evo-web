@@ -35,10 +35,10 @@ span.fake-menu-button__button {
 }
 
 div.menu-button__item[role^="menuitem"] {
+    cursor: default; /* needed to override text cursor */
+
     @include menu-mixins.base(menu-button);
     @include dropdown-mixins.item-border-radius(menu-button-menu);
-
-    cursor: default; /* needed to override text cursor */
 }
 
 .menu-button__item > svg.icon--16,

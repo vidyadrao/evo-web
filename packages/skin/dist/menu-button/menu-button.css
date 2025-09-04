@@ -9,14 +9,8 @@
 
 .fake-menu-button__menu,
 .menu-button__menu {
-    background-color: var(
-        --menu-button-menu-background-color,
-        var(--color-background-elevated)
-    );
-    border-radius: var(
-        --menu-button-menu-border-radius,
-        var(--border-radius-50)
-    );
+    background-color: var(--color-background-elevated);
+    border-radius: var(--border-radius-50);
     box-shadow: var(--bubble-shadow);
     box-sizing: border-box;
     display: none;

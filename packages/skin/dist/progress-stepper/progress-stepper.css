@@ -209,6 +209,7 @@ hr.progress-stepper__separator {
     min-width: inherit;
     width: 4px;
 }
+
 [dir="rtl"] .progress-stepper__item:first-child .progress-stepper__text {
     text-align: right;
 }

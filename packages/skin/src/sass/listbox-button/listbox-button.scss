@@ -197,10 +197,10 @@ div.listbox-button__option[role="option"][aria-selected="true"] svg.icon {
 }
 
 div.listbox-button__option[role="option"] {
+    cursor: default; /* needed to override text cursor */
+
     @include listbox-mixins.base;
     @include dropdown-mixins.item-border-radius(listbox-button-listbox);
-
-    cursor: default; /* needed to override text cursor */
 
     &:disabled .listbox-button__description,
     &[aria-disabled="true"] .listbox-button__description {
@@ -225,13 +225,13 @@ span.listbox-button__value {
 /* stylelint-disable no-descending-specificity */
 [dir="rtl"] {
     .listbox-button .btn__label {
+        margin-left: 3px;
+        margin-right: 0;
+
         @include token-mixins.color-token(
             listbox-button-label-color,
             color-foreground-secondary
         );
-
-        margin-left: 3px;
-        margin-right: 0;
     }
 }
 /* stylelint-enable no-descending-specificity */

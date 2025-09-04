@@ -24,14 +24,8 @@ span.listbox-button--fluid div.listbox-button__listbox {
 }
 
 div.listbox-button__listbox {
-    background-color: var(
-        --listbox-button-listbox-background-color,
-        var(--color-background-elevated)
-    );
-    border-radius: var(
-        --listbox-button-listbox-border-radius,
-        var(--border-radius-50)
-    );
+    background-color: var(--color-background-elevated);
+    border-radius: var(--border-radius-50);
     box-shadow: var(--bubble-shadow);
     box-sizing: border-box;
     display: none;
@@ -229,17 +223,11 @@ div.listbox-button__option[role="option"][aria-selected="true"] svg.icon {
 
 div.listbox-button__option[role="option"] {
     background-color: initial;
-    border-color: var(
-        --listbox-option-border-color,
-        var(--color-background-primary)
-    );
+    border-color: var(--color-background-primary);
     border-style: solid;
     border-width: 1px;
     box-sizing: border-box;
-    color: var(
-        --listbox-option-foreground-color,
-        var(--color-foreground-primary)
-    );
+    color: var(--color-foreground-primary);
     cursor: default;
     display: inline-grid;
     font-family: inherit;
@@ -259,10 +247,7 @@ div.listbox-button__option[role="option"][hidden] {
 }
 div.listbox-button__option[role="option"]:hover {
     background-color: var(--color-state-primary-hover);
-    color: var(
-        --listbox-option-hover-foreground-color,
-        var(--color-foreground-primary)
-    );
+    color: var(--color-foreground-primary);
 }
 div.listbox-button__option[role="option"]:active {
     font-weight: 700;

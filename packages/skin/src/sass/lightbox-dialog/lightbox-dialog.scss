@@ -20,17 +20,17 @@
 }
 
 .lightbox-dialog__main {
-    @include dialog-mixins.body-content;
-
     min-height: 18px;
     overflow: auto;
+
+    @include dialog-mixins.body-content;
 }
 
 .lightbox-dialog__footer {
-    @include dialog-mixins.footer-content;
-
     border-top: 1px solid
         var(--dialog-lightbox-separator-color, var(--color-stroke-subtle));
+
+    @include dialog-mixins.footer-content;
 }
 
 .lightbox-dialog__image {

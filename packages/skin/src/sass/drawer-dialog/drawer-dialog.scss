@@ -5,10 +5,10 @@
 @use "../mixins/private/token-mixins";
 
 .drawer-dialog[role="dialog"] {
-    @include dialog-mixins.base;
-
     align-items: flex-end;
     overflow: hidden;
+
+    @include dialog-mixins.base;
 }
 
 .drawer-dialog--no-mask[role="dialog"] {
@@ -51,10 +51,10 @@
 }
 
 .drawer-dialog__main {
-    @include dialog-mixins.body-content;
-
     min-height: auto;
     overflow: auto;
+
+    @include dialog-mixins.body-content;
 }
 
 .drawer-dialog__footer {

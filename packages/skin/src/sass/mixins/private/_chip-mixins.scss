@@ -31,8 +31,6 @@
 }
 
 @mixin interactive() {
-    @include button-mixins.animations;
-
     background-color: var(--color-background-primary);
     background-position: center;
     background-repeat: no-repeat;
@@ -40,6 +38,8 @@
     border: 1px solid var(--color-stroke-default);
     box-shadow: none;
     color: var(--color-foreground-primary);
+
+    @include button-mixins.animations;
 }
 
 @mixin selected() {

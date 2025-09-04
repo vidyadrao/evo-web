@@ -51,9 +51,7 @@ button.filter-chip {
     justify-content: space-between;
     max-width: 296px;
     min-width: 32px;
-    overflow: hidden;
     padding: 0 var(--spacing-150);
-    position: relative;
     text-decoration: none;
     transition: all var(--motion-duration-short-3)
         var(--motion-easing-quick-enter);
@@ -62,6 +60,11 @@ button.filter-chip {
 a.filter-chip:active,
 button.filter-chip:active {
     transform: scale(0.97);
+}
+a.filter-chip,
+button.filter-chip {
+    overflow: hidden;
+    position: relative;
 }
 a.filter-chip:after,
 button.filter-chip:after {
@@ -98,8 +101,8 @@ button.filter-chip--expressive {
 
 .filter-chip__media {
     align-items: center;
-    border-radius: 8px;
     border-radius: var(--spacing-400);
+    border-radius: 8px;
     display: flex;
     justify-content: center;
     margin-inline-start: -8px;

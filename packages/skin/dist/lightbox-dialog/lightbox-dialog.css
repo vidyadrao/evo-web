@@ -7,12 +7,12 @@
 }
 
 .lightbox-dialog[role="dialog"] {
+    align-items: flex-start;
     background-color: var(--dialog-scrim-color-show);
     bottom: 0;
+    justify-content: center;
     left: 0;
     -webkit-overflow-scrolling: touch;
-    align-items: flex-start;
-    justify-content: center;
     position: fixed;
     right: 0;
     top: 0;

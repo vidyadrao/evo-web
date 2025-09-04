@@ -6,21 +6,11 @@ div.filter-group {
 a.filter-link,
 button.filter-button {
     align-items: center;
-    background-color: var(
-        --filter-button-background-color,
-        var(--color-background-secondary)
-    );
+    background-color: var(--color-background-secondary);
     border: 1px solid transparent;
-    border-color: var(
-        --filter-button-selected-border-color,
-        var(--color-stroke-default)
-    );
     border-radius: 16px;
     box-sizing: border-box;
-    color: var(
-        --filter-button-foreground-color,
-        var(--color-foreground-primary)
-    );
+    color: var(--color-foreground-primary);
     display: inline-flex;
     flex: 0 1 auto;
     flex-direction: column;
