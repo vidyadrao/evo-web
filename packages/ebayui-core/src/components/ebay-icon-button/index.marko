@@ -7,7 +7,6 @@ static function toJSON(this: any) {
     };
 }
 $ const {
-    ariaLabel,
     badgeAriaLabel,
     badgeNumber,
     href,
@@ -34,7 +33,6 @@ $ if (href) {
     onKeydown("handleKeydown")
     onFocus("handleFocus")
     onBlur("handleBlur")
-    aria-label=ariaLabel
     href=href
     class=[
         inputClass,
@@ -53,8 +51,8 @@ $ if (href) {
         <ebay-badge
             number=badgeNumber
             type="icon"
-            aria-label=ariaLabel && badgeAriaLabel
-            aria-hidden=!!ariaLabel && "true"
+            aria-label=badgeAriaLabel
+            aria-hidden=!!input.ariaLabel && "true"
         />
     </if>
 </>

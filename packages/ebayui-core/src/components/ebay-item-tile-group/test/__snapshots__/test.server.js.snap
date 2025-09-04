@@ -29,6 +29,7 @@ exports[`ebay-item-tile-group > renders default 1`] = `
                   [36m/>[39m
                 [36m</a>[39m
                 [36m<button[39m
+                  [33maria-label[39m=[32m"Add to watchlist"[39m
                   [33mclass[39m=[32m"file-preview-card__action icon-btn"[39m
                   [33mdata-ebayui[39m=[32m""[39m
                   [33mtype[39m=[32m"button"[39m
@@ -143,6 +144,7 @@ exports[`ebay-item-tile-group > renders default 1`] = `
                   [36m/>[39m
                 [36m</a>[39m
                 [36m<button[39m
+                  [33maria-label[39m=[32m"Add to watchlist"[39m
                   [33mclass[39m=[32m"file-preview-card__action icon-btn"[39m
                   [33mdata-ebayui[39m=[32m""[39m
                   [33mtype[39m=[32m"button"[39m
@@ -150,11 +152,7 @@ exports[`ebay-item-tile-group > renders default 1`] = `
                   [36m<svg[39m
                     [33maria-hidden[39m=[32m"true"[39m
                     [33mclass[39m=[32m"icon icon--16"[39m
-                    [33mfocusable[39m=[32m"false"[39m
-                  [36m>[39m
-                    [36m<use[39m
-                      [33mhref[39m=[32m"#icon-heart-16"[39m
- ..."
+                    [33mfocusable[39m=[32m"false"..."
 `;
 
 exports[`ebay-item-tile-group > renders with layout=list 1`] = `
@@ -186,6 +184,7 @@ exports[`ebay-item-tile-group > renders with layout=list 1`] = `
                   [36m/>[39m
                 [36m</a>[39m
                 [36m<button[39m
+                  [33maria-label[39m=[32m"Add to watchlist"[39m
                   [33mclass[39m=[32m"file-preview-card__action icon-btn"[39m
                   [33mdata-ebayui[39m=[32m""[39m
                   [33mtype[39m=[32m"button"[39m
@@ -300,14 +299,12 @@ exports[`ebay-item-tile-group > renders with layout=list 1`] = `
                   [36m/>[39m
                 [36m</a>[39m
                 [36m<button[39m
+                  [33maria-label[39m=[32m"Add to watchlist"[39m
                   [33mclass[39m=[32m"file-preview-card__action icon-btn"[39m
                   [33mdata-ebayui[39m=[32m""[39m
                   [33mtype[39m=[32m"button"[39m
                 [36m>[39m
                   [36m<svg[39m
                     [33maria-hidden[39m=[32m"true"[39m
-                    [33mclass[39m=[32m"icon icon--16"[39m
-                    [33mfocusable[39m=[32m"false"[39m
-                  [36m>[39m
-                    [36m<use[..."
+                    [33mclass[39m=[32m"ico..."
 `;
