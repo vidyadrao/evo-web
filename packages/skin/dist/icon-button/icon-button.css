@@ -8,13 +8,12 @@ a.icon-link > svg {
 
 a.icon-link,
 button.icon-btn {
-    background-color: var(
-        --icon-button-background-color,
-        var(--color-background-secondary)
-    );
+    align-items: center;
+    background-color: var(--color-background-secondary);
     border: 2px solid transparent;
     border-radius: 50px;
     box-sizing: border-box;
+    display: inline-flex;
     font-family: inherit;
     height: 40px;
     justify-content: center;
@@ -25,10 +24,7 @@ button.icon-btn {
 }
 a.icon-link > svg,
 button.icon-btn > svg {
-    fill: var(
-        --icon-button-icon-foreground-color,
-        var(--color-foreground-primary)
-    );
+    fill: var(--color-foreground-primary);
     max-width: 75%;
     position: relative;
 }
@@ -49,31 +45,19 @@ button.icon-btn:not(:focus-visible) {
 
 a.icon-link.icon-link--primary,
 button.icon-btn.icon-btn--primary {
-    background-color: var(
-        --btn-primary-background-color,
-        var(--color-background-accent)
-    );
-    border-color: var(--btn-primary-border-color, var(--color-stroke-accent));
-    color: var(
-        --btn-primary-foreground-color,
-        var(--color-foreground-on-accent)
-    );
+    background-color: var(--color-background-accent);
+    border-color: var(--color-stroke-accent);
+    color: var(--color-foreground-on-accent);
 }
 
 a.icon-link.icon-link--primary > svg,
 button.icon-btn.icon-btn--primary > svg {
-    fill: var(
-        --icon-button-icon-foreground-color,
-        var(--color-foreground-on-accent)
-    );
+    fill: var(--color-foreground-on-accent);
 }
 
 a.icon-link.icon-link--secondary > svg,
 button.icon-btn.icon-btn--secondary > svg {
-    fill: var(
-        --icon-button-icon-foreground-color,
-        var(--color-foreground-accent)
-    );
+    fill: var(--color-foreground-accent);
 }
 
 a.icon-link.icon-link--small .progress-spinner,
@@ -110,10 +94,7 @@ button.icon-btn--transparent:hover {
 }
 
 a.icon-link:visited > svg {
-    fill: var(
-        --icon-button-icon-foreground-color,
-        var(--color-foreground-primary)
-    );
+    fill: var(--color-foreground-primary);
 }
 
 a:not([href]).icon-link > svg,
@@ -136,17 +117,11 @@ button[disabled].icon-btn:hover > svg {
 
 a.icon-link:visited:focus > svg,
 a.icon-link:visited:hover > svg {
-    fill: var(
-        --icon-button-icon-hover-foreground-color,
-        var(--color-foreground-primary)
-    );
+    fill: var(--color-foreground-primary);
 }
 
 a.icon-link.icon-link--primary:visited > svg {
-    fill: var(
-        --icon-button-icon-foreground-color,
-        var(--color-foreground-on-accent)
-    );
+    fill: var(--color-foreground-on-accent);
 }
 
 a.icon-link--badged,
@@ -206,24 +181,15 @@ a:not([href]).icon-link.icon-link--primary,
 a[aria-disabled="true"].icon-link.icon-link--primary,
 button[aria-disabled="true"].icon-btn.icon-btn--primary,
 button[disabled].icon-btn.icon-btn--primary {
-    background-color: var(
-        --icon-button-disabled-background-color,
-        var(--color-background-disabled)
-    );
-    border-color: var(
-        --btn-primary-disabled-border-color,
-        var(--color-stroke-disabled)
-    );
+    background-color: var(--color-background-disabled);
+    border-color: var(--color-stroke-disabled);
 }
 
 a:not([href]).icon-link.icon-link--primary > svg,
 a[aria-disabled="true"].icon-link.icon-link--primary > svg,
 button[aria-disabled="true"].icon-btn.icon-btn--primary > svg,
 button[disabled].icon-btn.icon-btn--primary > svg {
-    fill: var(
-        --icon-button-icon-foreground-color,
-        var(--color-foreground-on-accent)
-    );
+    fill: var(--color-foreground-on-accent);
 }
 
 a.icon-link.icon-link--primary .progress-spinner,
@@ -235,11 +201,8 @@ button.icon-btn.icon-btn--primary .progress-spinner {
 a.icon-link.icon-link--secondary,
 button.icon-btn.icon-btn--secondary {
     background-color: initial;
-    border-color: var(--btn-secondary-border-color, var(--color-stroke-accent));
-    color: var(
-        --btn-secondary-foreground-color,
-        var(--color-foreground-accent)
-    );
+    border-color: var(--color-stroke-accent);
+    color: var(--color-foreground-accent);
 }
 
 a.icon-link.icon-link--primary:not([disabled], [aria-disabled="true"]):focus,
@@ -271,20 +234,14 @@ a:not([href]).icon-link.icon-link--secondary,
 a[aria-disabled="true"].icon-link.icon-link--secondary,
 button[aria-disabled="true"].icon-btn.icon-btn--secondary,
 button[disabled].icon-btn.icon-btn--secondary {
-    border-color: var(
-        --btn-secondary-disabled-border-color,
-        var(--color-stroke-disabled)
-    );
+    border-color: var(--color-stroke-disabled);
 }
 
 a:not([href]).icon-link.icon-blinktn--secondary > svg,
 a[aria-disabled="true"].icon-link.icon-link--secondary > svg,
 button[aria-disabled="true"].icon-btn.icon-btn--secondary > svg,
 button[disabled].icon-btn.icon-btn--secondary > svg {
-    fill: var(
-        --icon-button-icon-foreground-color,
-        var(--color-foreground-disabled)
-    );
+    fill: var(--color-foreground-disabled);
 }
 
 a.icon-link.icon-link--secondary:not([disabled], [aria-disabled="true"]):focus,
@@ -310,18 +267,15 @@ button.icon-btn.icon-btn--secondary:not(
 a.icon-link.icon-link--tertiary,
 button.icon-btn.icon-btn--tertiary {
     background-color: initial;
-    border-color: var(--btn-primary-border-color, var(--color-stroke-default));
-    color: var(--btn-primary-foreground-color, var(--color-foreground-accent));
+    border-color: var(--color-stroke-default);
+    color: var(--color-foreground-accent);
 }
 
 a:not([href]).icon-link.icon-link--tertiary,
 a[aria-disabled="true"].icon-link.icon-link--tertiary,
 button[aria-disabled="true"].icon-btn.icon-btn--tertiary,
 button[disabled].icon-btn.icon-btn--tertiary {
-    border-color: var(
-        --btn-tertiary-disabled-border-color,
-        var(--color-stroke-disabled)
-    );
+    border-color: var(--color-stroke-disabled);
 }
 
 a.icon-link.icon-link--tertiary:not([disabled], [aria-disabled="true"]):focus,

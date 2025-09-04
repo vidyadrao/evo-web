@@ -1,5 +1,4 @@
 @use "../variables/variables";
-@use "../mixins/private/token-mixins";
 
 a.icon-link {
     align-items: center;
@@ -12,14 +11,12 @@ a.icon-link {
 
 button.icon-btn,
 a.icon-link {
-    @include token-mixins.background-color-token(
-        icon-button-background-color,
-        color-background-secondary
-    );
-
+    align-items: center;
+    background-color: var(--color-background-secondary);
     border: 2px solid transparent;
     border-radius: 50px;
     box-sizing: border-box;
+    display: inline-flex;
     font-family: inherit;
     height: 40px;
     justify-content: center;
@@ -29,11 +26,7 @@ a.icon-link {
     width: 40px;
 
     > svg {
-        @include token-mixins.fill-token(
-            icon-button-icon-foreground-color,
-            color-foreground-primary
-        );
-
+        fill: var(--color-foreground-primary);
         max-width: 75%;
         position: relative; /* Safari centering */
     }
@@ -54,34 +47,19 @@ a.icon-link {
 
 button.icon-btn.icon-btn--primary,
 a.icon-link.icon-link--primary {
-    @include token-mixins.background-color-token(
-        btn-primary-background-color,
-        color-background-accent
-    );
-    @include token-mixins.border-color-token(
-        btn-primary-border-color,
-        color-stroke-accent
-    );
-    @include token-mixins.color-token(
-        btn-primary-foreground-color,
-        color-foreground-on-accent
-    );
+    background-color: var(--color-background-accent);
+    border-color: var(--color-stroke-accent);
+    color: var(--color-foreground-on-accent);
 }
 
 button.icon-btn.icon-btn--primary > svg,
 a.icon-link.icon-link--primary > svg {
-    @include token-mixins.fill-token(
-        icon-button-icon-foreground-color,
-        color-foreground-on-accent
-    );
+    fill: var(--color-foreground-on-accent);
 }
 
 button.icon-btn.icon-btn--secondary > svg,
 a.icon-link.icon-link--secondary > svg {
-    @include token-mixins.fill-token(
-        icon-button-icon-foreground-color,
-        color-foreground-accent
-    );
+    fill: var(--color-foreground-accent);
 }
 
 button.icon-btn.icon-btn--small .progress-spinner,
@@ -119,10 +97,7 @@ a.icon-link--transparent {
 }
 
 a.icon-link:visited > svg {
-    @include token-mixins.fill-token(
-        icon-button-icon-foreground-color,
-        color-foreground-primary
-    );
+    fill: var(--color-foreground-primary);
 }
 
 button[disabled].icon-btn,
@@ -131,30 +106,24 @@ a:not([href]).icon-link,
 a[aria-disabled="true"].icon-link {
     > svg {
         background-color: transparent;
-        @include token-mixins.fill-token(color-background-disabled);
+        fill: var(--color-background-disabled);
     }
 
     &:focus > svg,
     &:hover > svg {
-        @include token-mixins.fill-token(color-background-disabled);
+        fill: var(--color-background-disabled);
     }
 }
 
 a.icon-link:visited {
     &:hover > svg,
     &:focus > svg {
-        @include token-mixins.fill-token(
-            icon-button-icon-hover-foreground-color,
-            color-foreground-primary
-        );
+        fill: var(--color-foreground-primary);
     }
 }
 
 a.icon-link.icon-link--primary:visited > svg {
-    @include token-mixins.fill-token(
-        icon-button-icon-foreground-color,
-        color-foreground-on-accent
-    );
+    fill: var(--color-foreground-on-accent);
 }
 
 button.icon-btn--badged,
@@ -176,9 +145,9 @@ button.icon-btn > svg.icon--confirmation-filled-24,
 button.icon-btn > svg.icon--confirmation-filled-16,
 a.icon-link > svg.icon--confirmation-filled-24,
 a.icon-link > svg.icon--confirmation-filled-16 {
-    @include token-mixins.fill-token(color-foreground-confirmation);
+    fill: var(--color-foreground-confirmation);
     &:hover {
-        @include token-mixins.fill-token(color-foreground-confirmation);
+        fill: var(--color-foreground-confirmation);
     }
 }
 
@@ -186,9 +155,9 @@ button.icon-btn > svg.icon--attention-filled-24,
 button.icon-btn > svg.icon--attention-filled-16,
 a.icon-link > svg.icon--attention-filled-24,
 a.icon-link > svg.icon--attention-filled-16 {
-    @include token-mixins.fill-token(color-foreground-attention);
+    fill: var(--color-foreground-attention);
     &:hover {
-        @include token-mixins.fill-token(color-foreground-attention);
+        fill: var(--color-foreground-attention);
     }
 }
 
@@ -196,9 +165,9 @@ button.icon-btn > svg.icon--information-filled-24,
 button.icon-btn > svg.icon--information-filled-16,
 a.icon-link > svg.icon--information-filled-24,
 a.icon-link > svg.icon--information-filled-16 {
-    @include token-mixins.fill-token(color-foreground-information);
+    fill: var(--color-foreground-information);
     &:hover {
-        @include token-mixins.fill-token(color-foreground-information);
+        fill: var(--color-foreground-information);
     }
 }
 
@@ -215,24 +184,15 @@ button[disabled].icon-btn.icon-btn--primary,
 button[aria-disabled="true"].icon-btn.icon-btn--primary,
 a:not([href]).icon-link.icon-link--primary,
 a[aria-disabled="true"].icon-link.icon-link--primary {
-    @include token-mixins.background-color-token(
-        icon-button-disabled-background-color,
-        color-background-disabled
-    );
-    @include token-mixins.border-color-token(
-        btn-primary-disabled-border-color,
-        color-stroke-disabled
-    );
+    background-color: var(--color-background-disabled);
+    border-color: var(--color-stroke-disabled);
 }
 
 button[disabled].icon-btn.icon-btn--primary > svg,
 button[aria-disabled="true"].icon-btn.icon-btn--primary > svg,
 a:not([href]).icon-link.icon-link--primary > svg,
 a[aria-disabled="true"].icon-link.icon-link--primary > svg {
-    @include token-mixins.fill-token(
-        icon-button-icon-foreground-color,
-        color-foreground-on-accent
-    );
+    fill: var(--color-foreground-on-accent);
 }
 
 button.icon-btn.icon-btn--primary .progress-spinner,
@@ -244,14 +204,8 @@ a.icon-link.icon-link--primary .progress-spinner {
 button.icon-btn.icon-btn--secondary,
 a.icon-link.icon-link--secondary {
     background-color: transparent;
-    @include token-mixins.border-color-token(
-        btn-secondary-border-color,
-        color-stroke-accent
-    );
-    @include token-mixins.color-token(
-        btn-secondary-foreground-color,
-        color-foreground-accent
-    );
+    border-color: var(--color-stroke-accent);
+    color: var(--color-foreground-accent);
 }
 
 button.icon-btn.icon-btn--primary:not([disabled], [aria-disabled="true"]),
@@ -278,20 +232,14 @@ button[disabled].icon-btn.icon-btn--secondary,
 button[aria-disabled="true"].icon-btn.icon-btn--secondary,
 a:not([href]).icon-link.icon-link--secondary,
 a[aria-disabled="true"].icon-link.icon-link--secondary {
-    @include token-mixins.border-color-token(
-        btn-secondary-disabled-border-color,
-        color-stroke-disabled
-    );
+    border-color: var(--color-stroke-disabled);
 }
 
 button[disabled].icon-btn.icon-btn--secondary > svg,
 button[aria-disabled="true"].icon-btn.icon-btn--secondary > svg,
 a:not([href]).icon-link.icon-blinktn--secondary > svg,
 a[aria-disabled="true"].icon-link.icon-link--secondary > svg {
-    @include token-mixins.fill-token(
-        icon-button-icon-foreground-color,
-        color-foreground-disabled
-    );
+    fill: var(--color-foreground-disabled);
 }
 
 button.icon-btn.icon-btn--secondary:not([disabled], [aria-disabled="true"]),
@@ -309,24 +257,15 @@ a.icon-link.icon-link--secondary:not([disabled], [aria-disabled="true"]) {
 button.icon-btn.icon-btn--tertiary,
 a.icon-link.icon-link--tertiary {
     background-color: transparent;
-    @include token-mixins.border-color-token(
-        btn-primary-border-color,
-        color-stroke-default
-    );
-    @include token-mixins.color-token(
-        btn-primary-foreground-color,
-        color-foreground-accent
-    );
+    border-color: var(--color-stroke-default);
+    color: var(--color-foreground-accent);
 }
 
 button[disabled].icon-btn.icon-btn--tertiary,
 button[aria-disabled="true"].icon-btn.icon-btn--tertiary,
 a:not([href]).icon-link.icon-link--tertiary,
 a[aria-disabled="true"].icon-link.icon-link--tertiary {
-    @include token-mixins.border-color-token(
-        btn-tertiary-disabled-border-color,
-        color-stroke-disabled
-    );
+    border-color: var(--color-stroke-disabled);
 }
 
 button.icon-btn.icon-btn--tertiary:not([disabled], [aria-disabled="true"]),
