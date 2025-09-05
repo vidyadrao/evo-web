@@ -23,7 +23,6 @@
     gap: var(--spacing-100);
     overflow: hidden;
     position: relative;
-    width: -moz-fit-content;
     width: fit-content;
 }
 .textbox button.icon-btn {
@@ -98,7 +97,6 @@ input.textbox__control:last-child:not([readonly]) {
 input.textbox__control,
 textarea.textbox__control {
     -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     flex-grow: 1;
     font-size: 1em;

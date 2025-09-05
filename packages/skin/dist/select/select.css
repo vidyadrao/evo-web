@@ -10,7 +10,6 @@ span.select {
 
 .select select {
     -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     background-color: var(
         --select-background-color,

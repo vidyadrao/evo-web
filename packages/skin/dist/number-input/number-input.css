@@ -145,7 +145,6 @@
     margin: 0;
 }
 .number-input .textbox .textbox__control[type="number"] {
-    -moz-appearance: textfield;
     -webkit-appearance: textfield;
     appearance: textfield;
 }

@@ -20,7 +20,6 @@ div.file-input__container {
     display: flex;
     flex-direction: row;
     gap: var(--spacing-100);
-    min-width: -moz-fit-content;
     min-width: fit-content;
     padding: var(--spacing-200);
     pointer-events: none;
