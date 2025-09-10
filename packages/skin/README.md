@@ -12,7 +12,7 @@ Skin is [MIT](LICENSE) licensed.
 
 ## Install
 
-Skin is available as the `@ebay/skin` package on [NPM](https://www.npmjs.com/). Skin is also available on our [CDN](https://opensource.ebay.com/evo-web/skin/#cdn).
+Skin is available as the `@ebay/skin` package on [NPM](https://www.npmjs.com/).
 
 ## Versioning
 

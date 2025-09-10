@@ -19,7 +19,7 @@ This page contains instructions and guidelines for anybody contributing code to 
     - [Commit Message Format](#commit-message-format)
     - [Pull Requests](#pull-requests)
     - [Naming Scheme](#naming-scheme)
-    - [Style Guide](https://github.com/eBay/evo-web/blob/main/packages/skin/STYLEGUIDE.md)
+    - [Style Guide](#style-guide)
     - [LESS API (deprecated)](#less-api-deprecated)
     - [Custom Property API](#custom-property-api)
         - [Core Tokens](#core-tokens)
@@ -87,29 +87,37 @@ _Example_
 ./scripts/develop-module -m toast-dialog
 ```
 
-Add applicable metadata about the component to the `module_metadata` map in [docs/index.html](https://github.com/eBay/skin/blob/master/docs/index.html):
+Add applicable metadata about the component to the `module_metadata` map in each of the components `+page.marko` files. This should be `export const metadata {}`.
 
-```yaml
-your-module-name: # the Skin module name
-    ds-component: # module's relationship with the eBay Design System
-        name: # eBay Design System component name
-        version: # version of the eBay Design System component implemented in Skin
-    status: # status, e.g. "beta", "deprecated", "in-progress"
-    submodules: # array of Skin modules used in this module
+```js
+export const metadata = {
+    component: "The skin module name",
+    ds-component: "module's relationship with the eBay Design System" {
+        name: "eBay Design System component name",
+        version: "version of the eBay Design System component implemented in Skin"
+    },
+    status: "status, e.g. 'beta', 'deprecated', 'in-progress'",
+    submodules: "array of Skin modules used in this module"
+}
 ```
 
 If the Skin component is used for multiple Design System components, include those as an array in the `ds-component` field. For example:
 
-```yaml
-lightbox-dialog:
-    ds-component:
-        - name: modal
-          version: 2.1
-        - name: bottom-sheet
-          version: 2.1
-    submodules:
-        - button
-        - icon-button
+```js
+export const metadata = {
+    component: "lightbox-dialog",
+    "ds-component": [
+        {
+            name: "dialog",
+            version: 4.1,
+        },
+        {
+            name: "bottom-sheet",
+            version: 3.0,
+        },
+    ],
+    submodules: ["button", "icon-button"],
+};
 ```
 
 When updating a Skin module to match an updated Design System design, make sure to update its version in its `ds-component` field.
