@@ -77,7 +77,6 @@ interface State {
     a11yNextText: string;
     a11yPauseText: string;
     a11yPlayText: string;
-    ariaRoleDescription: string;
 }
 
 class Carousel extends Marko.Component<Input, State> {
@@ -442,7 +441,6 @@ class Carousel extends Marko.Component<Input, State> {
             a11yNextText: input.a11yNextText || "Next Slide",
             a11yPauseText: input.a11yPauseText || "Pause",
             a11yPlayText: input.a11yPlayText || "Play",
-            ariaRoleDescription: input["aria-roledescription"] || "Carousel",
             items: [] as State["items"],
             slideWidth: 0,
             autoplayInterval: 0,
@@ -452,6 +450,7 @@ class Carousel extends Marko.Component<Input, State> {
             bothControlsDisabled: false,
         } satisfies State;
 
+        console.log(input["aria-roledescription"], input)
         const itemSkippedAttributes = ["class", "style", "key"];
         const { itemsPerSlide } = state;
         if (itemsPerSlide) {
