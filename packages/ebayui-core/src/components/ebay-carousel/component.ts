@@ -450,7 +450,6 @@ class Carousel extends Marko.Component<Input, State> {
             bothControlsDisabled: false,
         } satisfies State;
 
-        console.log(input["aria-roledescription"], input);
         const itemSkippedAttributes = ["class", "style", "key"];
         const { itemsPerSlide } = state;
         if (itemsPerSlide) {
