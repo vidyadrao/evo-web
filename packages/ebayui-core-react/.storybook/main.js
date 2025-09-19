@@ -1,5 +1,3 @@
-import { resolve } from "path";
-
 export default {
     stories: ["../src/**/__tests__/*.stories.tsx"],
     typescript: {
@@ -13,9 +11,7 @@ export default {
             propFilter: () => true,
         },
     },
-    addons: [
-        "@storybook/addon-a11y",
-    ],
+    addons: ["@storybook/addon-a11y", "@storybook/addon-docs"],
 
     framework: {
         name: "@storybook/react-vite",
@@ -27,7 +23,8 @@ export default {
     },
 
     docs: {
-        autodocs: 'tag',
+        defaultName: "Documentation",
+        autodocs: "tag",
     },
 
     core: {
