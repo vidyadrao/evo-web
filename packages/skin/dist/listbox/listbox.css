@@ -90,8 +90,8 @@ span.listbox__value {
 
 div.listbox__option svg.icon {
     align-self: center;
-    margin-inline-start: var(--spacing-100);
     fill: currentColor;
+    margin-inline-start: var(--spacing-100);
     margin: 0 auto;
     opacity: 0;
     stroke: currentColor;

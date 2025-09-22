@@ -52,12 +52,12 @@ ul.accordion details .details__content {
 }
 
 ul.accordion summary.details__summary span.details__icon svg {
+    animation: chevron-bounce-close var(--motion-duration-medium-1)
+        var(--motion-easing-standard);
     fill: var(
         --details-secondary-foreground-color,
         var(--color-foreground-secondary)
     );
-    animation: chevron-bounce-close var(--motion-duration-medium-1)
-        var(--motion-easing-standard);
 }
 
 ul.accordion details[open] summary.details__summary span.details__icon svg {
