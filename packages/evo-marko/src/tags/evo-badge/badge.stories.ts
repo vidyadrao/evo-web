@@ -1,17 +1,12 @@
 import { Story } from "@storybook/marko";
 import { tagToString } from "../../common/storybook/storybook-code-source";
 import {
-  addContent,
   buildExtensionTemplate,
 } from "../../common/storybook/utils";
 import Readme from "./README.md";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
 import { type Input } from "./index.marko";
-
-const Template: Story<Input> = (args) => ({
-  input: addContent(args),
-});
 
 export default {
   title: "graphics & icons/evo-badge",

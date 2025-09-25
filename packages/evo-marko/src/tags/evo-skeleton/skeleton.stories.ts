@@ -1,10 +1,11 @@
 import { tagToString } from "../../common/storybook/storybook-code-source";
 import {
-  addContent,
   buildExtensionTemplate,
 } from "../../common/storybook/utils";
 import Component, { type Input } from "./index.marko";
 import Readme from "./README.md";
+import DefaultTemplate from "./examples/default.marko";
+import DefaultTemplateCode from "./examples/default.marko?raw";
 import avatarTemplate from "./examples/avatar.marko";
 import avatarCode from "./examples/avatar.marko?raw";
 import buttonTemplate from "./examples/button.marko";
@@ -28,10 +29,6 @@ import compositeCode from "./examples/composite.marko?raw";
 import groupedTileTemplate from "./examples/grouped-tile.marko";
 import groupedTileCode from "./examples/grouped-tile.marko?raw";
 import { Story } from "@storybook/marko";
-
-const Template: Story<Input> = (args) => ({
-  input: addContent(args),
-});
 
 export default {
   title: "building blocks/evo-skeleton",
@@ -80,20 +77,7 @@ export default {
   },
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  style: "width: 220px",
-  a11yText: "Loading",
-  content: `<div class="skeleton__textbox" />` as any,
-};
-Default.parameters = {
-  docs: {
-    source: {
-      code: tagToString("evo-skeleton", Default.args),
-    },
-  },
-};
-
+export const Default = buildExtensionTemplate(DefaultTemplate, DefaultTemplateCode);
 export const Avatar = buildExtensionTemplate(avatarTemplate, avatarCode);
 
 export const Button = buildExtensionTemplate(buttonTemplate, buttonCode);

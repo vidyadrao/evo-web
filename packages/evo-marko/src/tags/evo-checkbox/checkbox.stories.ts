@@ -1,21 +1,18 @@
 import { tagToString } from "../../common/storybook/storybook-code-source";
-import {
-  buildExtensionTemplate,
-  addContent,
-} from "../../common/storybook/utils";
+import { buildExtensionTemplate } from "../../common/storybook/utils";
 
 import Readme from "./README.md";
 import Checkbox from "./index.marko";
 import GroupTemplate from "./examples/group.marko";
+import IsolatedTemplate from "./examples/isolated.marko";
 import WithLabelTemplate from "./examples/WithLabel.marko";
 import DisabledTemplate from "./examples/DisabledWithLabel.marko";
 import GroupCode from "./examples/group.marko?raw";
 import WithLabelCode from "./examples/WithLabel.marko?raw";
 import DisabledCode from "./examples/DisabledWithLabel.marko?raw";
+import IsolatedTemplateCode from "./examples/isolated.marko?raw";
 import { Story } from "@storybook/marko";
 import type { Input } from "./index.marko";
-
-const Template: Story<Input> = (args) => addContent(args);
 
 export default {
   title: "form input/evo-checkbox",
@@ -97,15 +94,7 @@ export const Disabled = buildExtensionTemplate(DisabledTemplate, DisabledCode, {
 
 export const Group = buildExtensionTemplate(GroupTemplate, GroupCode);
 
-export const Isolated = Template.bind({});
-Isolated.args = {
-  checked: false,
-};
-
-Isolated.parameters = {
-  docs: {
-    source: {
-      code: tagToString("evo-checkbox", Isolated.args),
-    },
-  },
-};
+export const Isolated = buildExtensionTemplate(
+  IsolatedTemplate,
+  IsolatedTemplateCode,
+);

@@ -1,21 +1,16 @@
 import { tagToString } from "../../common/storybook/storybook-code-source";
-import {
-  addContent,
-  buildExtensionTemplate,
-} from "../../common/storybook/utils";
+import { buildExtensionTemplate } from "../../common/storybook/utils";
 import avatar from "./index.marko";
 import Readme from "./README.md";
 import imageTemplate from "./examples/image.marko";
 import imageTemplateCode from "./examples/image.marko?raw";
 import autoImageTemplate from "./examples/with-auto-placement.marko";
 import autoImageTemplateCode from "./examples/with-auto-placement.marko?raw";
+import signedOutTemplate from "./examples/signedout.marko";
+import signedOutTemplateCode from "./examples/signedout.marko?raw";
 
 import { Story } from "@storybook/marko";
 import type { Input } from "./index.marko";
-
-const Template: Story<Input> = (args) => ({
-  input: addContent(args),
-});
 
 export default {
   title: "graphics & icons/evo-avatar",
@@ -105,15 +100,10 @@ export const WithAutoPlacement = buildExtensionTemplate(
   },
 );
 
-export const SignedOut = Template.bind({});
-SignedOut.args = {
-  "aria-label": "Signed out",
-};
-
-SignedOut.parameters = {
-  docs: {
-    source: {
-      code: tagToString("evo-avatar", SignedOut.args),
-    },
+export const SignedOut = buildExtensionTemplate(
+  autoImageTemplate,
+  autoImageTemplateCode,
+  {
+    "aria-label": "Signed out",
   },
-};
+);

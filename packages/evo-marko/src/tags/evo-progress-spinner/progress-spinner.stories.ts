@@ -1,12 +1,11 @@
 import { Story } from "@storybook/marko";
 import { tagToString } from "../../common/storybook/storybook-code-source";
-import { addContent } from "../../common/storybook/utils";
+import { buildExtensionTemplate } from "../../common/storybook/utils";
+import DefaultTemplate from "./examples/default.marko";
+import DefaultTemplateCode from "./examples/default.marko?raw";
 import Readme from "./README.md";
 import Component, { type Input } from "./index.marko";
 
-const Template: Story<Input> = (args) => ({
-  input: addContent(args),
-});
 export default {
   title: "progress/evo-progress-spinner",
   component: Component,
@@ -32,15 +31,4 @@ export default {
   },
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  "aria-label": "loading",
-};
-
-Default.parameters = {
-  docs: {
-    source: {
-      code: tagToString("evo-progress-spinner", Default.args),
-    },
-  },
-};
+export const Default = buildExtensionTemplate(DefaultTemplate, DefaultTemplateCode);

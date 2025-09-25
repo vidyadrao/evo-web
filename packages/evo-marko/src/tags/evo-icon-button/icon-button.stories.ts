@@ -1,17 +1,11 @@
 import { Story } from "@storybook/marko";
 import {
-  addContent,
   buildExtensionTemplate,
 } from "../../common/storybook/utils";
 import DefaultTemplate from "./examples/default.marko";
 import DefaultTemplateCode from "./examples/default.marko?raw";
 import Readme from "./README.md";
 import type { Input } from "./index.marko";
-
-const Template: Story<Input> = (args) => ({
-  input: addContent(args),
-});
-// const Template = args =({ input: withcontent(args) })
 
 export default {
   title: "buttons/evo-icon-button",

@@ -1,12 +1,10 @@
-import { Story } from "@storybook/marko";
 import { tagToString } from "../../common/storybook/storybook-code-source";
-import { addContent } from "../../common/storybook/utils";
+import { buildExtensionTemplate } from "src/common/storybook/utils";
 import Readme from "./README.md";
 import Component, { type Input } from "./index.marko";
+import DefaultTemplate from "./examples/default.marko";
+import DefaultTemplateCode from "./examples/default.marko?raw";
 
-const Template: Story<Input> = (args) => ({
-  input: addContent(args),
-});
 export default {
   title: "media/evo-3d-viewer",
   component: Component,
@@ -137,17 +135,4 @@ export default {
   },
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  src: "https://ir.ebaystatic.com/cr/v/c1/ebayui/3d/v1/image.glb",
-  alt: "View these shoes for sale.",
-  errorText: "An error has occurred",
-  a11yLoadingText: "Loading 3d model",
-};
-Default.parameters = {
-  docs: {
-    source: {
-      code: tagToString("evo-3d-viewer", Default.args),
-    },
-  },
-};
+export const Default = buildExtensionTemplate(DefaultTemplate, DefaultTemplateCode);

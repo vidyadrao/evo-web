@@ -1,7 +1,6 @@
 import { Story } from "@storybook/marko";
 import { tagToString } from "../../common/storybook/storybook-code-source";
 import {
-  addContent,
   buildExtensionTemplate,
 } from "../../common/storybook/utils";
 import DefaultTemplate from "./examples/default.marko";
