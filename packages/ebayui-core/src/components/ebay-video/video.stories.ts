@@ -300,3 +300,84 @@ mp4.parameters = {
         },
     },
 };
+
+export const customControls = Template.bind({});
+customControls.storyName = "Custom Controls";
+customControls.args = {
+    width: "700",
+    height: "400",
+    hideFullScreenButton: true,
+    hideSeekBar: true,
+    hideTotalTime: true,
+    hideCurrentTime: true,
+    disableClickToPlay: true,
+    showRemainingTime: true,
+    autoplay: true,
+    loop: true,
+    disableDoubleClickForFullScreen: true,
+
+    source: [
+        {
+            src: "https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd",
+            type: "dash",
+        },
+    ] as any,
+};
+customControls.parameters = {
+    docs: {
+        source: {
+            code: tagToString("ebay-video", customControls.args),
+        },
+        description: {
+            story: "This example demonstrates how to customize the video player controls using the new configurable videoConfig fields."
+        }
+    },
+};
+
+export const autoPlayViewport = Template.bind({});
+autoPlayViewport.storyName = "Auto-play on Viewport Visibility";
+autoPlayViewport.args = {
+    width: "700",
+    height: "400",
+    source: [
+        {
+            src: "https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd",
+            type: "dash",
+        },
+    ] as any,
+};
+autoPlayViewport.parameters = {
+    docs: {
+        source: {
+            code: tagToString("ebay-video", autoPlayViewport.args),
+        },
+        description: {
+            story: "The video player automatically plays the video when it is 50% visible in the viewport and pauses when it is less than 50% visible. This provides a better user experience by only playing videos when they are actually visible to the user. To test this feature, scroll the page so that the video is partially visible or not visible at all."
+        }
+    },
+};
+export const smallWithNoControls = Template.bind({});
+smallWithNoControls.args = {
+    width: "300",
+    height: "300",
+    hideFullScreenButton: true,
+    hideSeekBar: true,
+    hideTotalTime: true,
+    hideCurrentTime: true,
+    showRemainingTime: true,
+    autoplay: true,
+    loop: true,
+    source: [
+        {
+            src: "https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd",
+            type: "dash",
+        },
+    ] as any,
+};
+smallWithNoControls.parameters = {
+    docs: {
+        source: {
+            code: tagToString("ebay-video", smallWithNoControls.args),
+        },
+    },
+};

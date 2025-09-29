@@ -12,6 +12,7 @@
 Video player. Supports either MPD or M3U8 playlist formats.
 Natively uses dash.js player under the hood. Loads it async after the video player is loaded on the page.
 For resizing, `ebay-video` supports fixed width or variable width. If no width is provided the video tag will resize based on the container size.
+The video player automatically plays the video when it is 50% visible in the viewport and pauses when it is less than 50% visible. This provides a better user experience by only playing videos when they are actually visible to the user.
 
 ## Examples and Documentation
 

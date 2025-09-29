@@ -1,0 +1,30 @@
+class {}
+
+<ebay-video
+    width="600"
+    height="400"
+    disableDoubleClickForFullScreen=true
+    hideSeekBar=true
+    hideTotalTime=true
+    hideCurrentTime=true
+    hideFullScreenButton= true
+    showRemainingTime=true
+    disableClickToPlay= true
+    autoplay
+    loop
+
+    on-load-error(
+        (err) => {
+            console.log("handle error", err);
+        },
+    )
+>
+    <@source src="https://ir.ebaystatic.com/cr/v/c1/ebayui/video/v1/playlist.mpd"/>
+</ebay-video>
+
+<p>This example demonstrates customizing the video player controls:</p>
+<ul>
+    <li>Added a big play button (add-big-play-button=true)</li>
+    <li>Enabled the seek bar (add-seek-bar=true)</li>
+    <li>Customized control panel elements (removed "report" and "total_time" from the default set)</li>
+</ul>
