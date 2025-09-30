@@ -41,8 +41,6 @@ const defaultControlPanelElements = [
 
 
 const videoConfig = {
-    doubleClickForFullscreen: true,
-    singleClickForPlayAndPause: true,
     addBigPlayButton: false,
     addSeekBar: true,
     controlPanelElements: defaultControlPanelElements
