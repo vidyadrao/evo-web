@@ -306,15 +306,10 @@ customControls.storyName = "Custom Controls";
 customControls.args = {
     width: "700",
     height: "400",
-    hideFullScreenButton: true,
-    hideSeekBar: true,
-    hideTotalTime: true,
-    hideCurrentTime: true,
-    disableClickToPlay: true,
-    showRemainingTime: true,
+    "hide-seek-bar": true,
+    "time-display": "remaining",
     autoplay: true,
     loop: true,
-    disableDoubleClickForFullScreen: true,
 
     source: [
         {
@@ -360,11 +355,8 @@ export const smallWithNoControls = Template.bind({});
 smallWithNoControls.args = {
     width: "300",
     height: "300",
-    hideFullScreenButton: true,
-    hideSeekBar: true,
-    hideTotalTime: true,
-    hideCurrentTime: true,
-    showRemainingTime: true,
+    "hide-seek-bar": true,
+    "time-display": "remaining",
     autoplay: true,
     loop: true,
     source: [

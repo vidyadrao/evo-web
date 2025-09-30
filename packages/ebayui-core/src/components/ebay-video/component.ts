@@ -69,6 +69,16 @@ interface VideoInput extends Omit<Marko.HTML.Video, `on${string}`> {
     clip?: any[];
     source: Marko.AttrTag<Marko.HTML.Source>;
     /**
+     * Whether to show the elapsed time or remianing time on the player
+     * @default elapsed
+     */
+    "time-display"?: "remaining" | "elapsed" ;
+    /**
+     * Whether to hide the seek bar on the video player
+     * @default false
+     */
+    "hide-seek-bar"?: boolean;
+    /**
      * @deprecated Use `a11y-report-text` instead
      */
     "report-text"?: Marko.HTMLAttributes["aria-label"];
@@ -88,44 +98,10 @@ interface VideoInput extends Omit<Marko.HTML.Video, `on${string}`> {
     "on-volume-change"?: (event: VolumeEvent) => void;
     "on-load-error"?: (err: Error) => void;
     "shaka-config"?: any;
-    /**
-     * When true, the video will not play/pause when clicked directly.
-     * Play/pause will only be triggered by the play/pause button in the controls.
-     * @default false
-     */
-    disableClickToPlay?: boolean;
-
-     /**
-     * When true, the video will not play on fullscreen mode when double clicked.
-     * @default false
-     */
-    disableDoubleClickForFullScreen?: boolean;
-   
-    /**
-     * Whether to add a seek bar to the video player
-     * @default false
-     */
-    "hideSeekBar"?: boolean;
-    /**
-     * Whether to add the show full screen to the video player
-     * @default false
-     */
-    "hideFullScreenButton"?: boolean;
-    /**
-     * Whether to hide current video played time
-     * @default false
-     */
-    "hideCurrentTime"?: boolean;
-    /**
-     * Whether to hide total video time
-     * @default false
-     */
-    "hideTotalTime"?: boolean;
-     /**
-     * Whether to show remianing video time
-     * @default false
-     */
-    "showRemainingTime"?: boolean;
+  
+    
+    
+  
 }
 
 export interface Input extends WithNormalizedProps<VideoInput> {}
@@ -284,29 +260,15 @@ class Video extends Marko.Component<Input, State> {
 
         const updatedControlPanelElements = new Set(videoConfig.controlPanelElements);
 
-        if(input.disableClickToPlay === true) {
-            videoConfig.singleClickForPlayAndPause = false;
-        }
-
-        if(input.disableDoubleClickForFullScreen === true) {
-            videoConfig.doubleClickForFullscreen = false;
-        }
        
-        if(input.hideSeekBar === true) {
+        if(input["hide-seek-bar"] === true) {
             videoConfig.addSeekBar = false;
         }
-
-        if(input.hideFullScreenButton === true) {
-           updatedControlPanelElements.delete("fullscreen_button");
-        }
-         if(input.hideCurrentTime === true) {
-           updatedControlPanelElements.delete("current_time");
-        }
-        if(input.showRemainingTime === true) {
-           updatedControlPanelElements.add("remaining_time");
-        }
-        if(input.hideTotalTime === true) {
-           updatedControlPanelElements.delete("total_time");
+    
+         if(input["time-display"] === "remaining") {
+            updatedControlPanelElements.delete("current_time");
+            updatedControlPanelElements.delete("total_time");
+            updatedControlPanelElements.add("remaining_time");
         }
         videoConfig.controlPanelElements = [...updatedControlPanelElements];
 
