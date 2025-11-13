@@ -153,7 +153,6 @@
 }
 @container (inline-size < #{variables.$screen-size-XS}) {
     .video-player--compact video {
-        aspect-ratio: 1;
         object-fit: cover;
     }
     .video-player--compact .shaka-controls-button-panel {
